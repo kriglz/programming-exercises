@@ -13,7 +13,7 @@
  6
  31415926535897932384626433832795
  1
- 3
+ 9
  10
  3
  5
@@ -31,9 +31,46 @@ import Foundation
 
 let n = Int(readLine()!.trimmingCharacters(in: .whitespacesAndNewlines))!
 
-for _ in 0...n {
-    print(readLine()!)
+var unsorted: [String] = []
+
+for _ in 1...n {
+    let i = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
+    unsorted.append(i)
+
 }
 
 
+let sorted = unsorted.sorted { (a, b) -> Bool in
+    
+    if a.characters.count > b.characters.count {
+        return false
+    } else if a.characters.count < b.characters.count {
+        return true
+    } else { //same number of digits
+        let numberOfChars = a.characters.count
+        for i in 0..<numberOfChars {
+            let aIndex = a.index(a.startIndex, offsetBy: 0)
+            let aChar = a[aIndex]
+            let aInt = Int(String(aChar))!
+            
+            let bIndex = b.index(b.startIndex, offsetBy: 0)
+            let bChar = b[bIndex]
+            let bInt = Int(String(bChar))!
+
+            if aInt > bInt {
+                return false
+            } else if aInt < bInt {
+                return true
+            }
+        }
+    
+        
+    }
+    return false
+    
+}
+
+for number in sorted {
+    print(number)
+}
 
