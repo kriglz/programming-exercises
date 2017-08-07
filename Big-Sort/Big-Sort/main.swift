@@ -11,8 +11,8 @@
  Sample Input 0
  
  6
+ 35415926535897932384626433832795
  31415926535897932384626433832795
- 1
  9
  10
  3
@@ -49,11 +49,11 @@ let sorted = unsorted.sorted { (a, b) -> Bool in
     } else { //same number of digits
         let numberOfChars = a.characters.count
         for i in 0..<numberOfChars {
-            let aIndex = a.index(a.startIndex, offsetBy: 0)
+            let aIndex = a.index(a.startIndex, offsetBy: i)
             let aChar = a[aIndex]
             let aInt = Int(String(aChar))!
             
-            let bIndex = b.index(b.startIndex, offsetBy: 0)
+            let bIndex = b.index(b.startIndex, offsetBy: i)
             let bChar = b[bIndex]
             let bInt = Int(String(bChar))!
 
