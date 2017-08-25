@@ -118,7 +118,6 @@ struct AxesDrawer
         
         let path = UIBezierPath()
         path.move(to: CGPoint(x: location.x-dx, y: location.y-dy))
-//        print(location.x,  dx)
         path.addLine(to: CGPoint(x: location.x+dx, y: location.y+dy))
         path.stroke()
         
@@ -159,58 +158,9 @@ struct AxesDrawer
             }
         }
     }
-    
-    func drawGraph(in rect: CGRect, origin: CGPoint, pointsPerUnit: CGFloat)
-    {
-        UIGraphicsGetCurrentContext()?.saveGState()
-        color.set()
-        
-        var y = 0.0
-        var newX: CGFloat?
-        var newY: CGFloat?
-        var oldY: CGFloat?
-        var oldX: CGFloat?
-        
-        let path = UIBezierPath()
-
-        let start = Int(rect.minX)
-        let end = Int(rect.maxX)
-
-        
-        
-        /*
-         should check if y is not zero and if its normal .isNormal or .isZero
-         
-         should scale with the rest
- 
-         */
-        for x in start...end {
-            let scaledX = Double(x)/Double(pointsPerUnit)
-            //            y = exp(scaledX) * Double(pointsPerUnit)
-            y = (1 / (scaledX)) * Double(pointsPerUnit)
-            
-            newY = CGFloat(y)
-            newX = CGFloat(x)
-            
-            if ((newY!.isNormal) || (newY!.isZero)) && !(newY!.isNaN) {
-                if oldX == nil && oldY == nil {
-                    path.move(to: CGPoint(x: origin.x + newX!, y: origin.y - newY!).aligned(usingScaleFactor: contentScaleFactor)!)
-                } else if ((oldY!.isNormal) || (oldY!.isZero)) && (oldY!.isFinite) {
-                    path.move(to: CGPoint(x: origin.x + oldX!, y: origin.y - oldY!).aligned(usingScaleFactor: contentScaleFactor)!)
-                    path.addLine(to: CGPoint(x: origin.x + newX!, y: origin.y - newY!).aligned(usingScaleFactor: contentScaleFactor)!)
-                    path.stroke()
-                }
-            }
-            
-            oldY = newY
-            oldX = newX
-        }
-        UIGraphicsGetCurrentContext()?.restoreGState()
-    }
-    
 }
 
-private extension CGPoint
+extension CGPoint
 {
     func aligned(inside bounds: CGRect? = nil, usingScaleFactor scaleFactor: CGFloat = 1.0) -> CGPoint?
     {

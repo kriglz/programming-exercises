@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		89516A871F4D6CBE0014CEF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A861F4D6CBE0014CEF2 /* AppDelegate.swift */; };
-		89516A891F4D6CBE0014CEF2 /* AxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A881F4D6CBE0014CEF2 /* AxesViewController.swift */; };
+		89516A891F4D6CBE0014CEF2 /* AxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A881F4D6CBE0014CEF2 /* AxesView.swift */; };
 		89516A8C1F4D6CBE0014CEF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89516A8A1F4D6CBE0014CEF2 /* Main.storyboard */; };
 		89516A8E1F4D6CBE0014CEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89516A8D1F4D6CBE0014CEF2 /* Assets.xcassets */; };
 		89516A911F4D6CBE0014CEF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89516A8F1F4D6CBE0014CEF2 /* LaunchScreen.storyboard */; };
 		89516A9A1F4D6CE90014CEF2 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A991F4D6CE90014CEF2 /* AxesDrawer.swift */; };
+		89C6C7881F50702B00402E13 /* GraphDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6C7871F50702B00402E13 /* GraphDrawer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89516A831F4D6CBE0014CEF2 /* Draw-axes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw-axes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89516A861F4D6CBE0014CEF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89516A881F4D6CBE0014CEF2 /* AxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxesViewController.swift; sourceTree = "<group>"; };
+		89516A881F4D6CBE0014CEF2 /* AxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxesView.swift; sourceTree = "<group>"; };
 		89516A8B1F4D6CBE0014CEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89516A8D1F4D6CBE0014CEF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89516A901F4D6CBE0014CEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89516A921F4D6CBE0014CEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89516A991F4D6CE90014CEF2 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		89C6C7871F50702B00402E13 /* GraphDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphDrawer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				89516A981F4D6CCF0014CEF2 /* suplements */,
-				89516A881F4D6CBE0014CEF2 /* AxesViewController.swift */,
+				89516A881F4D6CBE0014CEF2 /* AxesView.swift */,
 				89516A991F4D6CE90014CEF2 /* AxesDrawer.swift */,
+				89C6C7871F50702B00402E13 /* GraphDrawer.swift */,
 				89516A8A1F4D6CBE0014CEF2 /* Main.storyboard */,
 			);
 			path = "Draw-axes";
@@ -148,9 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89516A891F4D6CBE0014CEF2 /* AxesViewController.swift in Sources */,
+				89516A891F4D6CBE0014CEF2 /* AxesView.swift in Sources */,
 				89516A871F4D6CBE0014CEF2 /* AppDelegate.swift in Sources */,
 				89516A9A1F4D6CE90014CEF2 /* AxesDrawer.swift in Sources */,
+				89C6C7881F50702B00402E13 /* GraphDrawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
