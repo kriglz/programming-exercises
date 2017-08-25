@@ -86,12 +86,15 @@ struct AxesDrawer
             while !bbox.contains(rect)
             {
                 let label = formatter.string(from: (origin.x-bbox.minX)/pointsPerUnit)!
-                if let leftHashmarkPoint = CGPoint(x: bbox.minX, y: origin.y).aligned(inside: rect, usingScaleFactor: contentScaleFactor) {
+                
+                if let leftHashmarkPoint = CGPoint(x: bbox.minX, y: origin.y).aligned(inside: rect, usingScaleFactor: contentScaleFactor){
                     drawHashmark(at: leftHashmarkPoint, label: .top("-\(label)"))
                 }
+
                 if let rightHashmarkPoint = CGPoint(x: bbox.maxX, y: origin.y).aligned(inside: rect, usingScaleFactor: contentScaleFactor) {
                     drawHashmark(at: rightHashmarkPoint, label: .top(label))
                 }
+                
                 if let topHashmarkPoint = CGPoint(x: origin.x, y: bbox.minY).aligned(inside: rect, usingScaleFactor: contentScaleFactor) {
                     drawHashmark(at: topHashmarkPoint, label: .left(label))
                 }
@@ -115,6 +118,7 @@ struct AxesDrawer
         
         let path = UIBezierPath()
         path.move(to: CGPoint(x: location.x-dx, y: location.y-dy))
+//        print(location.x,  dx)
         path.addLine(to: CGPoint(x: location.x+dx, y: location.y+dy))
         path.stroke()
         
