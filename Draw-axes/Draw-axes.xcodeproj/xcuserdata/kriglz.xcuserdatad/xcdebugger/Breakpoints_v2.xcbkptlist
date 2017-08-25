@@ -170,7 +170,7 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525344043.013653"
+                  timestampString = "525356751.33209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -185,7 +185,7 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525344043.017182"
+                  timestampString = "525356751.334811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "94"
@@ -218,7 +218,7 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525344043.024481"
+                  timestampString = "525356751.348762"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -233,7 +233,7 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525344043.02763"
+                  timestampString = "525356751.350312"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -241,6 +241,22 @@
                   offsetFromSymbolStart = "4124">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Draw-axes/AxesDrawer.swift"
+            timestampString = "525358205.686088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "drawGraph(in:origin:pointsPerUnit:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

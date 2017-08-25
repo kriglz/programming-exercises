@@ -166,8 +166,8 @@ struct AxesDrawer
         color.set()
         
         var y = 0.0
-        var newX: CGFloat = 0.0
-        var newY: CGFloat = 0.0
+        var newX: CGFloat?
+        var newY: CGFloat?
         var oldY: CGFloat?
         var oldX: CGFloat?
         
@@ -177,26 +177,34 @@ struct AxesDrawer
         let end = Int(rect.maxX)
 
         
+        
+        /*
+         should check if y is not zero and if its normal .isNormal or .isZero
+         
+         should scale with the rest
+ 
+         */
         for x in start...end {
-            y = 40 + 20*sin(Double(x)/4)
-//            y = 30 + log(Double(x))
+            let scaledX = Double(x)/Double(pointsPerUnit)
+            //            y = exp(scaledX) * Double(pointsPerUnit)
+            y = (1 / (scaledX)) * Double(pointsPerUnit)
             
             newY = CGFloat(y)
             newX = CGFloat(x)
             
-            if oldX == nil, oldY == nil {
-                path.move(to: CGPoint(x: origin.x + newX, y: origin.y - newY).aligned(usingScaleFactor: contentScaleFactor)!)
-            } else {
-                path.move(to: CGPoint(x: origin.x + oldX!, y: origin.y - oldY!).aligned(usingScaleFactor: contentScaleFactor)!)
+            if ((newY!.isNormal) || (newY!.isZero)) && !(newY!.isNaN) {
+                if oldX == nil && oldY == nil {
+                    path.move(to: CGPoint(x: origin.x + newX!, y: origin.y - newY!).aligned(usingScaleFactor: contentScaleFactor)!)
+                } else if ((oldY!.isNormal) || (oldY!.isZero)) && (oldY!.isFinite) {
+                    path.move(to: CGPoint(x: origin.x + oldX!, y: origin.y - oldY!).aligned(usingScaleFactor: contentScaleFactor)!)
+                    path.addLine(to: CGPoint(x: origin.x + newX!, y: origin.y - newY!).aligned(usingScaleFactor: contentScaleFactor)!)
+                    path.stroke()
+                }
             }
-            
-            path.addLine(to: CGPoint(x: origin.x + newX, y: origin.y - newY).aligned(usingScaleFactor: contentScaleFactor)!)
-            path.stroke()
             
             oldY = newY
             oldX = newX
         }
-        
         UIGraphicsGetCurrentContext()?.restoreGState()
     }
     

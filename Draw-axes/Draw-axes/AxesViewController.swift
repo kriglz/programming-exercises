@@ -10,6 +10,8 @@ import UIKit
 
 class AxesViewController: UIView {
 
+    let scaleConstant = 40
+    
     override func draw(_ rect: CGRect) {
         let axes: AxesDrawer =  AxesDrawer.init(color: UIColor.blue, contentScaleFactor: CGFloat(1))
         
@@ -17,25 +19,25 @@ class AxesViewController: UIView {
         axes.drawAxes(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
                                  size: CGSize(width: bounds.midX, height: -bounds.midY)),
                       origin: CGPoint(x: bounds.midX, y: bounds.midY),
-                      pointsPerUnit: CGFloat(2))
+                      pointsPerUnit: CGFloat(scaleConstant))
         
         //bottom right
         axes.drawAxes(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
                                  size: CGSize(width: bounds.midX, height: bounds.midY)),
                       origin: CGPoint(x: bounds.midX, y: bounds.midY),
-                      pointsPerUnit: CGFloat(2))
+                      pointsPerUnit: CGFloat(scaleConstant))
         
         //top left
         axes.drawAxes(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
                                  size: CGSize(width: -bounds.midX, height: -bounds.midY)),
                       origin: CGPoint(x: bounds.midX, y: bounds.midY),
-                      pointsPerUnit: CGFloat(2))
+                      pointsPerUnit: CGFloat(scaleConstant))
 
         //botton left
         axes.drawAxes(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
                                  size: CGSize(width: -bounds.midX, height: bounds.midY)),
                       origin: CGPoint(x: bounds.midX, y: bounds.midY),
-                      pointsPerUnit: CGFloat(2))
+                      pointsPerUnit: CGFloat(scaleConstant))
         
         
         let sine: AxesDrawer = AxesDrawer.init(color: UIColor.red, contentScaleFactor: CGFloat(1))
@@ -43,7 +45,7 @@ class AxesViewController: UIView {
         sine.drawGraph(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
                                   size: CGSize(width: -2*bounds.midX, height: -2*bounds.midY)),
                        origin: CGPoint(x: bounds.midX, y: bounds.midY),
-                       pointsPerUnit: CGFloat(2))
+                       pointsPerUnit: CGFloat(scaleConstant))
         
     }
 
