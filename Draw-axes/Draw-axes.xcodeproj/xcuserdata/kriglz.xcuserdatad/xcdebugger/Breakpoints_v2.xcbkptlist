@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525172258.281002"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525172259.154631"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525192937.826757"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -170,12 +170,12 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525291159.977628"
+                  timestampString = "525344043.013653"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "5088">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "4572">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -185,12 +185,12 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525291159.979252"
+                  timestampString = "525344043.017182"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "5412">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "4884">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Draw-axes/AxesDrawer.swift"
-            timestampString = "525341249.611837"
+            timestampString = "525346533.375466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -218,12 +218,12 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525291160.014074"
+                  timestampString = "525344043.024481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "3956">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "3812">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -233,12 +233,12 @@
                   moduleName = "Draw-axes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kriglz/Desktop/programming-exercises/Draw-axes/Draw-axes/AxesDrawer.swift"
-                  timestampString = "525291160.016245"
+                  timestampString = "525344043.02763"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "4268">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "4124">
                </Location>
             </Locations>
          </BreakpointContent>

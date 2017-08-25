@@ -159,6 +159,47 @@ struct AxesDrawer
             }
         }
     }
+    
+    func drawGraph(in rect: CGRect, origin: CGPoint, pointsPerUnit: CGFloat)
+    {
+        UIGraphicsGetCurrentContext()?.saveGState()
+        color.set()
+        
+        var y = 0.0
+        var newX: CGFloat = 0.0
+        var newY: CGFloat = 0.0
+        var oldY: CGFloat?
+        var oldX: CGFloat?
+        
+        let path = UIBezierPath()
+
+        let start = Int(rect.minX)
+        let end = Int(rect.maxX)
+
+        
+        for x in start...end {
+            y = 40 + 20*sin(Double(x)/4)
+//            y = 30 + log(Double(x))
+            
+            newY = CGFloat(y)
+            newX = CGFloat(x)
+            
+            if oldX == nil, oldY == nil {
+                path.move(to: CGPoint(x: origin.x + newX, y: origin.y - newY).aligned(usingScaleFactor: contentScaleFactor)!)
+            } else {
+                path.move(to: CGPoint(x: origin.x + oldX!, y: origin.y - oldY!).aligned(usingScaleFactor: contentScaleFactor)!)
+            }
+            
+            path.addLine(to: CGPoint(x: origin.x + newX, y: origin.y - newY).aligned(usingScaleFactor: contentScaleFactor)!)
+            path.stroke()
+            
+            oldY = newY
+            oldX = newX
+        }
+        
+        UIGraphicsGetCurrentContext()?.restoreGState()
+    }
+    
 }
 
 private extension CGPoint
