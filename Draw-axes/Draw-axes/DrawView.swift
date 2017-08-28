@@ -1,5 +1,5 @@
 //
-//  AxesView.swift
+//  DrawView.swift
 //  Draw-axes
 //
 //  Created by Kristina Gelzinyte on 8/23/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AxesView: UIView {
+class DrawView: UIView {
 
-    let scaleConstant = 40
+    let scaleConstant = 30  //use 40 pixels to make 1 unit
     
     override func draw(_ rect: CGRect) {
         let axes: AxesDrawer =  AxesDrawer.init(color: UIColor.blue, contentScaleFactor: CGFloat(1))
@@ -42,9 +42,9 @@ class AxesView: UIView {
         
         
         //draw function
-        let sine: GraphDrawer = GraphDrawer.init(color: UIColor.red, contentScaleFactor: CGFloat(1))
+        let graph: GraphDrawer = GraphDrawer.init(color: UIColor.red, contentScaleFactor: CGFloat(1))
         
-        sine.drawGraph(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
+        graph.drawGraph(in: CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY),
                                   size: CGSize(width: -2*bounds.midX, height: -2*bounds.midY)),
                        origin: CGPoint(x: bounds.midX, y: bounds.midY),
                        pointsPerUnit: CGFloat(scaleConstant))

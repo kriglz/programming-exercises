@@ -13,7 +13,7 @@ struct AxesDrawer
 {
     var color: UIColor
     var contentScaleFactor: CGFloat             // set this from UIView's contentScaleFactor to position axes with maximum accuracy
-    var minimumPointsPerHashmark: CGFloat = 40  // public even though init doesn't accommodate setting it (it's rare to want to change it)
+    var minimumPointsPerHashmark: CGFloat = 30  // public even though init doesn't accommodate setting it (it's rare to want to change it)
 
     init(color: UIColor = UIColor.blue, contentScaleFactor: CGFloat = 1) {
         self.color = color

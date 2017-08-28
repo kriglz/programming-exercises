@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89516A871F4D6CBE0014CEF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A861F4D6CBE0014CEF2 /* AppDelegate.swift */; };
-		89516A891F4D6CBE0014CEF2 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A881F4D6CBE0014CEF2 /* DrawView.swift */; };
-		89516A8C1F4D6CBE0014CEF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89516A8A1F4D6CBE0014CEF2 /* Main.storyboard */; };
-		89516A8E1F4D6CBE0014CEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89516A8D1F4D6CBE0014CEF2 /* Assets.xcassets */; };
-		89516A911F4D6CBE0014CEF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89516A8F1F4D6CBE0014CEF2 /* LaunchScreen.storyboard */; };
-		89516A9A1F4D6CE90014CEF2 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516A991F4D6CE90014CEF2 /* AxesDrawer.swift */; };
-		89C6C7881F50702B00402E13 /* GraphDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6C7871F50702B00402E13 /* GraphDrawer.swift */; };
+		89A61F931F5437DB0063FDE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A61F921F5437DB0063FDE2 /* AppDelegate.swift */; };
+		89A61F981F5437DB0063FDE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A61F961F5437DB0063FDE2 /* Main.storyboard */; };
+		89A61F9A1F5437DB0063FDE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A61F991F5437DB0063FDE2 /* Assets.xcassets */; };
+		89A61F9D1F5437DB0063FDE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A61F9B1F5437DB0063FDE2 /* LaunchScreen.storyboard */; };
+		89A61FA61F54387D0063FDE2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A61FA51F54387D0063FDE2 /* ImageViewController.swift */; };
+		89A61FAA1F5445550063FDE2 /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A61FA91F5445550063FDE2 /* DemoURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		89516A831F4D6CBE0014CEF2 /* Draw-axes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Draw-axes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89516A861F4D6CBE0014CEF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89516A881F4D6CBE0014CEF2 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
-		89516A8B1F4D6CBE0014CEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		89516A8D1F4D6CBE0014CEF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		89516A901F4D6CBE0014CEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89516A921F4D6CBE0014CEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89516A991F4D6CE90014CEF2 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
-		89C6C7871F50702B00402E13 /* GraphDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphDrawer.swift; sourceTree = "<group>"; };
+		89A61F8F1F5437DB0063FDE2 /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A61F921F5437DB0063FDE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89A61F971F5437DB0063FDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89A61F991F5437DB0063FDE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89A61F9C1F5437DB0063FDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89A61F9E1F5437DB0063FDE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89A61FA51F54387D0063FDE2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		89A61FA91F5445550063FDE2 /* DemoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoURL.swift; path = ../DemoURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		89516A801F4D6CBE0014CEF2 /* Frameworks */ = {
+		89A61F8C1F5437DB0063FDE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,83 +37,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		89516A7A1F4D6CBE0014CEF2 = {
+		89A61F861F5437DB0063FDE2 = {
 			isa = PBXGroup;
 			children = (
-				89516A851F4D6CBE0014CEF2 /* Draw-axes */,
-				89516A841F4D6CBE0014CEF2 /* Products */,
+				89A61F911F5437DB0063FDE2 /* Cassini */,
+				89A61F901F5437DB0063FDE2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		89516A841F4D6CBE0014CEF2 /* Products */ = {
+		89A61F901F5437DB0063FDE2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89516A831F4D6CBE0014CEF2 /* Draw-axes.app */,
+				89A61F8F1F5437DB0063FDE2 /* Cassini.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		89516A851F4D6CBE0014CEF2 /* Draw-axes */ = {
+		89A61F911F5437DB0063FDE2 /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
-				89516A981F4D6CCF0014CEF2 /* suplements */,
-				89516A881F4D6CBE0014CEF2 /* DrawView.swift */,
-				89516A991F4D6CE90014CEF2 /* AxesDrawer.swift */,
-				89C6C7871F50702B00402E13 /* GraphDrawer.swift */,
-				89516A8A1F4D6CBE0014CEF2 /* Main.storyboard */,
+				89A61FA41F5437EA0063FDE2 /* Supporting files */,
+				89A61F961F5437DB0063FDE2 /* Main.storyboard */,
+				89A61FA51F54387D0063FDE2 /* ImageViewController.swift */,
+				89A61FA91F5445550063FDE2 /* DemoURL.swift */,
 			);
-			path = "Draw-axes";
+			path = Cassini;
 			sourceTree = "<group>";
 		};
-		89516A981F4D6CCF0014CEF2 /* suplements */ = {
+		89A61FA41F5437EA0063FDE2 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				89516A861F4D6CBE0014CEF2 /* AppDelegate.swift */,
-				89516A8D1F4D6CBE0014CEF2 /* Assets.xcassets */,
-				89516A8F1F4D6CBE0014CEF2 /* LaunchScreen.storyboard */,
-				89516A921F4D6CBE0014CEF2 /* Info.plist */,
+				89A61F921F5437DB0063FDE2 /* AppDelegate.swift */,
+				89A61F991F5437DB0063FDE2 /* Assets.xcassets */,
+				89A61F9B1F5437DB0063FDE2 /* LaunchScreen.storyboard */,
+				89A61F9E1F5437DB0063FDE2 /* Info.plist */,
 			);
-			name = suplements;
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		89516A821F4D6CBE0014CEF2 /* Draw-axes */ = {
+		89A61F8E1F5437DB0063FDE2 /* Cassini */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89516A951F4D6CBE0014CEF2 /* Build configuration list for PBXNativeTarget "Draw-axes" */;
+			buildConfigurationList = 89A61FA11F5437DB0063FDE2 /* Build configuration list for PBXNativeTarget "Cassini" */;
 			buildPhases = (
-				89516A7F1F4D6CBE0014CEF2 /* Sources */,
-				89516A801F4D6CBE0014CEF2 /* Frameworks */,
-				89516A811F4D6CBE0014CEF2 /* Resources */,
+				89A61F8B1F5437DB0063FDE2 /* Sources */,
+				89A61F8C1F5437DB0063FDE2 /* Frameworks */,
+				89A61F8D1F5437DB0063FDE2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Draw-axes";
-			productName = "Draw-axes";
-			productReference = 89516A831F4D6CBE0014CEF2 /* Draw-axes.app */;
+			name = Cassini;
+			productName = Cassini;
+			productReference = 89A61F8F1F5437DB0063FDE2 /* Cassini.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		89516A7B1F4D6CBE0014CEF2 /* Project object */ = {
+		89A61F871F5437DB0063FDE2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Kristina Gelzinyte";
 				TargetAttributes = {
-					89516A821F4D6CBE0014CEF2 = {
+					89A61F8E1F5437DB0063FDE2 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = PJ8U3CQ43A;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 89516A7E1F4D6CBE0014CEF2 /* Build configuration list for PBXProject "Draw-axes" */;
+			buildConfigurationList = 89A61F8A1F5437DB0063FDE2 /* Build configuration list for PBXProject "Cassini" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,56 +120,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 89516A7A1F4D6CBE0014CEF2;
-			productRefGroup = 89516A841F4D6CBE0014CEF2 /* Products */;
+			mainGroup = 89A61F861F5437DB0063FDE2;
+			productRefGroup = 89A61F901F5437DB0063FDE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				89516A821F4D6CBE0014CEF2 /* Draw-axes */,
+				89A61F8E1F5437DB0063FDE2 /* Cassini */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		89516A811F4D6CBE0014CEF2 /* Resources */ = {
+		89A61F8D1F5437DB0063FDE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89516A911F4D6CBE0014CEF2 /* LaunchScreen.storyboard in Resources */,
-				89516A8E1F4D6CBE0014CEF2 /* Assets.xcassets in Resources */,
-				89516A8C1F4D6CBE0014CEF2 /* Main.storyboard in Resources */,
+				89A61F9D1F5437DB0063FDE2 /* LaunchScreen.storyboard in Resources */,
+				89A61F9A1F5437DB0063FDE2 /* Assets.xcassets in Resources */,
+				89A61F981F5437DB0063FDE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		89516A7F1F4D6CBE0014CEF2 /* Sources */ = {
+		89A61F8B1F5437DB0063FDE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89516A891F4D6CBE0014CEF2 /* DrawView.swift in Sources */,
-				89516A871F4D6CBE0014CEF2 /* AppDelegate.swift in Sources */,
-				89516A9A1F4D6CE90014CEF2 /* AxesDrawer.swift in Sources */,
-				89C6C7881F50702B00402E13 /* GraphDrawer.swift in Sources */,
+				89A61FA61F54387D0063FDE2 /* ImageViewController.swift in Sources */,
+				89A61FAA1F5445550063FDE2 /* DemoURL.swift in Sources */,
+				89A61F931F5437DB0063FDE2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		89516A8A1F4D6CBE0014CEF2 /* Main.storyboard */ = {
+		89A61F961F5437DB0063FDE2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				89516A8B1F4D6CBE0014CEF2 /* Base */,
+				89A61F971F5437DB0063FDE2 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		89516A8F1F4D6CBE0014CEF2 /* LaunchScreen.storyboard */ = {
+		89A61F9B1F5437DB0063FDE2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				89516A901F4D6CBE0014CEF2 /* Base */,
+				89A61F9C1F5437DB0063FDE2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -180,7 +176,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		89516A931F4D6CBE0014CEF2 /* Debug */ = {
+		89A61F9F1F5437DB0063FDE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -231,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		89516A941F4D6CBE0014CEF2 /* Release */ = {
+		89A61FA01F5437DB0063FDE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,27 +271,27 @@
 			};
 			name = Release;
 		};
-		89516A961F4D6CBE0014CEF2 /* Debug */ = {
+		89A61FA21F5437DB0063FDE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJ8U3CQ43A;
-				INFOPLIST_FILE = "Draw-axes/Info.plist";
+				INFOPLIST_FILE = Cassini/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "KG.Draw-axes";
+				PRODUCT_BUNDLE_IDENTIFIER = KG.Cassini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		89516A971F4D6CBE0014CEF2 /* Release */ = {
+		89A61FA31F5437DB0063FDE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJ8U3CQ43A;
-				INFOPLIST_FILE = "Draw-axes/Info.plist";
+				INFOPLIST_FILE = Cassini/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "KG.Draw-axes";
+				PRODUCT_BUNDLE_IDENTIFIER = KG.Cassini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -304,25 +300,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		89516A7E1F4D6CBE0014CEF2 /* Build configuration list for PBXProject "Draw-axes" */ = {
+		89A61F8A1F5437DB0063FDE2 /* Build configuration list for PBXProject "Cassini" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89516A931F4D6CBE0014CEF2 /* Debug */,
-				89516A941F4D6CBE0014CEF2 /* Release */,
+				89A61F9F1F5437DB0063FDE2 /* Debug */,
+				89A61FA01F5437DB0063FDE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89516A951F4D6CBE0014CEF2 /* Build configuration list for PBXNativeTarget "Draw-axes" */ = {
+		89A61FA11F5437DB0063FDE2 /* Build configuration list for PBXNativeTarget "Cassini" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				89516A961F4D6CBE0014CEF2 /* Debug */,
-				89516A971F4D6CBE0014CEF2 /* Release */,
+				89A61FA21F5437DB0063FDE2 /* Debug */,
+				89A61FA31F5437DB0063FDE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 89516A7B1F4D6CBE0014CEF2 /* Project object */;
+	rootObject = 89A61F871F5437DB0063FDE2 /* Project object */;
 }

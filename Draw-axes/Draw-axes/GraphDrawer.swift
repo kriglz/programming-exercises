@@ -36,22 +36,23 @@ struct GraphDrawer {
         
         for x in start...end {
             let scaledX = Double(x)/Double(pointsPerUnit)
-            //            y = exp(scaledX) * Double(pointsPerUnit)
-            y = (1 / (scaledX)) * Double(pointsPerUnit)
+            
+            y = (tan(scaledX) ) * Double(pointsPerUnit)
+//            y = (1 / (scaledX)) * Double(pointsPerUnit)
             
             newY = CGFloat(y)
             newX = CGFloat(x)
             
             if ((newY!.isNormal) || (newY!.isZero)) && !(newY!.isNaN) {
-                if oldX == nil && oldY == nil {
+                if oldX == nil && oldY == nil || (abs(newY!-oldY!) > 3000) {
                     path.move(to: CGPoint(x: origin.x + newX!, y: origin.y - newY!).aligned(usingScaleFactor: contentScaleFactor)!)
-                } else if ((oldY!.isNormal) || (oldY!.isZero)) && (oldY!.isFinite) {
+                } else if ((oldY!.isNormal) || (oldY!.isZero)) && (oldY!.isFinite){
                     path.move(to: CGPoint(x: origin.x + oldX!, y: origin.y - oldY!).aligned(usingScaleFactor: contentScaleFactor)!)
                     path.addLine(to: CGPoint(x: origin.x + newX!, y: origin.y - newY!).aligned(usingScaleFactor: contentScaleFactor)!)
                     path.stroke()
                 }
             }
-            
+
             oldY = newY
             oldX = newX
         }
