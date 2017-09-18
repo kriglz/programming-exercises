@@ -27,7 +27,6 @@ class ImageViewController: UIViewController
     
     private func fetchImage() {
         if let url = imageURL {
-            
             spinner.startAnimating()
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 let urlContents = try? Data(contentsOf: url)
