@@ -9,7 +9,7 @@
 import UIKit
 import Twitter
 
-class TweetTableViewController: UITableViewController
+class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
     private var tweets = [Array<Twitter.Tweet>]() {
         didSet {
@@ -19,6 +19,8 @@ class TweetTableViewController: UITableViewController
     
     var searchText: String? {
         didSet {
+            searchTextField?.text = searchText
+            searchTextField?.resignFirstResponder()
             tweets.removeAll()
             tableView.reloadData()
             searchForTweets()
@@ -39,8 +41,11 @@ class TweetTableViewController: UITableViewController
         if let request = twitterRequest() {
             lastTwitterRequest = request
             request.fetchTweets{ [weak self] newTweets in
-                if request == self?.lastTwitterRequest {
-                    self?.tweets.insert(newTweets, at: 0)
+                DispatchQueue.main.async {
+                    if request == self?.lastTwitterRequest {
+                        self?.tweets.insert(newTweets, at: 0)
+                        self?.tableView.insertSections([0], with: .fade)
+                    }
                 }
             }
         }
@@ -48,30 +53,49 @@ class TweetTableViewController: UITableViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchText = "#stanford"
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension        
     }
 
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == searchTextField {
+            searchText = searchTextField.text
+        }
+        return true
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return tweets.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tweets[section].count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
 
         // Configure the cell...
 
+        let tweet: Tweet = tweets[indexPath.section][indexPath.row]
+
+        if let tweetCell = cell as? TweetTableViewCell {
+            tweetCell.tweet = tweet
+        }
+        
+        
         return cell
     }
-    */
 
     
 }
