@@ -13,7 +13,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
     private var tweets = [Array<Twitter.Tweet>]() {
         didSet {
-            print(tweets)
+//            print(tweets)
         }
     }
     
@@ -82,13 +82,14 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         return tweets[section].count
     }
 
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
 
-        // Configure the cell...
-
+        
         let tweet: Tweet = tweets[indexPath.section][indexPath.row]
-
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }

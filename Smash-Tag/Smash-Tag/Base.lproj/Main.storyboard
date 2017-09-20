@@ -14,7 +14,7 @@
         <scene sceneID="PkO-K9-1xh">
             <objects>
                 <tableViewController id="8mf-4l-dHe" customClass="TweetTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" id="YPy-3G-u4Q">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="184" sectionHeaderHeight="28" sectionFooterHeight="28" id="YPy-3G-u4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,15 +26,15 @@
                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="twitter" returnKeyType="search"/>
                         </textField>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tweet" rowHeight="107" id="F0j-yx-ljX" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="375" height="107"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tweet" rowHeight="184" id="F0j-yx-ljX" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="375" height="184"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F0j-yx-ljX" id="h2k-pF-d9T">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="183.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OzL-47-Mpt">
-                                            <rect key="frame" x="8" y="8" width="359" height="90.5"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="167.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o6L-3U-TRx">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="78.5"/>
