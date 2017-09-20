@@ -36,11 +36,13 @@ class TweetTableViewCell: UITableViewCell
         }
         
         let userMentions = tweet?.userMentions
-        changeTextColor(of: userMentions!, with: .blue)
+        changeTextColor(of: userMentions!, with: .red)
         let urls = tweet?.urls
-        changeTextColor(of: urls!, with: .green)
+        changeTextColor(of: urls!, with: .orange)
         let hashtags = tweet?.hashtags
-        changeTextColor(of: hashtags!, with: .red)
+        changeTextColor(of: hashtags!, with: .blue)
+        
+        
         
         tweetUserLabel?.text = tweet?.user.description
         

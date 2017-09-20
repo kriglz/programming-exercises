@@ -40,7 +40,6 @@ public struct Tweet : CustomStringConvertible
             return nil
         }
 
-//        print(data)
         self.user = user
         self.text = text
         self.created = created
