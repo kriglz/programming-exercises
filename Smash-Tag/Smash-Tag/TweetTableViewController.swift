@@ -101,12 +101,10 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = (segue.destination as? MentionTableViewController) {
-            destinationViewController.navigationController?.setNavigationBarHidden(false, animated: true)
             destinationViewController.navigationItem.backBarButtonItem?.title = searchText
-
+            destinationViewController.tweets = tweets
         }
     }
-    
 }
 
 
