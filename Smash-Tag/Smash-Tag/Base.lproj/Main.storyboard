@@ -86,7 +86,7 @@
                                     <outlet property="tweetProfileImageView" destination="fAc-On-z7C" id="Ati-1j-z3o"/>
                                     <outlet property="tweetTextLabel" destination="eoc-GP-yFA" id="Z98-NV-o3u"/>
                                     <outlet property="tweetUserLabel" destination="lNC-JN-mMe" id="qFp-ZP-nfa"/>
-                                    <segue destination="iYq-np-7bT" kind="show" identifier="mentions" id="qMC-KC-1oy"/>
+                                    <segue destination="iYq-np-7bT" kind="show" identifier="mention" action="showDetailViewController:sender:" id="Onu-Fm-Ljw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -104,104 +104,34 @@
             </objects>
             <point key="canvasLocation" x="1063.2" y="207.34632683658174"/>
         </scene>
-        <!--Mention Table View Controller-->
+        <!--test-->
         <scene sceneID="Qxi-bT-Zdq">
             <objects>
-                <tableViewController id="iYq-np-7bT" customClass="MentionTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="iYq-np-7bT" customClass="MentionTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="154" sectionHeaderHeight="28" sectionFooterHeight="28" id="39q-8V-BFR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imagesTitle" textLabel="SkR-B8-8H8" rowHeight="30" style="IBUITableViewCellStyleDefault" id="vCo-Jo-PFG" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hashtags" textLabel="qBN-ce-1wx" rowHeight="30" style="IBUITableViewCellStyleDefault" id="Tmb-AS-cKS" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCo-Jo-PFG" id="qfd-MP-SFV">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmb-AS-cKS" id="3eF-WI-3Dp" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SkR-B8-8H8">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qBN-ce-1wx">
                                             <rect key="frame" x="15" y="0.0" width="345" height="29.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="images" rowHeight="128" id="Tmb-AS-cKS" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmb-AS-cKS" id="3eF-WI-3Dp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-M4-jAE">
-                                            <rect key="frame" x="91" y="11" width="193" height="108"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="dsc-M4-jAE" firstAttribute="centerY" secondItem="3eF-WI-3Dp" secondAttribute="centerY" constant="1.25" id="SjZ-5b-9VR"/>
-                                        <constraint firstItem="dsc-M4-jAE" firstAttribute="centerX" secondItem="3eF-WI-3Dp" secondAttribute="centerX" id="TPJ-8E-IwP"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="username" textLabel="1dF-hh-X1a" rowHeight="29" style="IBUITableViewCellStyleDefault" id="AlV-hB-tIc">
-                                <rect key="frame" x="0.0" y="186" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="AlV-hB-tIc" id="b6c-JC-Iar" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Hashtags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1dF-hh-X1a">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="28.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hashtags" rowHeight="29" id="dfj-rN-Foy">
-                                <rect key="frame" x="0.0" y="215" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="dfj-rN-Foy" id="Wxu-ze-jXV" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="username" textLabel="KX4-c5-4MY" rowHeight="29" style="IBUITableViewCellStyleDefault" id="uXu-qj-Idb">
-                                <rect key="frame" x="0.0" y="244" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="uXu-qj-Idb" id="cAh-78-WWr" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Hashtags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KX4-c5-4MY">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="28.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="username" rowHeight="29" id="QPk-7c-7G9">
-                                <rect key="frame" x="0.0" y="273" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="QPk-7c-7G9" id="nli-g9-IUI" customClass="TweetTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="hashtagLabel" destination="qBN-ce-1wx" id="G3D-7d-jeQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -210,7 +140,7 @@
                             <outlet property="delegate" destination="iYq-np-7bT" id="pzh-mP-SRv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FiL-s9-poa"/>
+                    <navigationItem key="navigationItem" title="test" id="FiL-s9-poa"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0p-oA-uSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,7 +158,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8mf-4l-dHe" kind="relationship" relationship="rootViewController" id="6gG-bo-I5H"/>
+                        <segue destination="8mf-4l-dHe" kind="relationship" relationship="rootViewController" id="wta-uo-Ska"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYT-6n-Pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -83,8 +83,6 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     }
 
     
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
 
@@ -93,16 +91,23 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
-        
-        
         return cell
     }
 
+//    private var selectedTweet: Twitter.Tweet?
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = (segue.destination as? MentionTableViewController) {
+            
+            let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
+            let selectedTweet = currentTweet
+            
+            
             destinationViewController.navigationItem.backBarButtonItem?.title = searchText
-            destinationViewController.tweets = tweets
+            destinationViewController.navigationItem.title = currentTweet.user.name
+
+            destinationViewController.tweet = selectedTweet
         }
     }
 }

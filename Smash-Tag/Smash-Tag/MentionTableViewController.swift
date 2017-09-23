@@ -11,14 +11,10 @@ import Twitter
 
 class MentionTableViewController: UITableViewController {
 
-    var tweets: [Array<Twitter.Tweet>]?
+    var tweet: Twitter.Tweet?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "test"
-
-//        tableView.estimatedRowHeight = tableView.rowHeight
-//        tableView.rowHeight = UITableViewAutomaticDimension
+        super.viewDidLoad()        
     }
 
     
@@ -26,28 +22,34 @@ class MentionTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {        
+        return "Hashtags"
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tweet?.hashtags.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hashtags", for: indexPath)
         
-        let tweet: Tweet = tweets![indexPath.section][indexPath.row]
-        if let tweetCell = cell as? TweetTableViewCell {
-            tweetCell.tweet = tweet
+        if let tweetCell = cell as? MentionTableViewCell {
+            if let tweetHashtags = tweet?.hashtags {
+                tweetCell.tweetHashtag = tweetHashtags[indexPath.row].keyword
+            }
         }
-
         return cell
     }
- 
-
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 30.0
+    }
 
     
 
