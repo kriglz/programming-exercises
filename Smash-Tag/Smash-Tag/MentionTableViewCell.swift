@@ -11,14 +11,15 @@ import Twitter
 
 class MentionTableViewCell: UITableViewCell {
 
-    var tweet: Twitter.Tweet?
-    var tweetHashtag: String? {didSet{ updateUI()}}
+    var mentionAsText: String? {didSet{ updateUI()}}
     
-    @IBOutlet weak var hashtagLabel: UILabel!
+    @IBOutlet weak var imageLabel: UILabel!
+    @IBOutlet weak var mentionAsTextLabel: UILabel!
+
     
     private func updateUI() {
       
-        hashtagLabel.text = tweetHashtag
+        mentionAsTextLabel.text = mentionAsText
         
     }
     
