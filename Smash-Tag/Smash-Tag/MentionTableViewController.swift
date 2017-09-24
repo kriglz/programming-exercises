@@ -14,23 +14,8 @@ class MentionTableViewController: UITableViewController {
     var tweet: Twitter.Tweet?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        self.navigationController?.isNavigationBarHidden = false
-//        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
-        if let navigationBar = self.navigationController {
-            navigationBar.navigationItem.title = tweet?.user.name
-            print(self.navigationController?.isNavigationBarHidden.customMirror)
-            
-
-        }
-        
+        super.viewDidLoad()        
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-            }
-    
 
     // MARK: - Table view data source
 

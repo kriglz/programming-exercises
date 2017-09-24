@@ -106,7 +106,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
 
             destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
             destinationViewController.navigationItem.backBarButtonItem?.title = searchText
-
+            destinationViewController.navigationItem.title = currentTweet.user.name
         }
     }
 }
