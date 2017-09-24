@@ -101,13 +101,12 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         if let destinationViewController = (segue.destination as? MentionTableViewController) {
             
             let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
-            let selectedTweet = currentTweet
             
-            
-            destinationViewController.navigationItem.backBarButtonItem?.title = searchText
-            destinationViewController.navigationItem.title = currentTweet.user.name
+            destinationViewController.tweet = currentTweet
 
-            destinationViewController.tweet = selectedTweet
+            destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
+            destinationViewController.navigationItem.backBarButtonItem?.title = searchText
+
         }
     }
 }

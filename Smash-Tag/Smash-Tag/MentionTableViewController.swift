@@ -14,9 +14,22 @@ class MentionTableViewController: UITableViewController {
     var tweet: Twitter.Tweet?
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+//        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        if let navigationBar = self.navigationController {
+            navigationBar.navigationItem.title = tweet?.user.name
+            print(self.navigationController?.isNavigationBarHidden.customMirror)
+            
+
+        }
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            }
     
 
     // MARK: - Table view data source
@@ -32,8 +45,7 @@ class MentionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweet?.hashtags.count ?? 0
     }
-
-    
+ 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hashtags", for: indexPath)
         
@@ -44,8 +56,7 @@ class MentionTableViewController: UITableViewController {
         }
         return cell
     }
-    
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 30.0
