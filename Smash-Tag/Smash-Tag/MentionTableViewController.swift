@@ -13,67 +13,50 @@ class MentionTableViewController: UITableViewController {
     
     var tweet: Twitter.Tweet? {
         didSet {
-            makeAMentionsArray(of: Keywords.hashtags)
-            makeAMentionsArray(of: Keywords.userMentions)
-            makeAMentionsArray(of: Keywords.urls)            
+            
+            func convert(elements: [Mention]) -> [TypeOfMention] {
+                var elementArray = [TypeOfMention]()
+                for element in elements {
+                    elementArray.append(.text(element.keyword))
+                }
+                return elementArray
+            }
+            
+            func convertM(elements: [MediaItem]) -> [TypeOfMention] {
+                var elementArray = [TypeOfMention]()
+                for element in elements {
+                    elementArray.append(.media(element.url))
+                }
+                return elementArray
+            }
+            
+            if !(tweet?.media.isEmpty)! {
+                mentionsArray.append(convertM(elements: (tweet?.media)!))
+                mentionTitles.append("Pictures")
+            }
+            
+            if !(tweet?.hashtags.isEmpty)! {
+                mentionsArray.append(convert(elements: (tweet?.hashtags)!))
+                mentionTitles.append("Hashtags")
+            }
+            if !(tweet?.userMentions.isEmpty)! {
+                mentionsArray.append(convert(elements: (tweet?.userMentions)!))
+                mentionTitles.append("Users")
+            }
+            if !(tweet?.urls.isEmpty)! {
+                mentionsArray.append(convert(elements: (tweet?.urls)!))
+                mentionTitles.append("URLs")
+            }
         }
     }
     
     private enum TypeOfMention {
-        case text
-        case media
+        case text(String)
+        case media(URL)
     }
 
-    private enum Keywords {
-        case media
-        case hashtags
-        case userMentions
-        case urls
-    }
-    
-    private var mentionsArray = [[String]]()
+    private var mentionsArray = [[TypeOfMention]]()
     private var mentionTitles = [String]()
-
-    private func makeAMentionsArray(of: Keywords) {
-        switch of {
-        case .hashtags:
-            if let hashtags = tweet?.hashtags {
-                if !hashtags.isEmpty {
-                    mentionsArray.append(addElements(hashtags))
-                    mentionTitles.append("Hashtags")
-                }
-            }
-            
-        case .userMentions:
-            if let userMentions = tweet?.userMentions {
-                if !userMentions.isEmpty {
-                    mentionsArray.append(addElements(userMentions))
-                    mentionTitles.append("Users")
-                }
-            }
-            
-        case .urls:
-            if let urls = tweet?.urls {
-                if !urls.isEmpty {
-                    mentionsArray.append(addElements(urls))
-                    mentionTitles.append("Images")
-                }
-            }
-        
-        default:
-            break
-        }
-    }
-    
-    private func addElements(_ mentions: [Mention]) -> [String] {
-        var array = [String]()
-        
-        for element in mentions {
-            array.append(element.keyword)
-        }
-        return array
-    }
-    
     
     
     // MARK: - Table view data source
@@ -91,25 +74,37 @@ class MentionTableViewController: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell?
         let cellMention = mentionsArray[indexPath.section][indexPath.row]
+                
+        switch cellMention {
+        case .text(let stringBe):
+            cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
+            if let tweetCell = cell as? MentionTableViewCell {
+                tweetCell.mentionAsText = stringBe
+            }
+            
+        case .media(let urlBe):
+            cell = tableView.dequeueReusableCell(withIdentifier: "media", for: indexPath)
+            if let tweetCell = cell as? MentionTableViewCell {
+                tweetCell.mentionAsUrl = urlBe
+            }
+            
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
-        if let tweetCell = cell as? MentionTableViewCell {
-            tweetCell.mentionAsText = cellMention
-        }
-        
-        return cell
-    }
 
+        }
+        return cell!
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 40.0
     }
-
     
-
     
-   
+    
+    
+    
     /*
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

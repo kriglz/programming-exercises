@@ -12,15 +12,30 @@ import Twitter
 class MentionTableViewCell: UITableViewCell {
 
     var mentionAsText: String? {didSet{ updateUI()}}
+    var mentionAsUrl: URL? {didSet{ updateUI()}}
     
-    @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var mentionAsTextLabel: UILabel!
+    @IBOutlet weak var mentionImageView: UIImageView!
 
     
     private func updateUI() {
       
-        mentionAsTextLabel.text = mentionAsText
+        mentionAsTextLabel?.text = mentionAsText
         
+        if let profileImageURL = mentionAsUrl {
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                if let imageData = try? Data(contentsOf: profileImageURL) {
+                    if profileImageURL == self?.mentionAsUrl {
+                        DispatchQueue.main.async {
+                            self?.mentionImageView?.image = UIImage(data: imageData)
+                        }
+                    }
+                }
+            }
+        } else {
+            mentionImageView?.image = nil
+        }
+
     }
     
 //        override func setSelected(_ selected: Bool, animated: Bool) {

@@ -113,28 +113,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="media" textLabel="qBN-ce-1wx" rowHeight="30" style="IBUITableViewCellStyleDefault" id="Tmb-AS-cKS" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="30"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="media" rowHeight="124" id="Tmb-AS-cKS" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmb-AS-cKS" id="3eF-WI-3Dp" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qBN-ce-1wx">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="29.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-MW-Lp9">
+                                            <rect key="frame" x="8" y="17" width="359" height="89"/>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ezO-MW-Lp9" secondAttribute="trailing" id="zRa-8v-tWg"/>
+                                        <constraint firstItem="ezO-MW-Lp9" firstAttribute="centerX" secondItem="3eF-WI-3Dp" secondAttribute="centerX" id="zvO-XC-xl8"/>
+                                        <constraint firstItem="ezO-MW-Lp9" firstAttribute="centerY" secondItem="3eF-WI-3Dp" secondAttribute="centerY" id="zxq-LX-QKv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageLabel" destination="qBN-ce-1wx" id="q4v-U2-aBI"/>
+                                    <outlet property="mentionImageView" destination="ezO-MW-Lp9" id="Kih-4c-dD5"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="text" textLabel="hth-M5-EEK" rowHeight="30" style="IBUITableViewCellStyleDefault" id="QlN-k9-eL7" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="152" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QlN-k9-eL7" id="JtJ-cl-Y8l" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
@@ -165,7 +166,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0p-oA-uSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="206"/>
+            <point key="canvasLocation" x="2984.8000000000002" y="205.54722638680661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pVw-Ct-iGT">
