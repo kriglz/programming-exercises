@@ -26,6 +26,7 @@ class MentionTableViewController: UITableViewController {
                 var elementArray = [TypeOfMention]()
                 for element in elements {
                     elementArray.append(.media(element.url))
+                    mediaaspAspectRatio.append(element.aspectRatio)
                 }
                 return elementArray
             }
@@ -57,7 +58,8 @@ class MentionTableViewController: UITableViewController {
 
     private var mentionsArray = [[TypeOfMention]]()
     private var mentionTitles = [String]()
-    
+    private var mediaaspAspectRatio = [Double]()
+
     
     // MARK: - Table view data source
 
@@ -88,6 +90,7 @@ class MentionTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: "media", for: indexPath)
             if let tweetCell = cell as? MentionTableViewCell {
                 tweetCell.mentionAsUrl = urlBe
+                print(urlBe)
             }
             
         
@@ -98,7 +101,19 @@ class MentionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 40.0
+        let cellMention = mentionsArray[indexPath.section][indexPath.row]
+        
+        switch cellMention {
+        case .text:
+                tableView.rowHeight = 40.0
+                tableView.rowHeight = UITableViewAutomaticDimension
+            
+        case .media:
+                tableView.rowHeight = tableView.bounds.size.width / CGFloat(mediaaspAspectRatio[indexPath.row])
+
+        }
+        
+        return tableView.rowHeight
     }
     
     

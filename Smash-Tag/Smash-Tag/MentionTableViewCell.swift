@@ -15,7 +15,7 @@ class MentionTableViewCell: UITableViewCell {
     var mentionAsUrl: URL? {didSet{ updateUI()}}
     
     @IBOutlet weak var mentionAsTextLabel: UILabel!
-    @IBOutlet weak var mentionImageView: UIImageView!
+    @IBOutlet weak var mentionImageView: UIImageView! 
 
     
     private func updateUI() {
@@ -28,6 +28,8 @@ class MentionTableViewCell: UITableViewCell {
                     if profileImageURL == self?.mentionAsUrl {
                         DispatchQueue.main.async {
                             self?.mentionImageView?.image = UIImage(data: imageData)
+                            
+//                            self.mentionImageView?.systemLayoutSizeFitting(CGSize(width: (self.bounds.width), height: (self.bounds.height)))
                         }
                     }
                 }
@@ -35,8 +37,8 @@ class MentionTableViewCell: UITableViewCell {
         } else {
             mentionImageView?.image = nil
         }
-
     }
+
     
 //        override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
