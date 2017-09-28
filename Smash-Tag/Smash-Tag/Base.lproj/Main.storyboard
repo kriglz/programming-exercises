@@ -183,21 +183,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-I4-UFQ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-aD-Ytl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="centerY" secondItem="VYD-oe-sCx" secondAttribute="centerY" id="nlu-FE-ryY"/>
-                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="leading" secondItem="VYD-oe-sCx" secondAttribute="leadingMargin" constant="-16" id="uW4-rQ-a7m"/>
-                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="centerX" secondItem="VYD-oe-sCx" secondAttribute="centerX" id="uma-UH-tDt"/>
-                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="top" secondItem="fio-XW-cdg" secondAttribute="bottom" constant="-20" id="xCc-pE-3Ix"/>
+                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="leading" secondItem="VYD-oe-sCx" secondAttribute="leadingMargin" constant="-16" id="akC-2W-w2O"/>
+                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="top" secondItem="fio-XW-cdg" secondAttribute="bottom" constant="-20" id="eM6-zT-zVy"/>
+                            <constraint firstItem="McE-Qx-9Hq" firstAttribute="top" secondItem="GgV-aD-Ytl" secondAttribute="bottom" id="sHa-Lh-iYA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GgV-aD-Ytl" secondAttribute="trailing" constant="-16" id="sMq-fK-RaT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LH1-Tw-yqg"/>
                     <connections>
-                        <outlet property="singleImageView" destination="ia5-I4-UFQ" id="pfy-hu-Hmq"/>
+                        <outlet property="scrollView" destination="GgV-aD-Ytl" id="7SC-Hn-kh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQh-CY-mSO" userLabel="First Responder" sceneMemberID="firstResponder"/>

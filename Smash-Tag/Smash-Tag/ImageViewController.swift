@@ -9,15 +9,32 @@
 import UIKit
 
 class ImageViewController: UIViewController {
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            self.scrollView.delegate = self
+            scrollView.minimumZoomScale = 0.3
+            scrollView.maximumZoomScale = 2.0
+            scrollView.contentSize = imageView.frame.size
+            scrollView.addSubview(imageView)
+        }
+    }
+    
+    var imageView = UIImageView()
+    private var image: UIImage? {
+        get {
+            return imageView.image
+        }
+        set {
+            imageView.image = newValue
+            imageView.sizeToFit()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+            scrollView?.contentSize = imageView.frame.size
+//            spinner?.stopAnimating()
+        }
+        
     }
 
-    @IBOutlet weak var singleImageView: UIImageView!
-    var singleImageUrl: URL? { didSet {updateUI()}}
+    var singleImageUrl: URL? {didSet{updateUI()}}
         
     private func updateUI() {
         
@@ -26,34 +43,18 @@ class ImageViewController: UIViewController {
                 if let imageData = try? Data(contentsOf: profileImageURL) {
                     if profileImageURL == self?.singleImageUrl {
                         DispatchQueue.main.async {
-                            //Loading the image
-                            self?.singleImageView?.image = UIImage(data: imageData)
-                            
-//                            //Resizing to fit the screen
-//                            let imageSize = CGSize(width: (self?.width)!, height: (self?.bounds.height)!)
-//                            UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
-//                            self?.singleImageView?.image?.draw(in: CGRect(origin: CGPoint.zero, size: imageSize ))
-//                            self?.singleImageView?.image = UIGraphicsGetImageFromCurrentImageContext()
-//                            UIGraphicsEndImageContext()
+                            self?.image = UIImage(data: imageData)
                         }
-                        
                     }
                 }
             }
-        } else {
-            singleImageView?.image = nil
         }
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ImageViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
-    */
-
+    
 }
