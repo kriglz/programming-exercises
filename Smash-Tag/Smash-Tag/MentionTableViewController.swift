@@ -117,15 +117,30 @@ class MentionTableViewController: UITableViewController {
     }
     
     
-    
-    
-    
-    /*
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+        if let destinationViewController = (segue.destination as? TweetTableViewController) {
+            
+            if segue.identifier == "hashtagSearch" {
+                
+                let currentCell = mentionsArray[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
+
+                switch currentCell {
+                case .text(let hashtag):
+                    destinationViewController.searchText = hashtag
+                    
+                    destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
+                    destinationViewController.navigationItem.backBarButtonItem?.title = hashtag
+                    destinationViewController.navigationItem.title = hashtag
+
+                    
+                default:
+                    break
+                }
+            }
+        
+            
+        }
+    }
+ 
 
 }
