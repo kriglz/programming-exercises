@@ -27,10 +27,17 @@ class MentionTableViewCell: UITableViewCell {
                 if let imageData = try? Data(contentsOf: profileImageURL) {
                     if profileImageURL == self?.mentionAsUrl {
                         DispatchQueue.main.async {
+                            //Loading the image
                             self?.mentionImageView?.image = UIImage(data: imageData)
                             
-//                            self.mentionImageView?.systemLayoutSizeFitting(CGSize(width: (self.bounds.width), height: (self.bounds.height)))
+                            //Resizing to fit the screen
+                            let imageSize = CGSize(width: (self?.bounds.width)!, height: (self?.bounds.height)!)
+                            UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+                            self?.mentionImageView?.image?.draw(in: CGRect(origin: CGPoint.zero, size: imageSize ))
+                            self?.mentionImageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+                            UIGraphicsEndImageContext()
                         }
+                        
                     }
                 }
             }
@@ -38,9 +45,9 @@ class MentionTableViewCell: UITableViewCell {
             mentionImageView?.image = nil
         }
     }
-
     
-//        override func setSelected(_ selected: Bool, animated: Bool) {
+    
+    //        override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
 //
 //        // Configure the view for the selected state

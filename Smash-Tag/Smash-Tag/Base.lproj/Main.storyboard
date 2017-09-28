@@ -126,9 +126,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ezO-MW-Lp9" firstAttribute="top" secondItem="3eF-WI-3Dp" secondAttribute="topMargin" id="14C-Sl-tn7"/>
-                                        <constraint firstItem="ezO-MW-Lp9" firstAttribute="centerX" secondItem="3eF-WI-3Dp" secondAttribute="centerX" id="5w0-CE-xDi"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="ezO-MW-Lp9" secondAttribute="leading" id="Tb9-Ys-Iiy"/>
-                                        <constraint firstItem="ezO-MW-Lp9" firstAttribute="centerY" secondItem="3eF-WI-3Dp" secondAttribute="centerY" id="hJz-oS-X6s"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ezO-MW-Lp9" secondAttribute="bottom" id="gF2-WY-hnE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ezO-MW-Lp9" secondAttribute="trailing" id="yEf-UD-d6w"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
