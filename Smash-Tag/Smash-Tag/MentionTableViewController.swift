@@ -11,6 +11,15 @@ import Twitter
 
 class MentionTableViewController: UITableViewController {
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        tableView.reloadData()
+    }
+    
     var tweet: Twitter.Tweet? {
         didSet {
             
@@ -117,30 +126,48 @@ class MentionTableViewController: UITableViewController {
     }
     
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = (segue.destination as? TweetTableViewController) {
-            
-            if segue.identifier == "hashtagSearch" {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let currentCell = mentionsArray[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
+        
+        switch currentCell {
+        case .text(let text):
+            if segue.identifier == "textSearch" {
                 
-                let currentCell = mentionsArray[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
-
-                switch currentCell {
-                case .text(let hashtag):
-                    destinationViewController.searchText = hashtag
+                if text.isStringLink() {
+                    let url = URL(string: text)
+                    UIApplication.shared.openURL(url!)
                     
-                    destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
-                    destinationViewController.navigationItem.backBarButtonItem?.title = hashtag
-                    destinationViewController.navigationItem.title = hashtag
-
-                    
-                default:
-                    break
+                } else {
+                    if let destinationViewController = (segue.destination as? TweetTableViewController) {
+                        
+                        destinationViewController.searchText = text
+                        destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
+                        destinationViewController.navigationItem.backBarButtonItem?.title = text
+                    }
                 }
             }
-        
-            
+        case .media(let url):
+            if segue.identifier == "image" {
+                if let destinationViewController = (segue.destination as? ImageViewController) {
+                    
+                    destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
+                    destinationViewController.singleImageUrl = url
+                }
+            }
         }
     }
- 
-
+}
+extension String {
+    func isStringLink() -> Bool {
+        let types: NSTextCheckingResult.CheckingType = [.link]
+        let detector = try? NSDataDetector(types: types.rawValue)
+        guard (detector != nil && self.characters.count > 0)
+            else {
+                return false
+        }
+        if detector!.numberOfMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) > 0 {
+            return true
+        }
+        return false
+    }
 }

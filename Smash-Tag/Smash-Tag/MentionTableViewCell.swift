@@ -15,7 +15,7 @@ class MentionTableViewCell: UITableViewCell {
     var mentionAsUrl: URL? {didSet{ updateUI()}}
     
     @IBOutlet weak var mentionAsTextLabel: UILabel!
-    @IBOutlet weak var mentionImageView: UIImageView! 
+    @IBOutlet weak var mentionImageView: UIImageView!
 
     
     private func updateUI() {
@@ -45,6 +45,7 @@ class MentionTableViewCell: UITableViewCell {
             mentionImageView?.image = nil
         }
     }
+    
     
     
     //        override func setSelected(_ selected: Bool, animated: Bool) {

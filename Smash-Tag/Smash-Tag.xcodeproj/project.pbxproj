@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		890F21781F768F450018D594 /* MentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890F21771F768F450018D594 /* MentionTableViewCell.swift */; };
 		8919C3EC1F6FC49D001E702C /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919C3EB1F6FC49D001E702C /* TweetTableViewCell.swift */; };
+		892109F11F7D4B8A00A9C22A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892109F01F7D4B8A00A9C22A /* ImageViewController.swift */; };
 		8926E92A1F69345600205FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926E9291F69345600205FCF /* AppDelegate.swift */; };
 		8926E92F1F69345600205FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926E92D1F69345600205FCF /* Main.storyboard */; };
 		8926E9311F69345600205FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8926E9301F69345600205FCF /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		890F21771F768F450018D594 /* MentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionTableViewCell.swift; sourceTree = "<group>"; };
 		8919C3EB1F6FC49D001E702C /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		892109F01F7D4B8A00A9C22A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8926E9261F69345600205FCF /* Smash-Tag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smash-Tag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8926E9291F69345600205FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8926E92E1F69345600205FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				8919C3EB1F6FC49D001E702C /* TweetTableViewCell.swift */,
 				89850EB21F72E8AA00538B1D /* MentionTableViewController.swift */,
 				890F21771F768F450018D594 /* MentionTableViewCell.swift */,
+				892109F01F7D4B8A00A9C22A /* ImageViewController.swift */,
 			);
 			path = "Smash-Tag";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				8926E92A1F69345600205FCF /* AppDelegate.swift in Sources */,
 				8926E93D1F69351300205FCF /* TweetTableViewController.swift in Sources */,
 				890F21781F768F450018D594 /* MentionTableViewCell.swift in Sources */,
+				892109F11F7D4B8A00A9C22A /* ImageViewController.swift in Sources */,
 				8919C3EC1F6FC49D001E702C /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

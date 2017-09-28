@@ -113,15 +113,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="media" rowHeight="134" id="Tmb-AS-cKS" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="media" rowHeight="134" id="Tmb-AS-cKS" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmb-AS-cKS" id="3eF-WI-3Dp" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="133.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-MW-Lp9">
-                                            <rect key="frame" x="8" y="8" width="359" height="117.5"/>
+                                            <rect key="frame" x="8" y="8" width="326" height="117.5"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -133,9 +133,10 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mentionImageView" destination="ezO-MW-Lp9" id="Kih-4c-dD5"/>
+                                    <segue destination="5UK-kx-QVn" kind="show" identifier="image" id="5hS-fq-qQP"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="text" textLabel="hth-M5-EEK" rowHeight="30" style="IBUITableViewCellStyleDefault" id="QlN-k9-eL7" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="redraw" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="text" textLabel="hth-M5-EEK" rowHeight="30" style="IBUITableViewCellStyleDefault" id="QlN-k9-eL7" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="162" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QlN-k9-eL7" id="JtJ-cl-Y8l" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
@@ -153,7 +154,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mentionAsTextLabel" destination="hth-M5-EEK" id="7nO-86-R0u"/>
-                                    <segue destination="8mf-4l-dHe" kind="show" identifier="hashtagSearch" id="Ehn-YZ-d4O"/>
+                                    <segue destination="8mf-4l-dHe" kind="show" identifier="textSearch" id="Ehn-YZ-d4O"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -169,6 +170,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0p-oA-uSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2863" y="206"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Fym-GB-HhT">
+            <objects>
+                <viewController id="5UK-kx-QVn" customClass="ImageViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fio-XW-cdg"/>
+                        <viewControllerLayoutGuide type="bottom" id="McE-Qx-9Hq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VYD-oe-sCx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-I4-UFQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="centerY" secondItem="VYD-oe-sCx" secondAttribute="centerY" id="nlu-FE-ryY"/>
+                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="leading" secondItem="VYD-oe-sCx" secondAttribute="leadingMargin" constant="-16" id="uW4-rQ-a7m"/>
+                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="centerX" secondItem="VYD-oe-sCx" secondAttribute="centerX" id="uma-UH-tDt"/>
+                            <constraint firstItem="ia5-I4-UFQ" firstAttribute="top" secondItem="fio-XW-cdg" secondAttribute="bottom" constant="-20" id="xCc-pE-3Ix"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LH1-Tw-yqg"/>
+                    <connections>
+                        <outlet property="singleImageView" destination="ia5-I4-UFQ" id="pfy-hu-Hmq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQh-CY-mSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3765.5999999999999" y="205.54722638680661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pVw-Ct-iGT">
