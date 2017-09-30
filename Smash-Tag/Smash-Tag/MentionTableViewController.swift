@@ -99,7 +99,6 @@ class MentionTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: "media", for: indexPath)
             if let tweetCell = cell as? MentionTableViewCell {
                 tweetCell.mentionAsUrl = urlBe
-                print(urlBe)
             }
             
         

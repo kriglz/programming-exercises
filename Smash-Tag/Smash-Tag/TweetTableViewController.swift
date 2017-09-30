@@ -9,6 +9,22 @@
 import UIKit
 import Twitter
 
+
+class UserDefaultsManager {
+    private let twitterSearchHistoryKey = "twitterSearch"
+    private let twitterUserDefaults = UserDefaults.standard
+    
+    var twitterSearchHistory: [String] {
+        get {
+            return twitterUserDefaults.stringArray(forKey: twitterSearchHistoryKey)!
+        }
+        set {
+            twitterUserDefaults.set(newValue, forKey: twitterSearchHistoryKey)
+        }
+    }
+}
+
+
 class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
     private var tweets = [Array<Twitter.Tweet>]() {
@@ -16,6 +32,9 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
 //            print(tweets)
         }
     }
+    
+    private var userDefaultsManager = UserDefaultsManager()
+    private var twitterSearchArray: [String] = []
     
     var searchText: String? {
         didSet {
@@ -25,6 +44,11 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
             tableView.reloadData()
             searchForTweets()
             title = searchText
+       
+            if userDefaultsManager.twitterSearchHistory.count > 99 {
+                userDefaultsManager.twitterSearchHistory.removeFirst()
+            }
+            userDefaultsManager.twitterSearchHistory.append(searchText!)
         }
     }
     
@@ -40,6 +64,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     private func searchForTweets() {
         if let request = twitterRequest() {
             lastTwitterRequest = request
+
             request.fetchTweets{ [weak self] newTweets in
                 DispatchQueue.main.async {
                     if request == self?.lastTwitterRequest {
@@ -55,7 +80,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension        
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     @IBOutlet weak var searchTextField: UITextField! {

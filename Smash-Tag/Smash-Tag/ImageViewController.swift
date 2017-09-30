@@ -19,6 +19,9 @@ class ImageViewController: UIViewController {
         }
     }
     
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var imageView = UIImageView()
     private var image: UIImage? {
         get {
@@ -28,17 +31,21 @@ class ImageViewController: UIViewController {
             imageView.image = newValue
             imageView.sizeToFit()
 
+//            imageView.contentMode = .scaleAspectFit
             scrollView?.contentSize = imageView.frame.size
-//            spinner?.stopAnimating()
         }
         
     }
 
-    var singleImageUrl: URL? {didSet{updateUI()}}
-        
+    var singleImageUrl: URL? {didSet{
+
+        updateUI()
+}}
+    
     private func updateUI() {
         
         if let profileImageURL = singleImageUrl {
+
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 if let imageData = try? Data(contentsOf: profileImageURL) {
                     if profileImageURL == self?.singleImageUrl {
