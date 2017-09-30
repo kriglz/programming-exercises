@@ -9,48 +9,9 @@
 import UIKit
 import Twitter
 
-
-class UserDefaultsManager {
-    private let twitterSearchHistoryKey = "twitterSearch"
-    private let twitterUserDefaults = UserDefaults.standard
-    
-    var twitterSearchHistory: [String] {
-        get {
-            return twitterUserDefaults.stringArray(forKey: twitterSearchHistoryKey)!
-        }
-        set {
-            twitterUserDefaults.set(newValue, forKey: twitterSearchHistoryKey)
-        }
-    }
-}
-
-
-class TweetTableViewController: UITableViewController, UITextFieldDelegate
+class TweetTableViewController: UITableViewController, UISearchBarDelegate
 {
-    private var tweets = [Array<Twitter.Tweet>]() {
-        didSet {
-//            print(tweets)
-        }
-    }
-    
-    private var userDefaultsManager = UserDefaultsManager()
-    private var twitterSearchArray: [String] = []
-    
-    var searchText: String? {
-        didSet {
-            searchTextField?.text = searchText
-            searchTextField?.resignFirstResponder()
-            tweets.removeAll()
-            tableView.reloadData()
-            searchForTweets()
-            title = searchText
-       
-            if userDefaultsManager.twitterSearchHistory.count > 99 {
-                userDefaultsManager.twitterSearchHistory.removeFirst()
-            }
-            userDefaultsManager.twitterSearchHistory.append(searchText!)
-        }
-    }
+    private var tweets = [Array<Twitter.Tweet>]()
     
     private func twitterRequest() -> Twitter.Request? {
         if let query = searchText, !query.isEmpty {
@@ -76,25 +37,54 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         }
     }
     
+    
+    
+    
+    
+    @IBOutlet weak var searchTextField: UISearchBar!
+    
+    private var userDefaultsManager = UserDefaultsManager()
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar == searchTextField {
+            searchText = searchTextField.text
+        }
+    }
+    var searchText: String? {
+        didSet {
+            searchTextField?.text = searchText
+            searchTextField?.resignFirstResponder()
+            tweets.removeAll()
+            tableView.reloadData()
+            searchForTweets()
+            title = searchText
+            
+            if userDefaultsManager.twitterSearchHistory.count > 99 {
+                userDefaultsManager.twitterSearchHistory.removeFirst()
+            }
+            userDefaultsManager.twitterSearchHistory.insert(searchText!, at: userDefaultsManager.twitterSearchHistory.startIndex)
+            
+            print(userDefaultsManager.twitterSearchHistory)
+            
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        searchTextField.delegate = self
     }
 
-    @IBOutlet weak var searchTextField: UITextField! {
-        didSet {
-            searchTextField.delegate = self
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == searchTextField {
-            searchText = searchTextField.text
-        }
-        return true
-    }
     
     
     // MARK: - Table view data source
