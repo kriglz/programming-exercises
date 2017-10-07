@@ -137,7 +137,7 @@ class MentionTableViewController: UITableViewController {
                     UIApplication.shared.openURL(url!)
                     
                 } else {
-                    if let destinationViewController = (segue.destination as? TweetTableViewController) {
+                    if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
                         
                         destinationViewController.searchText = text
                         destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)

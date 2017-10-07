@@ -38,9 +38,6 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
     }
     
     
-    
-    
-    
     @IBOutlet weak var searchTextField: UISearchBar!
     
     private var userDefaultsManager = UserDefaultsManager()
@@ -63,18 +60,8 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
                 userDefaultsManager.twitterSearchHistory.removeFirst()
             }
             userDefaultsManager.twitterSearchHistory.insert(searchText!, at: userDefaultsManager.twitterSearchHistory.startIndex)
-            
-            print(userDefaultsManager.twitterSearchHistory)
-            
-            
         }
     }
-    
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +84,6 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         return tweets[section].count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
 
@@ -108,12 +94,9 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         }
         return cell
     }
-
-//    private var selectedTweet: Twitter.Tweet?
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = (segue.destination as? MentionTableViewController) {
+        if let destinationViewController = (segue.destination.contents as? MentionTableViewController) {
             
             let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
             

@@ -10,12 +10,16 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        let VC = [TweetTableViewController(), TweetSearchTableViewController()]
+//        setViewControllers(VC, animated: false)
+//        selectedViewController = TweetTableViewController()
+//    }
+//
+//    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+//        animated = false
+//    }
     
 
     /*
