@@ -9,41 +9,36 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet {
-            self.scrollView.delegate = self
-            scrollView.minimumZoomScale = 0.3
-            scrollView.maximumZoomScale = 2.0
-            scrollView.contentSize = imageView.frame.size
-            scrollView.addSubview(imageView)
-        }
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    override func viewDidLoad() {
+        self.scrollView.delegate = self
+        scrollView.minimumZoomScale = 0.7
+        scrollView.maximumZoomScale = 1.5
+        scrollView.contentSize = view.frame.size
+        print(scrollView?.contentSize)
     }
     
-    
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
-    var imageView = UIImageView()
+    @IBOutlet weak var singleImageView: UIImageView!
+        
     private var image: UIImage? {
         get {
-            return imageView.image
+            return singleImageView.image
         }
         set {
-            imageView.image = newValue
-            imageView.sizeToFit()
+            singleImageView.image = newValue
+            print(scrollView?.contentSize)
 
-//            imageView.contentMode = .scaleAspectFit
-            scrollView?.contentSize = imageView.frame.size
+            scrollView?.contentSize = singleImageView.frame.size
+            print(scrollView?.contentSize)
+            scrollView?.addSubview(singleImageView)
         }
         
     }
 
-    var singleImageUrl: URL? {didSet{
-
-        updateUI()
-}}
+    var singleImageUrl: URL? {didSet{updateUI()}}
     
     private func updateUI() {
-        
         if let profileImageURL = singleImageUrl {
 
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -61,7 +56,9 @@ class ImageViewController: UIViewController {
 
 extension ImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        return singleImageView
     }
-    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        updateViewConstraints()
+    }
 }
