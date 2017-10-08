@@ -57,7 +57,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
             title = searchText
             
             if userDefaultsManager.twitterSearchHistory.count > 99 {
-                userDefaultsManager.twitterSearchHistory.removeFirst()
+                userDefaultsManager.twitterSearchHistory.removeLast()
             }
             userDefaultsManager.twitterSearchHistory.insert(searchText!, at: userDefaultsManager.twitterSearchHistory.startIndex)
         }
@@ -69,10 +69,10 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        searchTextField.delegate = self
+        searchTextField?.delegate = self
     }
-
     
+
     
     // MARK: - Table view data source
 
@@ -95,15 +95,13 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         return cell
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = (segue.destination.contents as? MentionTableViewController) {
             
             let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
             
             destinationViewController.tweet = currentTweet
-
-            destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
-            destinationViewController.navigationItem.backBarButtonItem?.title = searchText
             destinationViewController.navigationItem.title = currentTweet.user.name
         }
     }

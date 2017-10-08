@@ -37,8 +37,7 @@ class TweetSearchTableViewController: UITableViewController {
         tableView.reloadData()
 
     }
-
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -55,16 +54,14 @@ class TweetSearchTableViewController: UITableViewController {
             tweetCell.textSearch = cellText
         }
         return cell
-    }    
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let currentCell = userDefaultsManager.twitterSearchHistory[(tableView.indexPathForSelectedRow?.row)!]
-                
         if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
-            destinationViewController.searchText = currentCell
-//            destinationViewController.navigationItem.title = currentCell
-            destinationViewController.tabBarController?.tabBar.isHidden = false
-        
+            
+            let currentTweet = userDefaultsManager.twitterSearchHistory[(tableView.indexPathForSelectedRow?.row)!]
+            
+            destinationViewController.searchText = currentTweet
         }
     }
 }

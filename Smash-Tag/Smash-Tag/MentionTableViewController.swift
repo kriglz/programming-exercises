@@ -9,12 +9,7 @@
 import UIKit
 import Twitter
 
-class MentionTableViewController: UITableViewController {
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-    
+class MentionTableViewController: UITableViewController {    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         tableView.reloadData()
@@ -140,8 +135,9 @@ class MentionTableViewController: UITableViewController {
                     if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
                         
                         destinationViewController.searchText = text
-                        destinationViewController.navigationController?.setNavigationBarHidden(false, animated: false)
                         destinationViewController.navigationItem.backBarButtonItem?.title = text
+                        destinationViewController.tabBarController?.tabBar.isHidden = false
+
                     }
                 }
             }
