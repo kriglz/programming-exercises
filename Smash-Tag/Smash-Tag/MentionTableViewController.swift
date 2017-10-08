@@ -129,7 +129,11 @@ class MentionTableViewController: UITableViewController {
                 
                 if text.isStringLink() {
                     let url = URL(string: text)
-                    UIApplication.shared.openURL(url!)
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url!)
+                    }
                     
                 } else {
                     if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
