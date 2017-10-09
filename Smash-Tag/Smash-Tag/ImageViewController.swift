@@ -16,7 +16,6 @@ class ImageViewController: UIViewController {
         scrollView.minimumZoomScale = 0.7
         scrollView.maximumZoomScale = 1.5
         scrollView.contentSize = view.frame.size
-        print(scrollView?.contentSize)
     }
     
     @IBOutlet weak var singleImageView: UIImageView!
@@ -27,10 +26,7 @@ class ImageViewController: UIViewController {
         }
         set {
             singleImageView.image = newValue
-            print(scrollView?.contentSize)
-
             scrollView?.contentSize = singleImageView.frame.size
-            print(scrollView?.contentSize)
             scrollView?.addSubview(singleImageView)
         }
         
