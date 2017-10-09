@@ -14,7 +14,11 @@ class UserDefaultsManager {
     
     var twitterSearchHistory: [String] {
         get {
-            return twitterUserDefaults.stringArray(forKey: twitterSearchHistoryKey)!
+            if let searchText = twitterUserDefaults.stringArray(forKey: twitterSearchHistoryKey) {
+                return searchText
+            } else {
+                return []
+            }
         }
         set {
             twitterUserDefaults.set(newValue, forKey: twitterSearchHistoryKey)
