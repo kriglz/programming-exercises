@@ -18,18 +18,30 @@ class ImageViewController: UIViewController {
         scrollView.contentSize = view.frame.size
     }
     
-    @IBOutlet weak var singleImageView: UIImageView!
-        
+//    @IBOutlet weak var singleImageView: UIImageView!
+    
+    fileprivate var singleImageView = UIImageView()
     private var image: UIImage? {
         get {
             return singleImageView.image
         }
         set {
             singleImageView.image = newValue
+            singleImageView.frame = view.bounds
+            singleImageView.contentMode = .scaleAspectFit
+
             scrollView?.contentSize = singleImageView.frame.size
             scrollView?.addSubview(singleImageView)
+//            scrollView?.cont
         }
         
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        singleImageView.frame.size = size
+        scrollView?.contentSize = size
+        singleImageView.contentMode = .scaleAspectFit
+//        scrollView?.addSubview(singleImageView)
     }
 
     var singleImageUrl: URL? {didSet{updateUI()}}

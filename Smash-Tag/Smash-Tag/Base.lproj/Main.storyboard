@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -246,42 +245,27 @@
                         <viewControllerLayoutGuide type="bottom" id="McE-Qx-9Hq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VYD-oe-sCx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-aD-Ytl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tmk-mH-TRJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="tmk-mH-TRJ" secondAttribute="height" multiplier="75:113" id="yB7-VE-n6p"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="tmk-mH-TRJ" firstAttribute="top" secondItem="GgV-aD-Ytl" secondAttribute="top" id="JdA-8x-Aw2"/>
-                                    <constraint firstAttribute="trailing" secondItem="tmk-mH-TRJ" secondAttribute="trailing" id="Z5C-VN-cqz"/>
-                                    <constraint firstItem="tmk-mH-TRJ" firstAttribute="centerX" secondItem="GgV-aD-Ytl" secondAttribute="centerX" id="chD-cg-nmL"/>
-                                    <constraint firstItem="tmk-mH-TRJ" firstAttribute="leading" secondItem="GgV-aD-Ytl" secondAttribute="leading" id="xzb-M0-o7f"/>
-                                    <constraint firstAttribute="bottom" secondItem="tmk-mH-TRJ" secondAttribute="bottom" constant="20" symbolic="YES" id="zfH-KI-JEt"/>
-                                </constraints>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-aD-Ytl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="GgV-aD-Ytl" secondAttribute="trailing" constant="-16" id="3cK-gI-YxO"/>
-                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="top" secondItem="fio-XW-cdg" secondAttribute="bottom" constant="-64" id="5nS-Ha-eXR"/>
-                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="leading" secondItem="VYD-oe-sCx" secondAttribute="leadingMargin" constant="-16" id="7lc-mn-3h9"/>
-                            <constraint firstItem="McE-Qx-9Hq" firstAttribute="top" secondItem="GgV-aD-Ytl" secondAttribute="bottom" constant="-49" id="Mw1-na-pME"/>
+                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="leading" secondItem="VYD-oe-sCx" secondAttribute="leadingMargin" constant="-16" id="CUn-23-4bE"/>
+                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="centerY" secondItem="VYD-oe-sCx" secondAttribute="centerY" id="iZj-iV-7Sv"/>
+                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="centerX" secondItem="VYD-oe-sCx" secondAttribute="centerX" id="lKC-y4-fu6"/>
+                            <constraint firstItem="GgV-aD-Ytl" firstAttribute="top" secondItem="fio-XW-cdg" secondAttribute="bottom" id="rOp-fH-eqe"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="LH1-Tw-yqg"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="GgV-aD-Ytl" id="7SC-Hn-kh9"/>
-                        <outlet property="singleImageView" destination="tmk-mH-TRJ" id="YHp-IX-4xQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQh-CY-mSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,7 +443,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mentionImageView" destination="2KV-eF-v7h" id="gnY-yr-EAn"/>
-                                    <segue destination="uvP-CJ-fLZ" kind="show" identifier="image" id="8Hg-KY-aCM"/>
+                                    <segue destination="EaL-V1-NPf" kind="show" identifier="image" id="W0T-ol-KCk"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="redraw" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="text" textLabel="BVi-8M-fr9" rowHeight="30" style="IBUITableViewCellStyleDefault" id="Gw2-LQ-nSZ" customClass="MentionTableViewCell" customModule="Smash_Tag" customModuleProvider="target">
@@ -497,55 +481,40 @@
             <point key="canvasLocation" x="3561" y="740"/>
         </scene>
         <!--Image View Controller-->
-        <scene sceneID="nfE-6Q-y9p">
+        <scene sceneID="GTl-hc-o0k">
             <objects>
-                <viewController id="uvP-CJ-fLZ" customClass="ImageViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EaL-V1-NPf" customClass="ImageViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="U7d-RF-SZ1"/>
-                        <viewControllerLayoutGuide type="bottom" id="SQk-9K-aad"/>
+                        <viewControllerLayoutGuide type="top" id="odb-8U-55A"/>
+                        <viewControllerLayoutGuide type="bottom" id="k2g-GI-ENT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Lr-xg-SQQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="idq-aL-dLj">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8r-Se-8KU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHl-jO-KYY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="RHl-jO-KYY" secondAttribute="height" multiplier="75:113" id="gqi-lY-nKZ"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="RHl-jO-KYY" firstAttribute="leading" secondItem="y8r-Se-8KU" secondAttribute="leading" id="0Qy-Qr-sZk"/>
-                                    <constraint firstItem="RHl-jO-KYY" firstAttribute="centerX" secondItem="y8r-Se-8KU" secondAttribute="centerX" id="6wA-Zb-rN5"/>
-                                    <constraint firstAttribute="trailing" secondItem="RHl-jO-KYY" secondAttribute="trailing" id="B3U-nr-RIS"/>
-                                    <constraint firstItem="RHl-jO-KYY" firstAttribute="top" secondItem="y8r-Se-8KU" secondAttribute="top" id="MMH-t6-ETs"/>
-                                    <constraint firstAttribute="bottom" secondItem="RHl-jO-KYY" secondAttribute="bottom" constant="20" symbolic="YES" id="S7B-lg-HL0"/>
-                                </constraints>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="5HF-cp-2UJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="y8r-Se-8KU" secondAttribute="trailing" constant="-16" id="0gE-Sp-v51"/>
-                            <constraint firstItem="y8r-Se-8KU" firstAttribute="top" secondItem="U7d-RF-SZ1" secondAttribute="bottom" constant="-64" id="1DX-z9-10d"/>
-                            <constraint firstItem="y8r-Se-8KU" firstAttribute="leading" secondItem="6Lr-xg-SQQ" secondAttribute="leadingMargin" constant="-16" id="Z1i-TW-WZL"/>
-                            <constraint firstItem="SQk-9K-aad" firstAttribute="top" secondItem="y8r-Se-8KU" secondAttribute="bottom" constant="-49" id="qh5-w8-Pm6"/>
+                            <constraint firstItem="5HF-cp-2UJ" firstAttribute="centerX" secondItem="idq-aL-dLj" secondAttribute="centerX" id="6wH-LJ-7YD"/>
+                            <constraint firstItem="5HF-cp-2UJ" firstAttribute="top" secondItem="odb-8U-55A" secondAttribute="bottom" id="E32-Zz-hkH"/>
+                            <constraint firstItem="5HF-cp-2UJ" firstAttribute="leading" secondItem="idq-aL-dLj" secondAttribute="leadingMargin" constant="-16" id="TQk-zV-OBg"/>
+                            <constraint firstItem="5HF-cp-2UJ" firstAttribute="centerY" secondItem="idq-aL-dLj" secondAttribute="centerY" id="fZW-BK-d1n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fO3-Wl-gs0"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="ozS-Q4-ZDp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="scrollView" destination="y8r-Se-8KU" id="73H-a4-YDT"/>
-                        <outlet property="singleImageView" destination="RHl-jO-KYY" id="jxg-0e-IVg"/>
+                        <outlet property="scrollView" destination="5HF-cp-2UJ" id="gXi-XL-I3O"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wkr-vM-8rF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Zm-J6-Hiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4511" y="740"/>
+            <point key="canvasLocation" x="4569" y="740"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
