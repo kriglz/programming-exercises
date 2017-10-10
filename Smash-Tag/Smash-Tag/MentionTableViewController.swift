@@ -96,19 +96,23 @@ class MentionTableViewController: UITableViewController {
                 
         switch cellMention {
         case .text(let stringBe):
-            cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
-            if let tweetCell = cell as? MentionTableViewCell {
-                tweetCell.mentionAsText = stringBe
+            if !stringBe.isStringLink() {
+                cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
+                if let tweetCell = cell as? MentionTableViewCell {
+                    tweetCell.mentionAsText = stringBe
+                }
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "web", for: indexPath)
+                if let tweetCell = cell as? MentionTableViewCell {
+                    tweetCell.mentionAsText = stringBe
+                }
             }
-            
+                
         case .media(let urlBe):
             cell = tableView.dequeueReusableCell(withIdentifier: "media", for: indexPath)
             if let tweetCell = cell as? MentionTableViewCell {
                 tweetCell.mentionAsUrl = urlBe
             }
-            
-        
-
         }
         return cell!
     }
@@ -136,26 +140,24 @@ class MentionTableViewController: UITableViewController {
         
         switch currentCell {
         case .text(let text):
-            if segue.identifier == "textSearch" {
-                
+            if segue.identifier == "webView" {
                 if text.isStringLink() {
                     let url = URL(string: text)
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(url!)
-                    }
                     
-                } else {
-                    if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
-                        
-                        destinationViewController.searchText = text
-                        destinationViewController.navigationItem.backBarButtonItem?.title = text
-                        destinationViewController.tabBarController?.tabBar.isHidden = false
-
-                    }
+                    if let destinationViewController = (segue.destination.contents as? WebViewController) {
+                        destinationViewController.webURL = url
+                    }                    
                 }
             }
+            if segue.identifier == "textSearch" {
+                
+                if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
+                    destinationViewController.searchText = text
+                    destinationViewController.navigationItem.backBarButtonItem?.title = text
+                    destinationViewController.tabBarController?.tabBar.isHidden = false
+                }
+            }
+            
         case .media(let url):
             if segue.identifier == "image" {
                 if let destinationViewController = (segue.destination as? ImageViewController) {

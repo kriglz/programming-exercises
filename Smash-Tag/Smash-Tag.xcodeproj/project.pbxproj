@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		890F21781F768F450018D594 /* MentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890F21771F768F450018D594 /* MentionTableViewCell.swift */; };
 		8919C3EC1F6FC49D001E702C /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919C3EB1F6FC49D001E702C /* TweetTableViewCell.swift */; };
+		8919E4941F8CDFAC00B8F8A5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919E4931F8CDFAC00B8F8A5 /* WebViewController.swift */; };
 		892109F11F7D4B8A00A9C22A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892109F01F7D4B8A00A9C22A /* ImageViewController.swift */; };
 		8926E92A1F69345600205FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926E9291F69345600205FCF /* AppDelegate.swift */; };
 		8926E92F1F69345600205FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926E92D1F69345600205FCF /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		890F21771F768F450018D594 /* MentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionTableViewCell.swift; sourceTree = "<group>"; };
 		8919C3EB1F6FC49D001E702C /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		8919E4931F8CDFAC00B8F8A5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		892109F01F7D4B8A00A9C22A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8926E9261F69345600205FCF /* Smash-Tag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smash-Tag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8926E9291F69345600205FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				8919C3EB1F6FC49D001E702C /* TweetTableViewCell.swift */,
 				89850EB21F72E8AA00538B1D /* MentionTableViewController.swift */,
 				890F21771F768F450018D594 /* MentionTableViewCell.swift */,
+				8919E4931F8CDFAC00B8F8A5 /* WebViewController.swift */,
 				892109F01F7D4B8A00A9C22A /* ImageViewController.swift */,
 			);
 			path = "Smash-Tag";
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89850EB31F72E8AA00538B1D /* MentionTableViewController.swift in Sources */,
+				8919E4941F8CDFAC00B8F8A5 /* WebViewController.swift in Sources */,
 				8926E92A1F69345600205FCF /* AppDelegate.swift in Sources */,
 				8926E93D1F69351300205FCF /* TweetTableViewController.swift in Sources */,
 				890F21781F768F450018D594 /* MentionTableViewCell.swift in Sources */,
