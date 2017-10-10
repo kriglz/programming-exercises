@@ -32,7 +32,6 @@ class ImageViewController: UIViewController {
 
             scrollView?.contentSize = singleImageView.frame.size
             scrollView?.addSubview(singleImageView)
-//            scrollView?.cont
         }
         
     }
@@ -41,7 +40,6 @@ class ImageViewController: UIViewController {
         singleImageView.frame.size = size
         scrollView?.contentSize = size
         singleImageView.contentMode = .scaleAspectFit
-//        scrollView?.addSubview(singleImageView)
     }
 
     var singleImageUrl: URL? {didSet{updateUI()}}

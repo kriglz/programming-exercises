@@ -518,7 +518,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="pr7-pv-Cmc"/>
         <segue reference="veT-El-e3g"/>
-        <segue reference="11p-e8-uAX"/>
     </inferredMetricsTieBreakers>
 </document>

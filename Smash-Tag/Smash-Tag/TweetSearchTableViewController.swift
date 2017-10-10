@@ -60,6 +60,23 @@ class TweetSearchTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            
+            userDefaultsManager.twitterSearchHistory.remove(at: indexPath.row)
+            tableView.reloadData()
+
+            
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
+    }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
             
