@@ -44,10 +44,21 @@ class MentionTableViewController: UITableViewController {
                 mentionsArray.append(convert(elements: (tweet?.hashtags)!))
                 mentionTitles.append("Hashtags")
             }
+            
+            
+            let userNameString = String("@" + (tweet?.user.screenName)!)
+            var tweetUserArray = [TypeOfMention.text(userNameString!)]
             if !(tweet?.userMentions.isEmpty)! {
-                mentionsArray.append(convert(elements: (tweet?.userMentions)!))
-                mentionTitles.append("Users")
+                
+                let userMentionsArray = convert(elements: (tweet?.userMentions)!)
+                
+                for element in userMentionsArray {
+                    tweetUserArray.append(element)
+                }
             }
+            mentionsArray.append(tweetUserArray)
+            mentionTitles.append("Users")
+            
             if !(tweet?.urls.isEmpty)! {
                 mentionsArray.append(convert(elements: (tweet?.urls)!))
                 mentionTitles.append("URLs")

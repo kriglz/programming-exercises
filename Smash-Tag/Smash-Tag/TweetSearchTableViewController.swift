@@ -66,12 +66,8 @@ class TweetSearchTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            
             userDefaultsManager.twitterSearchHistory.remove(at: indexPath.row)
             tableView.reloadData()
-
-            
-            // handle delete (by removing the data from your array and updating the tableview)
         }
     }
     
