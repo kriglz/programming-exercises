@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -160,11 +160,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529078465.70917"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "searchText"
             landmarkType = "24">
          </BreakpointContent>
@@ -457,11 +457,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
@@ -505,11 +505,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -521,11 +521,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529093598.626449"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -537,11 +537,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529093607.417652"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "searchText"
             landmarkType = "24">
          </BreakpointContent>
@@ -553,11 +553,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -601,11 +601,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529093683.267968"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "searchForTweets()"
             landmarkType = "7">
          </BreakpointContent>
@@ -617,11 +617,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -633,11 +633,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -649,11 +649,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -729,11 +729,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529095098.894433"
+            timestampString = "529427392.736165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
