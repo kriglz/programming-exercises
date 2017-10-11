@@ -102,12 +102,23 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = (segue.destination.contents as? MentionTableViewController) {
-            
-            let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
-            
-            destinationViewController.tweet = currentTweet
-            destinationViewController.navigationItem.title = currentTweet.user.name
+        
+        if segue.identifier == "collection" {
+            if let destinationViewController = (segue.destination.contents as? TweetCollectionViewController) {
+                
+                destinationViewController.tweets = tweets
+            }
+        }
+        
+        
+        if segue.identifier == "mention" {
+            if let destinationViewController = (segue.destination.contents as? MentionTableViewController) {
+                
+                let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
+                
+                destinationViewController.tweet = currentTweet
+                destinationViewController.navigationItem.title = currentTweet.user.name
+            }
         }
     }
 }
