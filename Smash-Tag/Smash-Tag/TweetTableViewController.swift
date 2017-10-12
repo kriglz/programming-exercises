@@ -11,7 +11,7 @@ import Twitter
 
 class TweetTableViewController: UITableViewController, UISearchBarDelegate
 {
-    private var tweets = [Array<Twitter.Tweet>]()
+    var tweets = [Array<Twitter.Tweet>]()
     
     private func twitterRequest() -> Twitter.Request? {
         if let query = searchText, !query.isEmpty {
@@ -107,6 +107,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
             if let destinationViewController = (segue.destination.contents as? TweetCollectionViewController) {
                 
                 destinationViewController.tweets = tweets
+                destinationViewController.navigationItem.title = searchText
             }
         }
         
