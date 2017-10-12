@@ -15,13 +15,11 @@ class TweetCollectionViewCell: UICollectionViewCell {
     
     var tweetURL: URL? {didSet{updateUI()}}
     
-    private func updateUI() {
-        print(tweetURL)
-        
-        if let profileImageURL = tweetURL {
+    private func updateUI() {        
+        if let imageURL = tweetURL {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                if let imageData = try? Data(contentsOf: profileImageURL) {
-                    if profileImageURL == self?.tweetURL {
+                if let imageData = try? Data(contentsOf: imageURL) {
+                    if imageURL == self?.tweetURL {
                         DispatchQueue.main.async {
                             self?.imageView?.image = UIImage(data: imageData)
                         }

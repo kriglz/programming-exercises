@@ -23,22 +23,7 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(TweetCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
     }
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -54,15 +39,30 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
         
         let tweet: Tweet = tweets[indexPath.section][indexPath.row]
-//        if tweet.urls.isEmpty
         
         if let tweetCell = cell as? TweetCollectionViewCell {
-            tweetCell.tweetURL = tweet.user.profileImageURL
+            if !tweet.media.isEmpty {
+                for media in tweet.media {
+                    tweetCell.tweetURL = media.url //tweet.user.profileImageURL
+                }
+            } else {
+                tweetCell.tweetURL = tweet.user.profileImageURL
+            }
         }
-        
         return cell
     }
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -94,8 +94,8 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
     }
     */
     
-    fileprivate let itemsPerRow: CGFloat = 1
-    fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+    fileprivate let itemsPerRow: CGFloat = 3.0
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
