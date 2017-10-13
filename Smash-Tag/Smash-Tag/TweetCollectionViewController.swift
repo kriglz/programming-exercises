@@ -9,7 +9,7 @@
 import UIKit
 import Twitter
 
-
+@IBDesignable
 class TweetCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var tweets = [Array<Twitter.Tweet>]()
@@ -20,6 +20,14 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionView?.collectionViewLayout = layout
+        
+        
+        let handler = #selector(TweetCollectionViewController.changeScale(byReactingTo:))
+        let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: handler)
+        collectionView?.addGestureRecognizer(pinchRecognizer)
+        
+        
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,81 +61,78 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     
+    
      // MARK: - Navigation
      
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
         if segue.identifier == "collMention" {
             if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
-                
                 
                 let cell = sender as! TweetCollectionViewCell
                 let indexPaths = self.collectionView?.indexPath(for: cell)
                 
                 let currentTweet = tweets[(indexPaths?.section)!][(indexPaths?.row)!]
-                
-                print([currentTweet])
                 destinationViewController.tweets = [[currentTweet]]
             }
         }
      }
  
     
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+    }
     
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    fileprivate var itemsPerRow: CGFloat = 3.0
     
+    @IBInspectable
+    fileprivate var sectionInsets = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0) {
+        didSet {
+            collectionView?.collectionViewLayout.invalidateLayout()
+        }
     }
-    */
     
-    fileprivate let itemsPerRow: CGFloat = 3.0
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    func changeScale (byReactingTo pinchRecognizer: UIPinchGestureRecognizer)
+    {
+        switch pinchRecognizer.state {
+        case .changed, .ended:
+            sectionInsets.bottom /= pinchRecognizer.scale
+            sectionInsets.top /= pinchRecognizer.scale
+            sectionInsets.left /= pinchRecognizer.scale
+            sectionInsets.right /= pinchRecognizer.scale
+            itemsPerRow /= pinchRecognizer.scale
+            pinchRecognizer.scale = 1
+        default:
+            break
+        }
+    }
+    
+    
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = (view.frame.width - 2*paddingSpace)/itemsPerRow
         
         return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return UIEdgeInsets.zero
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return 0.0
     }
-
+    
 }

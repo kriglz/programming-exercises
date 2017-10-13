@@ -1474,11 +1474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
+            timestampString = "529594665.770011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "collectionView(_:layout:minimumLineSpacingForSectionAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1490,11 +1490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
+            timestampString = "529594665.770011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138">
+            startingLineNumber = "150"
+            endingLineNumber = "150">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1504,11 +1504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
+            timestampString = "529594665.770011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146">
+            startingLineNumber = "158"
+            endingLineNumber = "158">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1740,11 +1740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
+            timestampString = "529589401.657337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
@@ -1803,202 +1803,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
+            timestampString = "529591422.047358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "TweetCollectionViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529594169.100548"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529589401.657337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "viewWillLayoutSubviews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529589401.657337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "TweetCollectionViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.init (collectionViewLayout : __ObjC.UICollectionViewLayout) -&gt; Smash_Tag.TweetCollectionViewController"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529577661.528889"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Smash_Tag.TweetCollectionViewController"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529577661.531539"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Smash_Tag.TweetCollectionViewController&gt;"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529577661.534348"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "TweetCollectionViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.viewWillLayoutSubviews () -&gt; ()"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529575476.200476"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.viewWillLayoutSubviews () -&gt; ()"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529575476.201816"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "451">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "TweetCollectionViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.init (collectionViewLayout : __ObjC.UICollectionViewLayout) -&gt; Smash_Tag.TweetCollectionViewController"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529577661.54077"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Smash_Tag.TweetCollectionViewController"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529577661.542486"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Smash_Tag.TweetCollectionViewController&gt;"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-                  timestampString = "529577661.544119"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "TweetCollectionViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529578142.793952"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkName = "changeScale(byReactingTo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
