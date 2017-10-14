@@ -17,7 +17,6 @@ class TweetCollectionViewCell: UICollectionViewCell {
     var imageCache: NSCache<AnyObject, AnyObject>?
     
     private func updateUI() {
-        
         if let image = imageCache?.object(forKey: tweetIndex as AnyObject)
         {
            imageView?.image = image as? UIImage

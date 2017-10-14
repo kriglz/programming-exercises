@@ -18,6 +18,7 @@ class MentionTableViewController: UITableViewController {
     var tweet: Twitter.Tweet? {
         didSet {
             
+            //Crating new data structure for tweets
             func convert(elements: [Mention]) -> [TypeOfMention] {
                 var elementArray = [TypeOfMention]()
                 for element in elements {
@@ -135,6 +136,9 @@ class MentionTableViewController: UITableViewController {
     }
     
     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let currentCell = mentionsArray[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
         
@@ -169,6 +173,11 @@ class MentionTableViewController: UITableViewController {
         }
     }
 }
+
+
+
+
+
 extension String {
     func isStringLink() -> Bool {
         let types: NSTextCheckingResult.CheckingType = [.link]

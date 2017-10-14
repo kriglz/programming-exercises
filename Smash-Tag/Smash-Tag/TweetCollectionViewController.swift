@@ -22,6 +22,7 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionView?.collectionViewLayout = layout
         
+        //pinch handler
         let handler = #selector(TweetCollectionViewController.changeScale(byReactingTo:))
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: handler)
         collectionView?.addGestureRecognizer(pinchRecognizer)
@@ -53,7 +54,6 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
                 tweetCell.tweetURL = tweet.user.profileImageURL!
             }
         }
-        print(imageCache, "controller")
         return cell
     }
 
@@ -100,8 +100,6 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
             break
         }
     }
-    
-    
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

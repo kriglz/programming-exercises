@@ -17,9 +17,7 @@ class ImageViewController: UIViewController {
         scrollView.maximumZoomScale = 1.5
         scrollView.contentSize = view.frame.size
     }
-    
-//    @IBOutlet weak var singleImageView: UIImageView!
-    
+        
     fileprivate var singleImageView = UIImageView()
     private var image: UIImage? {
         get {

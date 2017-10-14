@@ -24,6 +24,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.navigationDelegate = self
         view = webView
         
+        //progress monitor
         progressView = UIProgressView(progressViewStyle: .default)
         progressView = UIProgressView(frame: CGRect(origin: CGPoint.init(x: 0, y: 64), size: CGSize(width: self.view.frame.width, height: 50.0)))
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress) , options: .new, context: nil)

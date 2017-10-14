@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Saving History of Tweet Search Terms
+
 class UserDefaultsManager {
     private let twitterSearchHistoryKey = "twitterSearch"
     private let twitterUserDefaults = UserDefaults.standard
@@ -72,7 +74,6 @@ class TweetSearchTableViewController: UITableViewController {
     }
     
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
             let currentTweet = userDefaultsManager.twitterSearchHistory[(tableView.indexPathForSelectedRow?.row)!]
@@ -80,6 +81,8 @@ class TweetSearchTableViewController: UITableViewController {
         }
     }
 }
+
+
 
 extension UIViewController
 {
