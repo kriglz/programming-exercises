@@ -17,9 +17,9 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         if let query = searchText, !query.isEmpty {
             if query.contains("@") {
                 let newQuery = query + " OR from:" + query
-                return Twitter.Request(search: newQuery, count: 100)
+                return Twitter.Request(search: "\(newQuery) - filter:safe -filter:retweets", count: 100)
             } else {
-                return Twitter.Request(search: query, count: 100)
+                return Twitter.Request(search: "\(query) - filter:safe -filter:retweets", count: 100)
             }
         }
         return nil
