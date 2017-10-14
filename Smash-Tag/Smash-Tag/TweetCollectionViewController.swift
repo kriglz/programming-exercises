@@ -12,8 +12,9 @@ import Twitter
 @IBDesignable
 class TweetCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var tweets = [Array<Twitter.Tweet>]()
+    let imageCache = NSCache<AnyObject, AnyObject>()
     
+    var tweets = [Array<Twitter.Tweet>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,9 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionView?.collectionViewLayout = layout
         
-        
         let handler = #selector(TweetCollectionViewController.changeScale(byReactingTo:))
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: handler)
         collectionView?.addGestureRecognizer(pinchRecognizer)
-        
-        
-
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
 
     // MARK: UICollectionViewDataSource
@@ -47,19 +41,22 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
         
         let tweet: Tweet = tweets[indexPath.section][indexPath.row]
-        
         if let tweetCell = cell as? TweetCollectionViewCell {
+            tweetCell.tweetIndex = [indexPath.section, indexPath.row]
+            tweetCell.imageCache = imageCache
+            
             if !tweet.media.isEmpty {
                 for media in tweet.media {
-                    tweetCell.tweetURL = media.url //tweet.user.profileImageURL
+                    tweetCell.tweetURL = media.url
                 }
             } else {
-                tweetCell.tweetURL = tweet.user.profileImageURL
+                tweetCell.tweetURL = tweet.user.profileImageURL!
             }
         }
+        print(imageCache, "controller")
         return cell
     }
-    
+
     
     
      // MARK: - Navigation
@@ -67,10 +64,9 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
         if segue.identifier == "collMention" {
             if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
-                
                 let cell = sender as! TweetCollectionViewCell
                 let indexPaths = self.collectionView?.indexPath(for: cell)
-                
+
                 let currentTweet = tweets[(indexPaths?.section)!][(indexPaths?.row)!]
                 destinationViewController.tweets = [[currentTweet]]
             }
@@ -79,10 +75,7 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
  
     
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-    }
+    //LAYOUT
     
     fileprivate var itemsPerRow: CGFloat = 3.0
     
