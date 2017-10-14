@@ -28,7 +28,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
     private var lastTwitterRequest: Twitter.Request?
     
     private func searchForTweets() {
-        if let request = twitterRequest() {
+        if let request = lastTwitterRequest?.newer ?? twitterRequest() {
             lastTwitterRequest = request
 
             request.fetchTweets{ [weak self] newTweets in
@@ -37,9 +37,16 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
                         self?.tweets.insert(newTweets, at: 0)
                         self?.tableView.insertSections([0], with: .fade)
                     }
+                    self?.refreshControl?.endRefreshing()
                 }
             }
+        } else {
+            self.refreshControl?.endRefreshing()
         }
+    }
+    
+    @IBAction func refresh(_ sender: UIRefreshControl) {
+        searchForTweets()
     }
     
     
@@ -57,6 +64,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
             searchTextField?.text = searchText
             searchTextField?.resignFirstResponder()
             tweets.removeAll()
+            lastTwitterRequest = nil
             tableView.reloadData()
             searchForTweets()
             title = searchText
