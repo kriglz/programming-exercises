@@ -119,6 +119,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
             if let destinationViewController = (segue.destination.contents as? TweetCollectionViewController) {
                 
                 destinationViewController.tweets = tweets
+                print(tweets)
                 destinationViewController.navigationItem.title = searchText
             }
         }

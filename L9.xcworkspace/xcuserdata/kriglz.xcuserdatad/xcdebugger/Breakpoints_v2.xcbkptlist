@@ -159,22 +159,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529760687.647527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/MentionTableViewCell.swift"
             timestampString = "528232754.441054"
             startingColumnNumber = "9223372036854775807"
@@ -448,70 +432,6 @@
             endingLineNumber = "73"
             landmarkName = "searchText"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529760687.647527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetTableViewController.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-                  timestampString = "529083077.57697"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "287">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Smash_Tag.TweetTableViewController.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "Smash-Tag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-                  timestampString = "529083077.581481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "3281">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529760687.647527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1474,7 +1394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -1490,7 +1410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -1504,7 +1424,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
@@ -1580,24 +1500,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smash-Tag/Smash-Tag/TweetTableViewController.swift"
-            timestampString = "529760687.647527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -1660,7 +1564,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -1676,7 +1580,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -1692,7 +1596,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
-            timestampString = "529760687.647527"
+            timestampString = "529779422.929978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -1808,6 +1712,213 @@
             endingLineNumber = "12"
             landmarkName = "SmashTweetersTableViewController"
             landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529779422.929978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529779422.929978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529779422.929978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewCell.swift"
+            timestampString = "529778021.605794"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smash_Tag.TweetCollectionViewCell.((updateUI in _81629129829B483CFE898E165E628DA8) () -&gt; ()).(closure #1)"
+                  moduleName = "Smash-Tag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewCell.swift"
+                  timestampString = "529779264.797458"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "614">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smash_Tag.TweetCollectionViewCell.((updateUI in _81629129829B483CFE898E165E628DA8) () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Smash-Tag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewCell.swift"
+                  timestampString = "529779264.799562"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1531">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewCell.swift"
+            timestampString = "529778022.372412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529779422.929978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529779422.929978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+            timestampString = "529779072.081168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "TweetCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smash_Tag.TweetCollectionViewController.init (collectionViewLayout : __ObjC.UICollectionViewLayout) -&gt; Smash_Tag.TweetCollectionViewController"
+                  moduleName = "Smash-Tag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+                  timestampString = "529779264.818545"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smash_Tag.TweetCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Smash_Tag.TweetCollectionViewController"
+                  moduleName = "Smash-Tag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+                  timestampString = "529779264.820425"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smash_Tag.TweetCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Smash_Tag.TweetCollectionViewController&gt;"
+                  moduleName = "Smash-Tag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kriglz/Desktop/programming-exercises/Smash-Tag/Smash-Tag/TweetCollectionViewController.swift"
+                  timestampString = "529779264.822179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -45,11 +45,33 @@ class SmashTweetTableViewController: TweetTableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
         if segue.identifier == "Tweeters Mentioning Search Term" {
             if let tweetersTVC = segue.destination.contents as? SmashTweetersTableViewController {
                 tweetersTVC.mention = searchText
                 tweetersTVC.container = container
             }
         }
+        
+//        if segue.identifier == "collection" {
+//            if let destinationViewController = (segue.destination.contents as? TweetCollectionViewController) {
+//                
+//                destinationViewController.tweets = tweets
+//                destinationViewController.navigationItem.title = searchText
+//            }
+//        }
+//        
+//        
+//        if segue.identifier == "mention" {
+//            if let destinationViewController = (segue.destination.contents as? MentionTableViewController) {
+//                
+//                let currentTweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
+//                
+//                destinationViewController.tweet = currentTweet
+//                destinationViewController.navigationItem.title = currentTweet.user.name
+//            }
+//        }
+
     }
 }

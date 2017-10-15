@@ -14,7 +14,7 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
 
     let imageCache = NSCache<AnyObject, AnyObject>()
     
-    var tweets = [Array<Twitter.Tweet>]()
+    var tweets = [Array<Twitter.Tweet>]() 
     
     override func viewDidLoad() {
         super.viewDidLoad()
