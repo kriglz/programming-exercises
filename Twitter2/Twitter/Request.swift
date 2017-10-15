@@ -44,19 +44,25 @@ public class Request: NSObject
     }
     
     // convenience initializer for creating a TwitterRequest that is a search for Tweets
-    public convenience init(search: String, count: Int = 0) { // , resultType resultType: SearchResultType = .Mixed, region region: CLCircularRegion? = nil) {
+    public convenience init(search: String, count: Int = 0, resultType: SearchResultType, region: CLCircularRegion? = nil) {
+        
         var parameters = [TwitterKey.query : search]
         if count > 0 {
             parameters[TwitterKey.count] = "\(count)"
         }
-//        switch resultType {
-//        case .Recent: parameters[TwitterKey.ResultType] = TwitterKey.ResultTypeRecent
-//        case .Popular: parameters[TwitterKey.ResultType] = TwitterKey.ResultTypePopular
-//        default: break
-//        }
-//        if let geocode = region {
-//            parameters[TwitterKey.Geocode] = "\(geocode.center.latitude),\(geocode.center.longitude),\(geocode.radius/1000.0)km"
-//        }
+        
+        switch resultType {
+            case .recent:
+                parameters[TwitterKey.resultType] = TwitterKey.resultTypeRecent
+            case .popular:
+                parameters[TwitterKey.resultType] = TwitterKey.resultTypePopular
+            default: break
+        }
+        
+        if let geocode = region {
+            parameters[TwitterKey.geocode] = "\(geocode.center.latitude),\(geocode.center.longitude),\(geocode.radius/1000.0)km"
+        }
+        
         self.init(TwitterKey.searchForTweets, parameters)
     }
         

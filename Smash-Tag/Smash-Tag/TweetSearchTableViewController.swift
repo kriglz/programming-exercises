@@ -75,9 +75,20 @@ class TweetSearchTableViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
-            let currentTweet = userDefaultsManager.twitterSearchHistory[(tableView.indexPathForSelectedRow?.row)!]
-            destinationViewController.searchText = currentTweet
+        
+        if segue.identifier == "search" {
+            if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
+                let currentTweet = userDefaultsManager.twitterSearchHistory[(tableView.indexPathForSelectedRow?.row)!]
+                destinationViewController.searchText = currentTweet
+            }
+        }
+        
+        if segue.identifier == "detailTable" {
+            if let destinationViewController = (segue.destination.contents as? DetailTweetTableViewController) {
+                
+                //pass something
+                
+            }
         }
     }
 }

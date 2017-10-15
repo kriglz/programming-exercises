@@ -173,6 +173,7 @@
                                 <connections>
                                     <outlet property="textOfTweetSearchHistory" destination="nAu-Vw-Can" id="gda-gk-9dO"/>
                                     <segue destination="v5E-LL-tRk" kind="show" identifier="search" id="UZp-x6-e9G"/>
+                                    <segue destination="PZF-s5-OKp" kind="show" identifier="detailTable" trigger="accessoryAction" id="bj7-h9-Cai"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -769,13 +770,41 @@
             </objects>
             <point key="canvasLocation" x="4157.6000000000004" y="2493.1034482758623"/>
         </scene>
+        <!--Detail Tweet Table View Controller-->
+        <scene sceneID="Dsk-ii-v7a">
+            <objects>
+                <tableViewController id="PZF-s5-OKp" customClass="DetailTweetTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fH3-VK-Oq7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail cell" id="JeE-hF-EYT">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JeE-hF-EYT" id="OWu-Zz-tYf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PZF-s5-OKp" id="amA-3F-Ply"/>
+                            <outlet property="delegate" destination="PZF-s5-OKp" id="1v0-BB-7nQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msq-ku-qUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2454" y="2870"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CollectionImage" width="50" height="35"/>
         <image name="TweetersImage" width="50" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UZp-x6-e9G"/>
         <segue reference="2mV-cY-27w"/>
-        <segue reference="YaY-8G-vrY"/>
     </inferredMetricsTieBreakers>
 </document>
