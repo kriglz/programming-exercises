@@ -7,13 +7,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tweet Table View Controller-->
+        <!--Smash Tweet Table View Controller-->
         <scene sceneID="PkO-K9-1xh">
             <objects>
-                <tableViewController modalPresentationStyle="currentContext" id="8mf-4l-dHe" customClass="TweetTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="currentContext" id="8mf-4l-dHe" customClass="SmashTweetTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="184" sectionHeaderHeight="28" sectionFooterHeight="28" id="YPy-3G-u4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,15 +95,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="gfm-lV-VTR">
-                        <barButtonItem key="rightBarButtonItem" title="Collection" id="pQ0-ff-ejB">
-                            <connections>
-                                <segue destination="1hD-W1-Sky" kind="show" identifier="collection" id="C1c-nQ-CdJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Collection" id="pQ0-ff-ejB">
+                                <connections>
+                                    <segue destination="1hD-W1-Sky" kind="show" identifier="collection" id="C1c-nQ-CdJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Tweeters" id="yuU-2i-CCp">
+                                <connections>
+                                    <segue destination="waQ-hX-FRN" kind="show" identifier="Tweeters Mentioning Search Term" id="PG6-fP-SbM"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pds-GN-Tkb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh:" destination="8mf-4l-dHe" eventType="valueChanged" id="K0x-VF-Wyf"/>
@@ -229,6 +238,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-wv-b7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2849" y="896"/>
+        </scene>
+        <!--Smash Tweeters Table View Controller-->
+        <scene sceneID="EGg-fb-8DW">
+            <objects>
+                <tableViewController id="waQ-hX-FRN" customClass="SmashTweetersTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bfJ-iD-yUN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwitterUser Cell" textLabel="2i9-71-LId" detailTextLabel="NYq-5c-67U" style="IBUITableViewCellStyleSubtitle" id="KVA-bc-QXZ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KVA-bc-QXZ" id="z8F-y8-0cy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2i9-71-LId">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NYq-5c-67U">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="waQ-hX-FRN" id="xIr-CT-Uwj"/>
+                            <outlet property="delegate" destination="waQ-hX-FRN" id="IAG-ft-gIo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MJ-iH-KuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="-137"/>
         </scene>
         <!--Mention Table View Controller-->
         <scene sceneID="Qxi-bT-Zdq">
@@ -559,10 +612,10 @@
             </objects>
             <point key="canvasLocation" x="4217" y="1164"/>
         </scene>
-        <!--Tweet Table View Controller-->
+        <!--Smash Tweet Table View Controller-->
         <scene sceneID="OG6-ZL-kMJ">
             <objects>
-                <tableViewController modalPresentationStyle="currentContext" id="v5E-LL-tRk" customClass="TweetTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="currentContext" id="v5E-LL-tRk" customClass="SmashTweetTableViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="184" sectionHeaderHeight="28" sectionFooterHeight="28" id="HUm-g2-Qn8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

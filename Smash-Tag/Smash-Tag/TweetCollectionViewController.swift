@@ -27,6 +27,10 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: handler)
         collectionView?.addGestureRecognizer(pinchRecognizer)
     }
+    
+    
+    
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -41,7 +45,7 @@ class TweetCollectionViewController: UICollectionViewController, UICollectionVie
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
         
-        let tweet: Tweet = tweets[indexPath.section][indexPath.row]
+        let tweet: Twitter.Tweet = tweets[indexPath.section][indexPath.row]
         if let tweetCell = cell as? TweetCollectionViewCell {
             tweetCell.tweetIndex = [indexPath.section, indexPath.row]
             tweetCell.imageCache = imageCache

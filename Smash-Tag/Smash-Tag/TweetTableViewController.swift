@@ -25,6 +25,11 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         return nil
     }
     
+    func insertTweet(_ newTweets: [Twitter.Tweet]) {
+        self.tweets.insert(newTweets, at: 0)
+        self.tableView.insertSections([0], with: .fade)
+    }
+    
     private var lastTwitterRequest: Twitter.Request?
     
     private func searchForTweets() {
@@ -34,8 +39,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
             request.fetchTweets{ [weak self] newTweets in
                 DispatchQueue.main.async {
                     if request == self?.lastTwitterRequest {
-                        self?.tweets.insert(newTweets, at: 0)
-                        self?.tableView.insertSections([0], with: .fade)
+                        self?.insertTweet(newTweets)
                     }
                     self?.refreshControl?.endRefreshing()
                 }
@@ -101,7 +105,7 @@ class TweetTableViewController: UITableViewController, UISearchBarDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
 
         
-        let tweet: Tweet = tweets[indexPath.section][indexPath.row]
+        let tweet: Twitter.Tweet = tweets[indexPath.section][indexPath.row]
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
