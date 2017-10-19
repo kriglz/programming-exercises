@@ -18,10 +18,11 @@ class DetailTweetTableViewController: FetchedResultsTableViewController {
     var fetchedResultsController: NSFetchedResultsController<Mention>?
     
     private func updateUI(){
+      
         if let context = container?.viewContext, mention != nil {
             let request: NSFetchRequest<Mention> = Mention.fetchRequest()
             
-            request.sortDescriptors = [NSSortDescriptor(key: "number", ascending: false)]
+            request.sortDescriptors = [NSSortDescriptor(key: "handle", ascending: false)]
             request.predicate = NSPredicate(format: "handle = [c] %@", mention!)
             
             fetchedResultsController = NSFetchedResultsController<Mention>(
@@ -36,21 +37,40 @@ class DetailTweetTableViewController: FetchedResultsTableViewController {
         }
     }
 
+    
+    
+    
+    
+    private func tweetCountWithMentionBy(_ mention: Mention) -> Int {
+        let request: NSFetchRequest<Mention> = Mention.fetchRequest()
+        request.predicate = NSPredicate(format: "handle = [c] %@", mention.handle!)
+        
+        let matches = try? mention.managedObjectContext?.fetch(request)
+        print(matches??[0].handle, matches??[0].twitterUniqueArray)
+        let number =  matches??[0].unique?.count
+        
+        return number ?? 0
+        //return (try? mention.managedObjectContext!.count(for: request)) ?? 0
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detail cell", for: indexPath)
         
         if let mention = fetchedResultsController?.object(at: indexPath) {
             cell.textLabel?.text = mention.handle
-            cell.detailTextLabel?.text = "\(mention.number) tweet\((mention.number == 1) ? "" : "s")"
+            
+            let mentionNumber = tweetCountWithMentionBy(mention)
+            
+            cell.detailTextLabel?.text = "\(mentionNumber) tweet\((mentionNumber == 1) ? "" : "s")"
         }
         return cell
     }
-//    
-//    private func tweetCountWithMentionBy(_ twitterUser: TwitterUser) -> Int {
-//        let request: NSFetchRequest<Tweet> = Tweet.fetchRequest()
-//        request.predicate = NSPredicate(format: "text contains[c] %@ and tweeter = %@", mention!, twitterUser)
-//        return (try? twitterUser.managedObjectContext!.count(for: request)) ?? 0
-//    }
+    
+    
+    
+    
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {

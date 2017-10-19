@@ -12,17 +12,21 @@ import Twitter
 
 class Mention: NSManagedObject {
 
-    class func findOrCreateTwitterMention(matching twitterInfo: String, in context: NSManagedObjectContext) throws -> Mention
+    class func findOrCreateTwitterMention(matching twitterInfo: String, with tweetID: String, in context: NSManagedObjectContext) throws -> Mention
     {
         let request: NSFetchRequest<Mention> = Mention.fetchRequest()
         
-        request.predicate = NSPredicate(format: "handle = [c]%@", twitterInfo)
+        request.predicate = NSPredicate(format: "handle = [c] %@", twitterInfo)
         
         do {
             let matches = try context.fetch(request)
             if matches.count > 0 {
                 //that mention does exist
-                matches[0].number += 1
+                
+                if !(matches[0].twitterUniqueArray.contains(tweetID)) {
+                    matches[0].twitterUniqueArray.append(tweetID)
+                }
+                
                 return matches[0]
             }
         } catch {
@@ -31,10 +35,21 @@ class Mention: NSManagedObject {
         
         let mention = Mention(context: context)
         mention.handle = twitterInfo
-        mention.number = 1
+        mention.twitterUniqueArray = [tweetID]
         
         return mention
         
     }
 }
 
+extension Mention {
+    var twitterUniqueArray: [String] {
+        get {
+            return unique as? Array<String> ?? []
+            
+        } set {
+            unique = newValue as NSArray
+        }
+    }
+    
+}

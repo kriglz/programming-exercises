@@ -30,6 +30,7 @@ class Tweet: NSManagedObject {
         tweet.unique = twitterInfo.identifier
         tweet.text = twitterInfo.text
         tweet.created = twitterInfo.created as NSDate
+        tweet.tweeter = try? TwitterUser.findOrCreateTwitterUser(matching: twitterInfo.user, in: context)
          
         return tweet
     }

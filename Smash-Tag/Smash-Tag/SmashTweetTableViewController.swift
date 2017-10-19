@@ -25,12 +25,14 @@ class SmashTweetTableViewController: TweetTableViewController {
                 _ = try? Tweet.findOrCreateTweet(matching: twitterInfo, in: context)
                 
                 for hashtag in twitterInfo.hashtags {
-                    _ = try? Mention.findOrCreateTwitterMention(matching: hashtag.keyword, in: context)
+                    _ = try? Mention.findOrCreateTwitterMention(matching: hashtag.keyword, with: twitterInfo.identifier, in: context)
                 }
+                
                 for userMentions in twitterInfo.userMentions {
-                    _ = try? Mention.findOrCreateTwitterMention(matching: userMentions.keyword, in: context)
+                    _ = try? Mention.findOrCreateTwitterMention(matching: userMentions.keyword, with: twitterInfo.identifier, in: context)
                 }
             }
+            
             try? context.save()
             self?.printDatabaseStatistcs()
         }
