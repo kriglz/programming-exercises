@@ -11,39 +11,40 @@ import CoreData
 
 class DetailTweetTableViewController: FetchedResultsTableViewController {
 
-//    var mention: String? { didSet{ updateUI()}}
-//    
-//    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer { didSet{ updateUI()}}
-//    
-    var fetchedResultsController: NSFetchedResultsController<TwitterUser>?
-//    
-//    private func updateUI(){
-//        if let context = container?.viewContext, mention != nil {
-//            let request: NSFetchRequest<TwitterUser> = TwitterUser.fetchRequest()
-//            request.sortDescriptors = [NSSortDescriptor(key: "handle", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))]
-//            request.predicate = NSPredicate(format: "any tweets.text contains[c] %@", mention!)
-//            fetchedResultsController = NSFetchedResultsController<TwitterUser>(
-//                fetchRequest: request,
-//                managedObjectContext: context,
-//                sectionNameKeyPath: nil,
-//                cacheName: nil
-//            )
-//            fetchedResultsController?.delegate = self
-//            try? fetchedResultsController?.performFetch()
-//            tableView.reloadData()
-//        }
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TwitterUser Cell", for: indexPath)
-//        
-//        if let twitterUser = fetchedResultsController?.object(at: indexPath) {
-//            cell.textLabel?.text = twitterUser.handle
-//            let tweetCount = tweetCountWithMentionBy(twitterUser)
-//            cell.detailTextLabel?.text = "\(tweetCount) tweet\((tweetCount == 1) ? "" : "s")"
-//        }
-//        return cell
-//    }
+    var mention: String? { didSet{ updateUI()}}
+    
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer { didSet{ updateUI()}}
+    
+    var fetchedResultsController: NSFetchedResultsController<Mention>?
+    
+    private func updateUI(){
+        if let context = container?.viewContext, mention != nil {
+            let request: NSFetchRequest<Mention> = Mention.fetchRequest()
+            
+            request.sortDescriptors = [NSSortDescriptor(key: "number", ascending: false)]
+            request.predicate = NSPredicate(format: "handle = [c] %@", mention!)
+            
+            fetchedResultsController = NSFetchedResultsController<Mention>(
+                fetchRequest: request,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil
+            )
+            fetchedResultsController?.delegate = self
+            try? fetchedResultsController?.performFetch()
+            tableView.reloadData()
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detail cell", for: indexPath)
+        
+        if let mention = fetchedResultsController?.object(at: indexPath) {
+            cell.textLabel?.text = mention.handle
+            cell.detailTextLabel?.text = "\(mention.number) tweet\((mention.number == 1) ? "" : "s")"
+        }
+        return cell
+    }
 //    
 //    private func tweetCountWithMentionBy(_ twitterUser: TwitterUser) -> Int {
 //        let request: NSFetchRequest<Tweet> = Tweet.fetchRequest()

@@ -24,7 +24,7 @@ class TweetTableViewCell: UITableViewCell
         let textAttributed = NSAttributedString(string: text!)
         let textFinal = NSMutableAttributedString(attributedString: textAttributed)
         
-        func changeTextColor(of mentions: [Mention], with color: UIColor) {
+        func changeTextColor(of mentions: [Twitter.Mention], with color: UIColor) {
             for mention in mentions {
                 let length = mention.nsrange.length
                 let location = mention.nsrange.location

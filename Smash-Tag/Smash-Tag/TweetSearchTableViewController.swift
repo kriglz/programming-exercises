@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //Saving History of Tweet Search Terms
 
@@ -37,12 +38,13 @@ class UserDefaultsManager {
 class TweetSearchTableViewController: UITableViewController {
     
     private var userDefaultsManager = UserDefaultsManager()
-    
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-
     }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -54,6 +56,9 @@ class TweetSearchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
+        
+        cell.accessoryType = .detailDisclosureButton
+        
         let cellText =  userDefaultsManager.twitterSearchHistory[indexPath.row]
         
         if let tweetCell = cell as? TweetSearchTableViewCell {
@@ -72,22 +77,25 @@ class TweetSearchTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        let indexPath = tableView.indexPath(for: sender as! UITableViewCell)!
+        let currentTweet = userDefaultsManager.twitterSearchHistory[indexPath.row]
+
+        
         if segue.identifier == "search" {
             if let destinationViewController = (segue.destination.contents as? TweetTableViewController) {
-                let currentTweet = userDefaultsManager.twitterSearchHistory[(tableView.indexPathForSelectedRow?.row)!]
                 destinationViewController.searchText = currentTweet
             }
         }
         
         if segue.identifier == "detailTable" {
             if let destinationViewController = (segue.destination.contents as? DetailTweetTableViewController) {
-                
-                //pass something
-                
+                destinationViewController.mention = currentTweet
+                destinationViewController.container = container
             }
         }
     }

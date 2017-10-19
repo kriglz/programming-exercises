@@ -19,7 +19,7 @@ class MentionTableViewController: UITableViewController {
         didSet {
             
             //Crating new data structure for tweets
-            func convert(elements: [Mention]) -> [TypeOfMention] {
+            func convert(elements: [Twitter.Mention]) -> [TypeOfMention] {
                 var elementArray = [TypeOfMention]()
                 for element in elements {
                     elementArray.append(.text(element.keyword))
