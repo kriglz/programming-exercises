@@ -44,13 +44,10 @@ class DetailTweetTableViewController: FetchedResultsTableViewController {
     private func tweetCountWithMentionBy(_ mention: Mention) -> Int {
         let request: NSFetchRequest<Mention> = Mention.fetchRequest()
         request.predicate = NSPredicate(format: "handle = [c] %@", mention.handle!)
-        
         let matches = try? mention.managedObjectContext?.fetch(request)
-        print(matches??[0].handle, matches??[0].twitterUniqueArray)
         let number =  matches??[0].unique?.count
         
         return number ?? 0
-        //return (try? mention.managedObjectContext!.count(for: request)) ?? 0
     }
     
     
