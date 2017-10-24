@@ -17,19 +17,17 @@ class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
         return behaviour
     }()
     
-
     
     var balls = [BallView]()
-    func startPushing(_ object: BallView, by magnitude: CGFloat, to direction: CGVector) {
+    
+    func startPushing(by magnitude: CGFloat, to direction: CGVector) {
     
         for ball in balls {
             let pusher = UIPushBehavior(items: [ball], mode: .instantaneous)
             pusher.magnitude = magnitude
-//                        pusher.angle = CGFloat.pi*2
             pusher.pushDirection = direction
             addChildBehavior(pusher)
         }
-     
     }
     
     override init() {

@@ -19,23 +19,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="fhH-cx-wlf" appends="YES" id="EkU-af-0yK"/>
-                            <outletCollection property="gestureRecognizers" destination="nW8-yJ-4MQ" appends="YES" id="FUz-1w-AUq"/>
-                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="fhH-cx-wlf">
-                    <connections>
-                        <action selector="panGesture:" destination="BYZ-38-t0r" id="4c3-Fy-zv0"/>
-                    </connections>
-                </panGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="nW8-yJ-4MQ">
-                    <connections>
-                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="BQQ-mp-9So"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
