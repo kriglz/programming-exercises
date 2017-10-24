@@ -17,19 +17,21 @@ class BallViewController: UIViewController {
     private func moveTheBall(_ panGesture: UIPanGestureRecognizer) {
         switch panGesture.state {
         case .changed, .ended:
+            animator.addBehavior(ballBehavior)
+
             translationCoordinate = panGesture.translation(in: view)
-//            ballCoordinates?.x += (translationCoordinate?.x)!
-//            ballCoordinates?.y += (translationCoordinate?.y)!
+            ballCoordinates?.x += (translationCoordinate?.x)!
+            ballCoordinates?.y += (translationCoordinate?.y)!
             
-//            panGesture.velocity(in: view)
+//            let pushMagnitude = panGesture.vel
             
-            ballBehavior.startPushing(to: CGVector(dx: (translationCoordinate?.x)!, dy: (translationCoordinate?.y)!))
+            ballBehavior.startPushing(ball, by: 0.01, to: CGVector(dx: (translationCoordinate?.x)!, dy: (translationCoordinate?.y)!))
             
             ball.setNeedsDisplay()
 
             
             panGesture.setTranslation(CGPoint.zero, in: view)
-            updateUI()
+//            updateUI()
         default:
             break
         }
@@ -37,18 +39,31 @@ class BallViewController: UIViewController {
     
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         if sender.numberOfTapsRequired == 2 {
+            animator.removeBehavior(ballBehavior)
             ballCoordinates = CGPoint.init(x: view.bounds.midX - ballSize.width/2, y: view.bounds.midY - ballSize.height/2)
+            ball.setNeedsDisplay()
+
             updateUI()
         }
     }
     
     private var translationCoordinate: CGPoint?
-    private lazy var animator: UIDynamicAnimator = UIDynamicAnimator()
-    private var ballBehavior = BallBehavior()
+    private lazy var animator: UIDynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+    private var ballBehavior = BallBehavior() {
+        didSet {
+            
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animator.addBehavior(ballBehavior)
+
+        ballBehavior.balls.append(ball)
+        ballBehavior.removeBall(ball)
+        ballBehavior.addBall(ball)
+        
+//        ballBehavior.startPushing(ball, by: 1.5, to: CGVector(dx: 10, dy: -8)) // (translationCoordinate?.x)!, dy: (translationCoordinate?.y)!))
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,13 +71,14 @@ class BallViewController: UIViewController {
         animator.removeBehavior(ballBehavior)
     }
 
-    private var ballCoordinates: CGPoint? { didSet{ updateUI()}}
+    private var ballCoordinates: CGPoint? //{ didSet{ updateUI()}}
     private let ballSize = CGSize(width: 100.0, height: 100.0)
     let ball = BallView()
     
     private func updateUI() {
         ball.frame = CGRect(origin: ballCoordinates!, size: ballSize)
         ball.backgroundColor = UIColor.clear
+        view.addSubview(ball)
     }
     
     
@@ -73,7 +89,6 @@ class BallViewController: UIViewController {
         super.viewWillLayoutSubviews()
         ballCoordinates = CGPoint.init(x: view.bounds.midX - ballSize.width/2, y: view.bounds.midY - ballSize.height/2)
         updateUI()
-        view.addSubview(ball)
     }
     
 }
