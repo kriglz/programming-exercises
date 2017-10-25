@@ -17,11 +17,13 @@ class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
         return behaviour
     }()
     
+    func addObstacle(for object: UIBezierPath) {
+        collider.addBoundary(withIdentifier: "barrier" as NSCopying, for: object)
+    }
     
     var balls = [BallView]()
     
     func startPushing(by magnitude: CGFloat, to direction: CGVector) {
-    
         for ball in balls {
             let pusher = UIPushBehavior(items: [ball], mode: .instantaneous)
             pusher.magnitude = magnitude
@@ -30,9 +32,17 @@ class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
         }
     }
     
+    private lazy var physics: UIDynamicItemBehavior = {
+        let behavior = UIDynamicItemBehavior(items: balls)
+        behavior.elasticity = 1.0
+        behavior.friction = 0.0
+        return behavior
+    }()
+    
     override init() {
         super.init()
         addChildBehavior(collider)
+        addChildBehavior(physics)
     }
     
     func addBall (_ ball: BallView) {

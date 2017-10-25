@@ -23,6 +23,12 @@ class BallViewController: UIViewController {
         
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(moveTheBall(byReactingTo:)))
         view.addGestureRecognizer(panRecognizer)
+        
+        let obstacleFrame = CGRect(x: 0, y: 300, width: 130, height: 20)
+        let barrier = UIView(frame: obstacleFrame)
+        ballBehavior.addObstacle(for: UIBezierPath(rect: obstacleFrame))
+        barrier.backgroundColor = UIColor.red
+        view.addSubview(barrier)
     }
 
     
@@ -41,50 +47,52 @@ class BallViewController: UIViewController {
         }
     }
     
+    
     @objc private func moveTheBall(byReactingTo panGesture: UIPanGestureRecognizer) {
         switch panGesture.state {
         case .began, .changed:
-            translationCoordinate = panGesture.translation(in: self.view)
-            ballCoordinates!.x += translationCoordinate!.x
-            ballCoordinates!.y += translationCoordinate!.y
             
-            print("original", ballCoordinates)
+//            ballCoordinates = ball.
             
+            translationCoordinate = panGesture.translation(in: view)
+            ballCoordinates.x += translationCoordinate!.x
+            ballCoordinates.y += translationCoordinate!.y
+            
+            sumOfTranslation.x += translationCoordinate!.x
+            sumOfTranslation.y += translationCoordinate!.y
+
+            panGesture.setTranslation(CGPoint.zero, in: view)
             updateUI()
-//            print(ball.center)
+            someBallAction()
 
             
-            panGesture.setTranslation(CGPoint.zero, in: view)
-            
         case  .ended:
-            print("ended")
+            animator.addBehavior(ballBehavior)
+            translationCoordinate = panGesture.translation(in: view)
+
+            if panGesture.velocity(in: view).x > 0.0 || panGesture.velocity(in: view).y > 0.0 {
+                ballBehavior.startPushing(by: 0.1, to: CGVector(dx: sumOfTranslation.x, dy: sumOfTranslation.y))
+            }
+
             
-//            animator.addBehavior(ballBehavior)
-//
-//            translationCoordinate = panGesture.translation(in: view)
-//            ballCoordinates?.x += (translationCoordinate?.x)!
-//            ballCoordinates?.y += (translationCoordinate?.y)!
-//
-//
-//            ballBehavior.startPushing(by: 0.1, to: CGVector(dx: (translationCoordinate?.x)!, dy: (translationCoordinate?.y)!))
-//
-//            updateUI()
+            
             panGesture.setTranslation(CGPoint.zero, in: view)
-            
-            
+            updateUI()
+            sumOfTranslation = CGPoint.zero
             
         default:
             break
         }
     }
 
-    
+    private var sumOfTranslation = CGPoint.zero
     private var translationCoordinate: CGPoint?
     private lazy var animator: UIDynamicAnimator = UIDynamicAnimator(referenceView: self.view)
     private var ballBehavior = BallBehavior()
-    private var ballCoordinates: CGPoint? //{ didSet{ updateUI()}}
-    private let ballSize = CGSize(width: 100.0, height: 100.0)
+    
     let ball = BallView()
+    private lazy var ballCoordinates: CGPoint = CGPoint.init(x: view.bounds.midX - ballSize.width/2, y: view.bounds.midY - ballSize.height/2)
+    private let ballSize = CGSize(width: 70.0, height: 70.0)
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -97,22 +105,40 @@ class BallViewController: UIViewController {
         super.viewWillDisappear(animated)
         animator.removeBehavior(ballBehavior)
     }
-
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        ballCoordinates = CGPoint.init(x: view.bounds.midX - ballSize.width/2, y: view.bounds.midY - ballSize.height/2)
         updateUI()
     }
     
     private func updateUI() {
-//        ball.center = ballCoordinates!
-//        ball.frame.size = ballSize
-        ball.frame = CGRect(origin: ballCoordinates!, size: ballSize)
-        
+        ball.frame = CGRect(origin: ballCoordinates, size: ballSize)
         ball.backgroundColor = UIColor.clear
-        ball.setNeedsDisplay()
-
-        
         view.addSubview(ball)
     }
+    
+    private var updateCount = 0
+    
+    func someBallAction() {
+        if (updateCount % 3 == 0) {
+            
+            let outline = BallView(frame: ball.bounds)
+            outline.color = UIColor.darkGray
+            outline.transform = ball.transform
+            
+            outline.linewidth = 3.0
+            outline.center = ball.center
+            outline.alpha = 0.5
+            outline.backgroundColor = UIColor.clear
+        
+            view.addSubview(outline)
+            
+            UIView.animate(withDuration: 0.3, delay: 0.7, options: .curveEaseOut,
+                           animations: {outline.transform = CGAffineTransform.init(translationX: 1.0, y: 5.0)},
+                           completion: {finished in outline.removeFromSuperview()}
+            )
+        }
+        updateCount += 1
+    }
+
 }
