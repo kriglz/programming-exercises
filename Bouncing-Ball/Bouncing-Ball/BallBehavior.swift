@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
+class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate, UIDynamicAnimatorDelegate {
     private lazy var collider: UICollisionBehavior = {
         let behaviour = UICollisionBehavior()
         behaviour.collisionMode = .boundaries
@@ -20,6 +20,9 @@ class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
     func addObstacle(for object: UIBezierPath) {
         collider.addBoundary(withIdentifier: "barrier" as NSCopying, for: object)
     }
+    
+    
+    
     
     var balls = [BallView]()
     
@@ -34,8 +37,9 @@ class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
     
     private lazy var physics: UIDynamicItemBehavior = {
         let behavior = UIDynamicItemBehavior(items: balls)
-        behavior.elasticity = 1.0
-        behavior.friction = 0.0
+        behavior.elasticity = 0.5
+        behavior.allowsRotation = false
+        behavior.friction = 0.5
         return behavior
     }()
     
@@ -47,9 +51,11 @@ class BallBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate {
     
     func addBall (_ ball: BallView) {
         collider.addItem(ball)
+        physics.addItem(ball)
     }
     
     func removeBall (_ ball: BallView){
         collider.removeItem(ball)
+        physics.removeItem(ball)
     }
 }

@@ -52,8 +52,6 @@ class BallViewController: UIViewController {
         switch panGesture.state {
         case .began, .changed:
             
-//            ballCoordinates = ball.
-            
             translationCoordinate = panGesture.translation(in: view)
             ballCoordinates.x += translationCoordinate!.x
             ballCoordinates.y += translationCoordinate!.y
@@ -70,12 +68,10 @@ class BallViewController: UIViewController {
             animator.addBehavior(ballBehavior)
             translationCoordinate = panGesture.translation(in: view)
 
-            if panGesture.velocity(in: view).x > 0.0 || panGesture.velocity(in: view).y > 0.0 {
+            if panGesture.velocity(in: view) != CGPoint.zero {
                 ballBehavior.startPushing(by: 0.1, to: CGVector(dx: sumOfTranslation.x, dy: sumOfTranslation.y))
             }
-
-            
-            
+     
             panGesture.setTranslation(CGPoint.zero, in: view)
             updateUI()
             sumOfTranslation = CGPoint.zero
@@ -133,7 +129,7 @@ class BallViewController: UIViewController {
         
             view.addSubview(outline)
             
-            UIView.animate(withDuration: 0.3, delay: 0.7, options: .curveEaseOut,
+            UIView.animate(withDuration: 0.4, delay: 0.7, options: .curveEaseOut,
                            animations: {outline.transform = CGAffineTransform.init(translationX: 1.0, y: 5.0)},
                            completion: {finished in outline.removeFromSuperview()}
             )
