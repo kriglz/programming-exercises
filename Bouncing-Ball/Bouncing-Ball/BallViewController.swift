@@ -51,18 +51,14 @@ class BallViewController: UIViewController {
     @objc private func moveTheBall(byReactingTo panGesture: UIPanGestureRecognizer) {
         switch panGesture.state {
         case .began, .changed:
-            
             translationCoordinate = panGesture.translation(in: view)
-            ballCoordinates.x += translationCoordinate!.x
-            ballCoordinates.y += translationCoordinate!.y
-            
+            ball.frame.origin.x += translationCoordinate!.x
+            ball.frame.origin.y += translationCoordinate!.y
             sumOfTranslation.x += translationCoordinate!.x
             sumOfTranslation.y += translationCoordinate!.y
 
             panGesture.setTranslation(CGPoint.zero, in: view)
-            updateUI()
             someBallAction()
-
             
         case  .ended:
             animator.addBehavior(ballBehavior)
@@ -73,7 +69,6 @@ class BallViewController: UIViewController {
             }
      
             panGesture.setTranslation(CGPoint.zero, in: view)
-            updateUI()
             sumOfTranslation = CGPoint.zero
             
         default:
@@ -95,16 +90,12 @@ class BallViewController: UIViewController {
         ballBehavior.balls.append(ball)
         ballBehavior.removeBall(ball)
         ballBehavior.addBall(ball)
+        updateUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         animator.removeBehavior(ballBehavior)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        updateUI()
     }
     
     private func updateUI() {
@@ -117,7 +108,6 @@ class BallViewController: UIViewController {
     
     func someBallAction() {
         if (updateCount % 3 == 0) {
-            
             let outline = BallView(frame: ball.bounds)
             outline.color = UIColor.darkGray
             outline.transform = ball.transform
@@ -128,10 +118,10 @@ class BallViewController: UIViewController {
             outline.backgroundColor = UIColor.clear
         
             view.addSubview(outline)
-            
+
             UIView.animate(withDuration: 0.4, delay: 0.7, options: .curveEaseOut,
                            animations: {outline.transform = CGAffineTransform.init(translationX: 1.0, y: 5.0)},
-                           completion: {finished in outline.removeFromSuperview()}
+                           completion: { finished in outline.removeFromSuperview()}
             )
         }
         updateCount += 1
