@@ -19,22 +19,22 @@ class DetailTweetTableViewController: FetchedResultsTableViewController {
     
     private func updateUI(){
       
-        if let context = container?.viewContext, mention != nil {
-            let request: NSFetchRequest<Mention> = Mention.fetchRequest()
-            
-            request.sortDescriptors = [NSSortDescriptor(key: "handle", ascending: false)]
-            request.predicate = NSPredicate(format: "handle = [c] %@", mention!)
-            
-            fetchedResultsController = NSFetchedResultsController<Mention>(
-                fetchRequest: request,
-                managedObjectContext: context,
-                sectionNameKeyPath: nil,
-                cacheName: nil
-            )
-            fetchedResultsController?.delegate = self
-            try? fetchedResultsController?.performFetch()
-            tableView.reloadData()
-        }
+//        if let context = container?.viewContext, mention != nil {
+//            let request: NSFetchRequest<Mention> = Mention.fetchRequest()
+//            
+//            request.sortDescriptors = [NSSortDescriptor(key: "handle", ascending: false)]
+//            request.predicate = NSPredicate(format: "handle = [c] %@", mention!)
+//            
+//            fetchedResultsController = NSFetchedResultsController<Mention>(
+//                fetchRequest: request,
+//                managedObjectContext: context,
+//                sectionNameKeyPath: nil,
+//                cacheName: nil
+//            )
+//            fetchedResultsController?.delegate = self
+//            try? fetchedResultsController?.performFetch()
+//            tableView.reloadData()
+//        }
     }
 
     

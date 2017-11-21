@@ -193,7 +193,7 @@
         <scene sceneID="5A3-SF-w43">
             <objects>
                 <collectionViewController id="1hD-W1-Sky" customClass="TweetCollectionViewController" customModule="Smash_Tag" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" misplaced="YES" dataMode="prototypes" id="nvk-vp-l00">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" dataMode="prototypes" id="nvk-vp-l00">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
