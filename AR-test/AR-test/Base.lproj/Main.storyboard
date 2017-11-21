@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h6T-bs-ULE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="2g8-X0-K2e">
+            <objects>
+                <viewController id="h6T-bs-ULE" customClass="ViewController" customModule="AR_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cEd-Tk-sac">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aX0-C6-cjs" userLabel="Scene View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="h6T-bs-ULE" id="tOM-Ui-Agy"/>
+                                </connections>
+                            </arscnView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyD-nf-g0G">
+                                <rect key="frame" x="43" y="610" width="185" height="37"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yGs-X1-J8o">
+                                    <rect key="frame" x="0.0" y="0.0" width="185" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initializing AR session." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnN-nm-7nw">
+                                            <rect key="frame" x="8" y="8" width="169" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DnN-nm-7nw" firstAttribute="top" secondItem="yGs-X1-J8o" secondAttribute="topMargin" id="4rN-5r-bd3"/>
+                                        <constraint firstItem="DnN-nm-7nw" firstAttribute="bottom" secondItem="yGs-X1-J8o" secondAttribute="bottomMargin" id="Tvi-j7-r1Y"/>
+                                        <constraint firstItem="DnN-nm-7nw" firstAttribute="trailing" secondItem="yGs-X1-J8o" secondAttribute="trailingMargin" id="aFd-S4-t8H"/>
+                                        <constraint firstItem="DnN-nm-7nw" firstAttribute="leading" secondItem="yGs-X1-J8o" secondAttribute="leadingMargin" id="lrb-Zd-uvX"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aX0-C6-cjs" firstAttribute="top" secondItem="cEd-Tk-sac" secondAttribute="top" id="Lxx-UH-k9W"/>
+                            <constraint firstItem="aX0-C6-cjs" firstAttribute="bottom" secondItem="YXO-2J-5So" secondAttribute="bottom" id="Okj-0Y-G5I"/>
+                            <constraint firstAttribute="bottom" secondItem="CyD-nf-g0G" secondAttribute="bottom" constant="20" symbolic="YES" id="Y6i-cf-bbW"/>
+                            <constraint firstAttribute="trailing" secondItem="aX0-C6-cjs" secondAttribute="trailing" id="cL6-7w-kxk"/>
+                            <constraint firstItem="aX0-C6-cjs" firstAttribute="leading" secondItem="cEd-Tk-sac" secondAttribute="leading" id="fl7-G4-4Zw"/>
+                            <constraint firstItem="CyD-nf-g0G" firstAttribute="leading" secondItem="YXO-2J-5So" secondAttribute="leading" constant="43" id="pbR-iE-RZw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YXO-2J-5So"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="aX0-C6-cjs" id="bEd-Oh-D3R"/>
+                        <outlet property="sessionInfoLabel" destination="DnN-nm-7nw" id="45Q-bR-JTA"/>
+                        <outlet property="sessionInfoView" destination="CyD-nf-g0G" id="IAy-h9-bL9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XG9-47-kPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421.60000000000002" y="13.943028485757123"/>
+        </scene>
+    </scenes>
+</document>
