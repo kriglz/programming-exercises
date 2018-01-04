@@ -17,6 +17,10 @@ class GameScene: SKScene {
                    "CircularShapeShader.fsh",
                    "ShapeGradientShader.fsh"]
     
+    private lazy var currentSader: SKShader = SKShader(fileNamed: shaders[0])
+    private var shaderIndex: Int = 0
+    private var testNode: SKSpriteNode!
+
     override func didMove(to view: SKView) {
         // Adds tap handler to the scene.
         let tapHandler = #selector(handleTapGesture(byReactingTo:))
@@ -27,16 +31,15 @@ class GameScene: SKScene {
     
     override func sceneDidLoad() {
         
-        let testNode = SKSpriteNode.init(color: .blue, size: CGSize(width: self.size.width, height: self.size.height))
+        testNode = SKSpriteNode.init(color: .blue, size: CGSize(width: self.size.width, height: self.size.height))
         testNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
         testNode.zPosition = 100
         
         // Adds the shader to the node.
-        let colorShader = SKShader(fileNamed: "CircularShapeShader.fsh")
-        colorShader.attributes = [
+        currentSader.attributes = [
             SKAttribute(name: "a_sprite_size", type: .vectorFloat2)
         ]
-        testNode.shader = colorShader
+        testNode.shader = currentSader
         let testNodeSize = vector_float2(Float(testNode.size.width),
                                          Float(testNode.size.height))
         testNode.setValue(SKAttributeValue(vectorFloat2: testNodeSize),
@@ -46,9 +49,14 @@ class GameScene: SKScene {
     }
     
     
-    
     @objc private func handleTapGesture(byReactingTo: UITapGestureRecognizer){
-        
+        if shaderIndex != shaders.count-1 {
+            shaderIndex += 1
+        } else {
+            shaderIndex = 0
+        }
+        currentSader = SKShader(fileNamed: shaders[shaderIndex])
+        testNode.shader = currentSader
     }
     
     
