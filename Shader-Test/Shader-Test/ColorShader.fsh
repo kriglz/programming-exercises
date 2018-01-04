@@ -6,42 +6,35 @@
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
+#define PI 3.14159265359
 
+float plot (vec2 st, float pct){
+    return smoothstep( pct-0.01, pct, st.y) - smoothstep( pct, pct+0.01, st.y);
+}
 
 void main()
-{
+{    
+    vec2 st = gl_FragCoord.xy;
+    st.x /= 1080;
+    st.y /= 1920;
     
-    gl_FragColor = vec4(abs(sin(u_time)), abs(tan(u_time)), abs(sin(u_time)), 1.0); //vec4(1.0, 0.0, 1.0, 1.0);
+    vec3 color = vec3(0.0);
     
+    vec3 pct = vec3(st.x+st.y);
     
- 
+    pct.r = smoothstep(0.0,1.0, st.x)+ sin(u_time*PI);
+    pct.g = sin(st.x*PI+PI) + sin(st.y*PI) + sin(u_time*PI/2);
+    pct.b = exp(st.y/100);
     
-//        gl_FragColor = SKDefaultShading();
-//
-//        vec4 color = texture2D(u_texture, v_tex_coord);
-//        float alpha = color.a;
-//        float phase = mod(u_time, 3);
-//        vec3 outputColor = color.rgb;
-//        if (phase < 1.0) {
-//            outputColor = color.bgr;
-//        } else if (phase < 2.0) {
-//            outputColor = color.brg;
-//        }
-//        gl_FragColor = vec4(outputColor, 1.0) * alpha;
+    vec3 colorA = vec3(0.149,0.141,0.912);
+    vec3 colorB = vec3(1.000,0.833,0.224);
+    color = mix(colorA, colorB, pct);
     
+    // Plot transition lines for each channel
+//    color = mix(color,vec3(1.0,0.0,0.0),plot(st,pct.r));
+//    color = mix(color,vec3(0.0,1.0,0.0),plot(st,pct.g));
+//    color = mix(color,vec3(0.0,0.0,1.0),plot(st,pct.b));
     
-    
-//        vec4 color = texture2D(u_texture, v_tex_coord);
-//        float alpha = color.a;
-//        float r = (sin(u_time+ 3.14 * 0.00)+1.0)*0.5;
-//        float g = (sin(u_time+ 3.14 * 0.33)+1.0)*0.5;
-//        float b = (sin(u_time+ 3.14 * 0.66)+1.0)*0.5;
-//        gl_FragColor = vec4(r,g,b, 1.0) * alpha;
-    
-//    vec2 coord = v_tex_coord;
-//    float deltaX = sin(coord.y * 3.14 * 11 + u_time * 2) * 0.005;
-//    coord.x = coord.x + deltaX;
-//    vec4 color = texture2D(u_texture, coord);
-//    gl_FragColor = color;
+    gl_FragColor = vec4(color,1.0);
 }
 

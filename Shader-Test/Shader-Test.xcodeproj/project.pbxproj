@@ -14,6 +14,10 @@
 		89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CD51FFD8042009F8636 /* Assets.xcassets */; };
 		89BE3CD91FFD8042009F8636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CD71FFD8042009F8636 /* LaunchScreen.storyboard */; };
 		89BE3CE21FFD80A7009F8636 /* ColorShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CE11FFD80A7009F8636 /* ColorShader.fsh */; };
+		89BE3CE41FFDA23B009F8636 /* ShapeGradientShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CE31FFDA23B009F8636 /* ShapeGradientShader.fsh */; };
+		89BE3CE61FFDA3EC009F8636 /* TestShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CE51FFDA3EC009F8636 /* TestShader.fsh */; };
+		89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CE91FFDBF53009F8636 /* CircularShapeShader.fsh */; };
+		89BE3CEC1FFDD867009F8636 /* InterferanceShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CEB1FFDD867009F8636 /* InterferanceShader.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		89BE3CD81FFD8042009F8636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89BE3CDA1FFD8042009F8636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89BE3CE11FFD80A7009F8636 /* ColorShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ColorShader.fsh; sourceTree = "<group>"; };
+		89BE3CE31FFDA23B009F8636 /* ShapeGradientShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ShapeGradientShader.fsh; sourceTree = "<group>"; };
+		89BE3CE51FFDA3EC009F8636 /* TestShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TestShader.fsh; sourceTree = "<group>"; };
+		89BE3CE91FFDBF53009F8636 /* CircularShapeShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircularShapeShader.fsh; sourceTree = "<group>"; };
+		89BE3CEB1FFDD867009F8636 /* InterferanceShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = InterferanceShader.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +66,11 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89BE3CE91FFDBF53009F8636 /* CircularShapeShader.fsh */,
+				89BE3CEB1FFDD867009F8636 /* InterferanceShader.fsh */,
+				89BE3CE51FFDA3EC009F8636 /* TestShader.fsh */,
 				89BE3CE11FFD80A7009F8636 /* ColorShader.fsh */,
+				89BE3CE31FFDA23B009F8636 /* ShapeGradientShader.fsh */,
 				89BE3CD01FFD8042009F8636 /* GameViewController.swift */,
 				89BE3CCE1FFD8042009F8636 /* GameScene.swift */,
 				89BE3CE01FFD805B009F8636 /* Supporting Files */,
@@ -137,10 +149,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BE3CE61FFDA3EC009F8636 /* TestShader.fsh in Resources */,
+				89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */,
+				89BE3CEC1FFDD867009F8636 /* InterferanceShader.fsh in Resources */,
 				89BE3CD41FFD8042009F8636 /* Main.storyboard in Resources */,
 				89BE3CE21FFD80A7009F8636 /* ColorShader.fsh in Resources */,
 				89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */,
 				89BE3CD91FFD8042009F8636 /* LaunchScreen.storyboard in Resources */,
+				89BE3CE41FFDA23B009F8636 /* ShapeGradientShader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

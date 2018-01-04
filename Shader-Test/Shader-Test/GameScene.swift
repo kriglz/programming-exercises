@@ -11,18 +11,28 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-//    override func didMove(to view: SKView) {
-//        
-//       
-//    }
+    let shaders = ["TestShader.fsh",
+                   "ColorShader.fsh",
+                   "InterferanceShader.fsh",
+                   "CircularShapeShader.fsh",
+                   "ShapeGradientShader.fsh"]
+    
+    override func didMove(to view: SKView) {
+        // Adds tap handler to the scene.
+        let tapHandler = #selector(handleTapGesture(byReactingTo:))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: tapHandler)
+        tapRecognizer.numberOfTapsRequired = 1
+        self.view?.addGestureRecognizer(tapRecognizer)
+    }
     
     override func sceneDidLoad() {
-        let testNode = SKSpriteNode.init(color: .blue, size: CGSize(width: self.size.width / 2, height: self.size.height / 2))
+        
+        let testNode = SKSpriteNode.init(color: .blue, size: CGSize(width: self.size.width, height: self.size.height))
         testNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
         testNode.zPosition = 100
         
-        // Adds shader which makes water grass to wave.
-        let colorShader = SKShader(fileNamed: "ColorShader.fsh")
+        // Adds the shader to the node.
+        let colorShader = SKShader(fileNamed: "CircularShapeShader.fsh")
         colorShader.attributes = [
             SKAttribute(name: "a_sprite_size", type: .vectorFloat2)
         ]
@@ -37,20 +47,8 @@ class GameScene: SKScene {
     
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    @objc private func handleTapGesture(byReactingTo: UITapGestureRecognizer){
+        
     }
     
     
