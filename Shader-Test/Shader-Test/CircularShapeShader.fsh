@@ -6,13 +6,14 @@
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
+
 float plot (vec2 st, float pct){
     return smoothstep( pct-0.01, pct, st.y*st.x) - smoothstep( pct, pct+0.01, st.x);
 }
 
 void main(){
     
-    vec2 iResolution = (1080, 1920);
+    vec2 iResolution = a_sprite_size; 
     vec2 fragCoord = gl_FragCoord.xy / iResolution.xy;
 
     

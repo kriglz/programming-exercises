@@ -66,7 +66,7 @@ void main()
     vec3 color2=vec3(0.,1.,1.);
     vec3 color3=vec3(.5,1.,0.);
     
-    vec2 iResolution = (1080, 1920);
+    vec2 iResolution = a_sprite_size; 
 
     vec2 uv = gl_FragCoord.xy / iResolution.xy;
     //uv-=0.5;

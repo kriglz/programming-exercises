@@ -13,9 +13,8 @@ float plot(vec2 st, float pct){
 
 void main()
 {
-    vec2 st = gl_FragCoord.xy;
-    st.x /= 1080;
-    st.y /= 1920;
+    vec2 iResolution = a_sprite_size;
+    vec2 st = gl_FragCoord.xy/iResolution;
     
     //    float y = pow(st.x, 1);
     //    float y = step(0.5,st.x);

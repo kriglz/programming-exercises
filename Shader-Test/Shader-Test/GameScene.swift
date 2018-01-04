@@ -11,13 +11,13 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["TestShader.fsh",
+    let shaders = ["CircularShapeShader.fsh",
+                   "TestShader.fsh",
                    "ColorShader.fsh",
                    "InterferanceShader.fsh",
-                   "CircularShapeShader.fsh",
                    "ShapeGradientShader.fsh"]
     
-    private lazy var currentSader: SKShader = SKShader(fileNamed: shaders[0])
+    private lazy var currentShader: SKShader = SKShader(fileNamed: shaders[0])
     private var shaderIndex: Int = 0
     private var testNode: SKSpriteNode!
 
@@ -35,16 +35,8 @@ class GameScene: SKScene {
         testNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
         testNode.zPosition = 100
         
-        // Adds the shader to the node.
-        currentSader.attributes = [
-            SKAttribute(name: "a_sprite_size", type: .vectorFloat2)
-        ]
-        testNode.shader = currentSader
-        let testNodeSize = vector_float2(Float(testNode.size.width),
-                                         Float(testNode.size.height))
-        testNode.setValue(SKAttributeValue(vectorFloat2: testNodeSize),
-                          forAttribute: "a_sprite_size")
-
+        addTheShader()
+        
         addChild(testNode)
     }
     
@@ -55,10 +47,25 @@ class GameScene: SKScene {
         } else {
             shaderIndex = 0
         }
-        currentSader = SKShader(fileNamed: shaders[shaderIndex])
-        testNode.shader = currentSader
+        addTheShader()
     }
     
+    
+    private func addTheShader(){
+        currentShader = SKShader(fileNamed: shaders[shaderIndex])
+        testNode.shader = currentShader
+        
+        // Adds the shader to the node.
+        currentShader.attributes = [
+            SKAttribute(name: "a_sprite_size", type: .vectorFloat2)
+        ]
+        testNode.shader = currentShader
+        let testNodeSize = vector_float2(Float(testNode.size.width),
+                                         Float(testNode.size.height))
+        testNode.setValue(SKAttributeValue(vectorFloat2: testNodeSize),
+                          forAttribute: "a_sprite_size")
+
+    }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
