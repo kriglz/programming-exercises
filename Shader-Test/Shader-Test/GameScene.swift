@@ -60,8 +60,8 @@ class GameScene: SKScene {
             SKAttribute(name: "a_sprite_size", type: .vectorFloat2)
         ]
         testNode.shader = currentShader
-        let testNodeSize = vector_float2(Float(testNode.size.width),
-                                         Float(testNode.size.height))
+        let testNodeSize = vector_float2(Float(testNode.size.width*UIScreen.main.scale),
+                                         Float(testNode.size.height*UIScreen.main.scale))
         testNode.setValue(SKAttributeValue(vectorFloat2: testNodeSize),
                           forAttribute: "a_sprite_size")
 
