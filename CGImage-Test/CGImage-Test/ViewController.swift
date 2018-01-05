@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var thirdImage: UIImageView!
+    @IBOutlet weak var fourthImage: UIImageView!
+
     
     
     override func viewDidLoad() {
@@ -34,6 +36,14 @@ class ViewController: UIViewController {
         let croppedImage = applyFilterChain(to: image!)
         let cgCroppedImage = context.createCGImage(croppedImage, from: croppedImage.extent)
         thirdImage.image = UIImage(cgImage: cgCroppedImage!)
+        
+        let checkers = CIFilter(name: "CICheckerboardGenerator")!
+        checkers.setValue(CIColor.black, forKey: "inputColor0")
+        checkers.setValue(CIColor.yellow, forKey: "inputColor1")
+        checkers.setValue(5.0, forKey: kCIInputWidthKey)
+        let imageCheckers = checkers.outputImage
+        let cgImageCheckers = context.createCGImage(imageCheckers!, from: CGRect(origin: CGPoint.zero, size: CGSize(width: 100, height: 100)))
+        fourthImage.image = UIImage(cgImage: cgImageCheckers!)
     }
     
     func applyFilterChain(to image: CIImage) -> CIImage {
