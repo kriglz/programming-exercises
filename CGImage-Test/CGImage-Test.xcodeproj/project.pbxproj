@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8960F16520002ED3007492EF /* IMG_0614.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8960F16420002ED3007492EF /* IMG_0614.mov */; };
 		89D3174C1FFFF17900715C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3174B1FFFF17900715C6B /* AppDelegate.swift */; };
 		89D3174E1FFFF17900715C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3174D1FFFF17900715C6B /* ViewController.swift */; };
 		89D317511FFFF17900715C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3174F1FFFF17900715C6B /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8960F16420002ED3007492EF /* IMG_0614.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_0614.mov; path = ../../../../../IMG_0614.mov; sourceTree = "<group>"; };
 		89D317481FFFF17900715C6B /* CGImage-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CGImage-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D3174B1FFFF17900715C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D3174D1FFFF17900715C6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8960F16320002EBC007492EF /* mov */ = {
+			isa = PBXGroup;
+			children = (
+				8960F16420002ED3007492EF /* IMG_0614.mov */,
+			);
+			path = mov;
+			sourceTree = "<group>";
+		};
 		89D3173F1FFFF17900715C6B = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +67,7 @@
 				89D3174D1FFFF17900715C6B /* ViewController.swift */,
 				89D3174F1FFFF17900715C6B /* Main.storyboard */,
 				89D3174B1FFFF17900715C6B /* AppDelegate.swift */,
+				8960F16320002EBC007492EF /* mov */,
 				89D317521FFFF17900715C6B /* Assets.xcassets */,
 				89D317541FFFF17900715C6B /* LaunchScreen.storyboard */,
 				89D317571FFFF17900715C6B /* Info.plist */,
@@ -125,6 +136,7 @@
 			files = (
 				89D317561FFFF17900715C6B /* LaunchScreen.storyboard in Resources */,
 				89D317531FFFF17900715C6B /* Assets.xcassets in Resources */,
+				8960F16520002ED3007492EF /* IMG_0614.mov in Resources */,
 				89D317511FFFF17900715C6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
