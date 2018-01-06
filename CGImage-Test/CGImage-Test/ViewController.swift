@@ -49,9 +49,6 @@ class ViewController: UIViewController {
         let imageCheckers = checkers.outputImage
         let cgImageCheckers = context.createCGImage(imageCheckers!, from: CGRect(origin: CGPoint.zero, size: CGSize(width: 100, height: 100)))
         fourthImage.image = UIImage(cgImage: cgImageCheckers!)
-
-        applyFilterToVideo()
-
     }
     
     func applyFilterChain(to image: CIImage) -> CIImage {
@@ -71,12 +68,14 @@ class ViewController: UIViewController {
         return croppedImage
     }
     
-    func applyFilterToVideo(){
+    func applyFilterToVideo(with url: URL) -> AVVideoComposition {
         let filter = CIFilter(name: "CIGaussianBlur")!
-        
-        let asset = AVAsset(url: URL.init(string: "/Users/kriglz/Desktop/IMG_0614.TRIM.mov")!)
-        
-        let composition = AVVideoComposition(asset: asset, applyingCIFiltersWithHandler: { request in
+        let asset = AVAsset(url: url)
+
+        let composition = AVVideoComposition(asset: asset) {request in
+            
+//            let filter = CIFilter(name: "CISepiaTone")!
+//            filter.setValue(0.8, forKey: kCIInputIntensityKey)
             
             // Clamp to avoid blurring transparent pixels at the image edges
             let source = request.sourceImage.clampedToExtent()
@@ -91,33 +90,44 @@ class ViewController: UIViewController {
             
             // Provide the filter output to the composition
             request.finish(with: output, context: nil)
-        })
+        }
         
-        let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPreset1920x1080)!
-        export.outputFileType = AVFileType.mov
-        export.outputURL = URL.init(string: "/Users/kriglz/Desktop/")
+        
+        let playerItem = AVPlayerItem(asset: asset)
+        playerItem.videoComposition = composition
+        
+        let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPreset640x480)!
         export.videoComposition = composition
+        export.outputFileType = AVFileType.mov
+        export.outputURL = URL.init(string: "~/Desktop/")
+        export.exportAsynchronously(completionHandler: {print("\ndone\n")})
         
-        export.exportAsynchronously(completionHandler: {print("done")})
+        return composition
     }
     
-    
-    //    @IBOutlet weak var playerView: PlayerView!
-    
+        
     func playVideo() {
         
         guard let url = URL(string: "https://devimages-cdn.apple.com/samplecode/avfoundationMedia/AVFoundationQueuePlayer_HLS2/master.m3u8") else {
             return
         }
         
-        let player = AVPlayer.init(url: url)
         let controller = AVPlayerViewController()
         present(controller, animated: true)
         addChildViewController(controller)
         videoView.addSubview(controller.view)
         controller.view.frame = videoView.bounds
-        controller.player = player
-        player.play()
+        
+
+
+        let blurVideo = AVPlayer.init(url: url)
+        let composition = applyFilterToVideo(with: url)
+        
+        if let current = blurVideo.currentItem {
+            current.videoComposition = composition
+            controller.player = blurVideo
+            blurVideo.play()
+        }
     }
 }
 
