@@ -20,13 +20,21 @@ void main(){
     float i2 = fragCoord.y;
     float j2 = fragCoord.x;
     float d = sqrt(i2*i2+j2*j2);
-    float o = (d - sin(u_time*3.14))*cos(d*3.14);
+    
+    float o = (d - sin(u_time*3.14/1.5))*tan(d*3.14*(15+10*sin(u_time/4)));
+    
+//    if (u_time < 10) {
+//        o = (d - sin(u_time*3.14/2))*tan(d*3.14*u_time);
+//    } else {
+//        o = (d - sin(u_time*3.14/2))*tan(d*3.14*(10+ 1/60))+0.5;
+//    }
+    
     
     // Plot a line
-    float pct = plot(fragCoord.x, o);
+    float pct = plot(fragCoord, o);
     
     vec3 color = vec3(o);
-    color = (1.0-pct)*color + pct*vec3(1.0,1.0,o);
+    color = (1.0-pct)*color + pct*vec3(o,o,1.0);
     
     gl_FragColor = vec4(color, o);
 }
