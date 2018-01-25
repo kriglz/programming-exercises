@@ -26,9 +26,9 @@ vec3 rgb2hsb( vec3 c ){
 //  https://www.shadertoy.com/view/MsS3Wc
 vec3 hsb2rgb( vec3 c ){
     vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),
-                             6.0)-3.0)-1.0,
-                     0.0,
-                     1.0 );
+                             6.0)-3.0)-0.5,
+                    0.2,
+                    1);
     rgb = rgb*rgb*(3.0-2.0*rgb);
     return c.z * mix(vec3(1.0), rgb, c.y);
 }
@@ -46,7 +46,7 @@ void main(){
     
     // Map the angle (-PI to PI) to the Hue (from 0 to 1)
     // and the Saturation to the radius
-    color = hsb2rgb(vec3((angle/6.28)+0.5 + (u_time),radius,1.0));
+    color = hsb2rgb(vec3((angle/6.28)+0.5+(u_time),radius,1.0));
     
     
     
