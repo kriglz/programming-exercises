@@ -18,6 +18,7 @@
 		89BE3CE61FFDA3EC009F8636 /* TestShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CE51FFDA3EC009F8636 /* TestShader.fsh */; };
 		89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CE91FFDBF53009F8636 /* CircularShapeShader.fsh */; };
 		89BE3CEC1FFDD867009F8636 /* InterferanceShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89BE3CEB1FFDD867009F8636 /* InterferanceShader.fsh */; };
+		89E3D737201A525300917358 /* ColorMixShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E3D736201A525300917358 /* ColorMixShader.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		89BE3CE51FFDA3EC009F8636 /* TestShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TestShader.fsh; sourceTree = "<group>"; };
 		89BE3CE91FFDBF53009F8636 /* CircularShapeShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircularShapeShader.fsh; sourceTree = "<group>"; };
 		89BE3CEB1FFDD867009F8636 /* InterferanceShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = InterferanceShader.fsh; sourceTree = "<group>"; };
+		89E3D736201A525300917358 /* ColorMixShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ColorMixShader.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89E3D736201A525300917358 /* ColorMixShader.fsh */,
 				89BE3CE91FFDBF53009F8636 /* CircularShapeShader.fsh */,
 				89BE3CEB1FFDD867009F8636 /* InterferanceShader.fsh */,
 				89BE3CE51FFDA3EC009F8636 /* TestShader.fsh */,
@@ -157,6 +160,7 @@
 				89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */,
 				89BE3CD91FFD8042009F8636 /* LaunchScreen.storyboard in Resources */,
 				89BE3CE41FFDA23B009F8636 /* ShapeGradientShader.fsh in Resources */,
+				89E3D737201A525300917358 /* ColorMixShader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
