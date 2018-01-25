@@ -11,7 +11,9 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["ColorMixShader.fsh",
+    let shaders = ["SpectrumShader.fsh",
+                   "ColorMoveShader.fsh",
+                   "ColorMixShader.fsh",
                    "CircularShapeShader.fsh",
                    "TestShader.fsh",
                    "ColorShader.fsh",
