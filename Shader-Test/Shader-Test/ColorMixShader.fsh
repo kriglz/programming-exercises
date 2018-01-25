@@ -58,19 +58,23 @@ void main() {
     vec2 iResolution = a_sprite_size;
     vec2 st = gl_FragCoord.xy/iResolution;
     
-    vec3 colorA = vec3(0,0,0);
-    vec3 colorB = vec3(1.0,1.0,1.0);
+    vec3 colorA = vec3(1,0.9,0.7);
+    vec3 colorB = vec3(1,0.8,0.9);
     vec3 color = vec3(0.0);
     
-    vec3 pct = vec3(st.x);//quadraticInOut(sin(u_time));
+    vec4 pct = vec4(st.x);//quadraticInOut(sin(u_time));
     
-    color = mix(colorA, colorB, pct);
-//    color = getColor(color, pct);
+    pct.x = step((1-st.x)*sin(u_time * 1.1), st.y*cos(u_time * 1.1)); //bounceInOut(st.x*sin(u_time));
+    pct.y = step(st.x*sin(u_time * 1.2), (1-st.y)*cos(u_time * 1.2)); //bounceInOut(st.y*cos(u_time));
+    pct.z = step(st.x*cos(u_time * 1.3), st.y*sin(u_time * 1.3)); //bounceInOut(sqrt(st.y*st.y*2 + st.x*st.x)) + step(pct.x, pct.y);
+    pct.w = step((1-st.x)*cos(u_time * 1.4), (1-st.y)*sin(u_time * 1.4));
+    
+    color = mix(colorA, colorB, pct.xyz);
     
     // Plot transition lines for each channel
-    color = mix(color,vec3(1.0,0.0,0.0),plot(st,pct.r));
-    color = mix(color,vec3(0.0,1.0,0.0),plot(st,pct.g));
-    color = mix(color,vec3(0.0,0.0,1.0),plot(st,pct.b));
-    
-    gl_FragColor = vec4(color,1.0);
+//    color = mix(color,vec3(1.0,0.0,0.0),plot(st,pct.r));
+//    color = mix(color,vec3(0.0,1.0,0.0),plot(st,pct.g));
+//    color = mix(color,vec3(0.0,0.0,1.0),plot(st,pct.b));
+//
+    gl_FragColor = vec4(color, pct.w);
 }
