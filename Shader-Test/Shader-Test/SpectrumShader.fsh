@@ -46,7 +46,7 @@ void main(){
     
     // Map the angle (-PI to PI) to the Hue (from 0 to 1)
     // and the Saturation to the radius
-    color = hsb2rgb(vec3((angle/6.28)+0.5+(u_time),radius,1.0));
+    color = hsb2rgb(vec3((angle/6.28)+0.5+(u_time)/toCenter.x,radius,1.0)); // + st.x/5
     
     
     
