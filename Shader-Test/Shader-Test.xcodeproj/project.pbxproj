@@ -10,6 +10,7 @@
 		89223B8F2028A76900E7D1D2 /* CircleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89223B8E2028A76900E7D1D2 /* CircleShader.fsh */; };
 		89223B912028A97600E7D1D2 /* DistanceFieldShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89223B902028A97600E7D1D2 /* DistanceFieldShader.fsh */; };
 		892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892294582020BE5800BCE6E2 /* ShapeShader.fsh */; };
+		892C77082039F4BD0051E11E /* MovingPlus.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892C77072039F4BD0051E11E /* MovingPlus.fsh */; };
 		892D87E02029EB15002D0C0D /* PolarShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892D87DF2029EB15002D0C0D /* PolarShader.fsh */; };
 		892D87E22029F056002D0C0D /* DistanceCombinedShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892D87E12029F056002D0C0D /* DistanceCombinedShader.fsh */; };
 		89A03F4F20284DB500B9B705 /* CircularShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89A03F4E20284DB500B9B705 /* CircularShader.fsh */; };
@@ -33,6 +34,7 @@
 		89223B8E2028A76900E7D1D2 /* CircleShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircleShader.fsh; sourceTree = "<group>"; };
 		89223B902028A97600E7D1D2 /* DistanceFieldShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = DistanceFieldShader.fsh; sourceTree = "<group>"; };
 		892294582020BE5800BCE6E2 /* ShapeShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ShapeShader.fsh; sourceTree = "<group>"; };
+		892C77072039F4BD0051E11E /* MovingPlus.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = MovingPlus.fsh; sourceTree = "<group>"; };
 		892D87DF2029EB15002D0C0D /* PolarShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = PolarShader.fsh; sourceTree = "<group>"; };
 		892D87E12029F056002D0C0D /* DistanceCombinedShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = DistanceCombinedShader.fsh; sourceTree = "<group>"; };
 		89A03F4E20284DB500B9B705 /* CircularShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircularShader.fsh; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				892C77072039F4BD0051E11E /* MovingPlus.fsh */,
 				892D87E12029F056002D0C0D /* DistanceCombinedShader.fsh */,
 				892D87DF2029EB15002D0C0D /* PolarShader.fsh */,
 				89223B902028A97600E7D1D2 /* DistanceFieldShader.fsh */,
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BE3CE61FFDA3EC009F8636 /* TestShader.fsh in Resources */,
+				892C77082039F4BD0051E11E /* MovingPlus.fsh in Resources */,
 				89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */,
 				892D87E22029F056002D0C0D /* DistanceCombinedShader.fsh in Resources */,
 				892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */,

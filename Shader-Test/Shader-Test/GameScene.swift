@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["DistanceCombinedShader.fsh",
+    let shaders = ["MovingPlus.fsh",
+                   "DistanceCombinedShader.fsh",
                    "PolarShader.fsh",
                    "DistanceFieldShader.fsh",
                    "CircleShader.fsh",
