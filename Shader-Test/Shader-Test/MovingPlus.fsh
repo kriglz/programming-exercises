@@ -23,18 +23,27 @@ float cross(vec2 _st, float _size){
     return  box(_st, vec2(_size,_size/4.)) + box(_st, vec2(_size/4.,_size));
 }
 
+/// Rotation around the axis function.
 mat2 rotate2d(float _angle){
-    return mat2(cos(_angle),-sin(_angle), sin(_angle),cos(_angle));
+    return mat2(cos(_angle), -sin(_angle),
+                sin(_angle), cos(_angle));
+}
+
+/// Scale the object.
+mat2 scale(vec2 _scale){
+    return mat2(_scale.x, 0.0,
+                0.0, _scale.y);
 }
 
 void main(){
     vec2 iResolution = a_sprite_size / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
-    vec3 color = vec3(0.0);
+    vec3 color = vec3(1.0);
     
     st -= vec2(0.5);
     
     st = rotate2d( sin(u_time) * PI ) * st;
+    st = scale( vec2( sin(u_time) + 1.0) ) * st;
     
     // To move the cross we move the space
     vec2 translate = vec2(cos(u_time), sin(u_time));
@@ -44,10 +53,10 @@ void main(){
     st += vec2(0.5);
     
     // Show the coordinates of the space on the background
-    color = vec3(st.x,st.y,0);
+    color = vec3(st.x*2, st.y*2, 0);
     
     // Add the shape on the foreground
-    color += vec3(cross(st,0.25));
+    color += vec3(cross(st, 0.2));
     
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(color, 1.0);
 }
