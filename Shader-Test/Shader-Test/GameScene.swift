@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["MovingPlus.fsh",
+    let shaders = ["OblivionRadar.fsh",
+                   "MovingPlus.fsh",
                    "DistanceCombinedShader.fsh",
                    "PolarShader.fsh",
                    "DistanceFieldShader.fsh",

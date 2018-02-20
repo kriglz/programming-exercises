@@ -1,8 +1,8 @@
 //
-//  MovingPlus.fsh
+//  OblivionRadar.fsh
 //  Shader-Test
 //
-//  Created by Kristina Gelzinyte on 2/18/18.
+//  Created by Kristina Gelzinyte on 2/20/18.
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
@@ -19,8 +19,10 @@ float box(vec2 _st, vec2 _size){
     return uv.x*uv.y;
 }
 
-float cross(vec2 _st, float _size){
-    return  box(_st, vec2(_size,_size/4.)) + box(_st, vec2(_size/4.,_size));
+float circle(float firstRadius, float secondRadius, float d) {
+    float circle = step(firstRadius, d);
+    circle *= step(1-secondRadius, 1 - d);
+    return circle;
 }
 
 /// Rotation around the axis function.
@@ -40,23 +42,25 @@ void main(){
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(1.0);
     
-    st -= vec2(0.5);
+//    st -= vec2(0.5);
     
-    st = rotate2d( sin(u_time) * PI ) * scale( vec2( sin(u_time) + 1.0) ) * st;
-//    st = scale( vec2( sin(u_time) + 1.0) ) * st;
+//    st = rotate2d( sin(u_time) * PI ) * scale( vec2( sin(u_time) + 1.0) ) * st;
+    //    st = scale( vec2( sin(u_time) + 1.0) ) * st;
     
     // To move the cross we move the space
-    vec2 translate = vec2(cos(u_time), sin(u_time));
-   // st += translate * 0.35;// * (1 - 0.5 * sin(u_time));
-    st += translate / sin(u_time)/100; // Vertical movement.
+//    vec2 translate = vec2(cos(u_time), sin(u_time));
+    // st += translate * 0.35;// * (1 - 0.5 * sin(u_time));
+//    st += translate / sin(u_time)/100; // Vertical movement.
     
-    st += vec2(0.5);
+//    st += vec2(0.5);
     
     // Show the coordinates of the space on the background
-    color = vec3(st.x*2, st.y*2, 0);
+//    color = vec3(st.x*2, st.y*2, 0);
     
-    // Add the shape on the foreground
-    color += vec3(cross(st, 0.2));
-    
+    // Calculate the center
+    float pct = distance(st, vec2(0.5));
+    // Add the cicle shape on the foreground
+    color = vec3(circle(0.5, 0.55, pct));
+        
     gl_FragColor = vec4(color, 1.0);
 }
