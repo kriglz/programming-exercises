@@ -6,6 +6,8 @@
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
+#define PI 3.14159265359
+
 float box(vec2 _st, vec2 _size){
     _size = vec2(0.5) - _size*0.5;
     vec2 uv = smoothstep(_size,
@@ -21,15 +23,25 @@ float cross(vec2 _st, float _size){
     return  box(_st, vec2(_size,_size/4.)) + box(_st, vec2(_size/4.,_size));
 }
 
+mat2 rotate2d(float _angle){
+    return mat2(cos(_angle),-sin(_angle), sin(_angle),cos(_angle));
+}
+
 void main(){
     vec2 iResolution = a_sprite_size / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(0.0);
     
+    st -= vec2(0.5);
+    
+    st = rotate2d( sin(u_time) * PI ) * st;
+    
     // To move the cross we move the space
     vec2 translate = vec2(cos(u_time), sin(u_time));
-    st += translate * 0.35 * (1 - 0.5 * sin(u_time));
-//    st += translate / sin(u_time)/10; // Vertical movement.
+   // st += translate * 0.35;// * (1 - 0.5 * sin(u_time));
+    st += translate / sin(u_time)/100; // Vertical movement.
+    
+    st += vec2(0.5);
     
     // Show the coordinates of the space on the background
     color = vec3(st.x,st.y,0);
