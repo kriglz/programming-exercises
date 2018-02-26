@@ -7,6 +7,7 @@
 //
 
 #define PI 3.14159265359
+#define center vec2(0.3, 0.5)
 
 //float box(vec2 _st, vec2 _size){
 //    _size = vec2(0.5) - _size*0.5;
@@ -43,8 +44,12 @@ mat2 scale(vec2 _scale){
                 0.0, _scale.y);
 }
 
-float line(vec2 st, float pct){
-    return step(pct, st.y) - step(pct+0.001, st.y);
+float line(vec2 st, float x){
+    return step(x, st.y) - step(x + 0.001, st.y);
+}
+
+float lineTo(float distanceToCenter, float y, float x){
+    return step(x, y) - smoothstep(x, x + 1 * distanceToCenter, y);
 }
 
 vec3 makeColor(float red, float green, float blue, float coord) {
@@ -58,26 +63,10 @@ float blinking(float time) {
 }
 
 void main(){
-    vec2 center = vec2(0.3, 0.5);
     vec2 iResolution = a_sprite_size.y / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(1.0);
-    
-//    st -= vec2(0.3, 0);
-    
-//    st = rotate2d( sin(u_time) * PI ) * scale( vec2( sin(u_time) + 1.0) ) * st;
-    //    st = scale( vec2( sin(u_time) + 1.0) ) * st;
-    
-    // To move the cross we move the space
-//    vec2 translate = vec2(cos(u_time), sin(u_time));
-    // st += translate * 0.35;// * (1 - 0.5 * sin(u_time));
-//    st += translate / sin(u_time)/100; // Vertical movement.
-    
-//    st += vec2(0.5);
-    
-    // Show the coordinates of the space on the background
-//    color = vec3(st.x*2, st.y*2, 0);
-    
+
     // Calculate the center
     float pct = distance(st, center);
     
@@ -93,15 +82,14 @@ void main(){
     // Adds crossing lines.
     color += vec3(line(stMoved, stMoved.x));
     color += vec3(line(stMoved, 1-stMoved.x));
-
+  
     // Adding moving small red circle.
-    
     // Creates circular movement.
     vec2 translate = vec2(cos(u_time), sin(u_time));
     // Decentralize.
     vec2 stMoving = st - center;
     // Adds time dependent movement.
-    stMoving += translate * 0.28 * sin(u_time / 100);
+    stMoving += translate * 0.28 * sin(translate / 10 - u_time / 5);
     // Centralize.
     stMoving += center;
 
@@ -120,5 +108,20 @@ void main(){
     // Adds red empty scaling circle with smooth line.
     color += makeColor(255, 0, 0, circleSmooth(scaledCircle.x - 0.05, scaledCircle.x, pct));
 
+    // Virtual center position.
+    vec2 centerMoving = vec2(0.5);
+    // Decentrialize center.
+    stMoving = st + vec2(0.2, 0);
+    stMoving -= centerMoving;
+    // Add rotation to the line.
+    stMoving = rotate2d(u_time) * stMoving;
+    // Centrialize the line rotation.
+    stMoving += centerMoving;
+    // Point distance to the center.
+    float distanceToCenter = distance(st, center);
+
+    // Add the line.
+    color += makeColor(24, 201, 239, lineTo(distanceToCenter, stMoving.y, stMoving.x));
+    
     gl_FragColor = vec4(color, 1.0);
 }
