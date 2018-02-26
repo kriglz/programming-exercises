@@ -25,6 +25,12 @@ float circle(float firstRadius, float secondRadius, float d) {
     return circle;
 }
 
+float circleSmooth(float firstRadius, float secondRadius, float d) {
+    float circle = smoothstep(firstRadius, firstRadius + 0.05, d);
+    circle *= step(1-secondRadius, 1 - d);
+    return circle;
+}
+
 /// Rotation around the axis function.
 mat2 rotate2d(float _angle){
     return mat2(cos(_angle), -sin(_angle),
@@ -84,19 +90,35 @@ void main(){
     // Moving center position of the cross to match the circle center.
     vec2 stMoved = st + vec2(0.2, 0);
     
-    // Add crossing lines.
+    // Adds crossing lines.
     color += vec3(line(stMoved, stMoved.x));
     color += vec3(line(stMoved, 1-stMoved.x));
 
-    // Add moving small red circle.
-    vec2 translate = vec2(cos(u_time), sin(u_time));    // Creates circular movement.
-    vec2 stMoving = st - center;                        // Decentralize.
-    stMoving += translate * 0.28 * sin(u_time / 25);    // Adds time dependent movement.
-    stMoving += center;                                 // Centralize.
-
-    pct = distance(stMoving, center);                   // Gets distance from the center.
-    color += makeColor(255, 0, 0, circle(0.0, 0.015, pct)) * blinking(u_time);      // Adds red filled blinking cirle.
-    color += makeColor(255, 0, 0, circle(0.02, 0.022, pct));                        // Adds red empty circle.
+    // Adding moving small red circle.
     
+    // Creates circular movement.
+    vec2 translate = vec2(cos(u_time), sin(u_time));
+    // Decentralize.
+    vec2 stMoving = st - center;
+    // Adds time dependent movement.
+    stMoving += translate * 0.28 * sin(u_time / 100);
+    // Centralize.
+    stMoving += center;
+
+    // Gets distance from the center.
+    pct = distance(stMoving, center);
+    // Adds red filled blinking cirle.
+    color += makeColor(255, 0, 0, circle(0.0, 0.015, pct)) * blinking(u_time);
+    // Adds red empty circle.
+    color += makeColor(255, 0, 0, circle(0.02, 0.022, pct));
+    
+    // Init scaled circle radius.
+    vec2 scaledCircle = vec2(0.022);
+    // Scales the circle radius.
+    scaledCircle *= scale(vec2(max(step(0, tan(u_time * 2 + PI)) * (tan(u_time + PI / 2) * 5 + 1.0),
+                                   step(0, tan(u_time*2)) * (tan(u_time) * 5 + 1.0))));
+    // Adds red empty scaling circle with smooth line.
+    color += makeColor(255, 0, 0, circleSmooth(scaledCircle.x - 0.05, scaledCircle.x, pct));
+
     gl_FragColor = vec4(color, 1.0);
 }
