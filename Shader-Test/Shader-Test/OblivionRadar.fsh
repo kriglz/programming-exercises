@@ -43,11 +43,11 @@ float line (vec2 st, float pct){
 }
 
 void main(){
-    vec2 iResolution = a_sprite_size.x / 1.15;
+    vec2 iResolution = a_sprite_size.y / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(1.0);
     
-//    st -= vec2(0.5);
+//    st -= vec2(0.3, 0);
     
 //    st = rotate2d( sin(u_time) * PI ) * scale( vec2( sin(u_time) + 1.0) ) * st;
     //    st = scale( vec2( sin(u_time) + 1.0) ) * st;
@@ -63,15 +63,17 @@ void main(){
 //    color = vec3(st.x*2, st.y*2, 0);
     
     // Calculate the center
-    float pct = distance(st, vec2(0.5));
+    float pct = distance(st, vec2(0.3, 0.5));
     // Add the cicle shape on the foreground
     color = vec3(circle(0.5, 0.52, pct));
     color += vec3(circle(0.35, 0.36, pct));
     color += vec3(circle(0.2, 0.205, pct));
     color += vec3(circle(0.05, 0.057, pct));
 
-    color += vec3(line(st, st.x));
-    color += vec3(line(st, 1-st.x));
+    // Moving center position of the cross to match the circle center.
+    vec2 stMoved = st + vec2(0.2, 0);
+    color += vec3(line(stMoved, stMoved.x));
+    color += vec3(line(stMoved, 1-stMoved.x));
 
     gl_FragColor = vec4(color, 1.0);
 }
