@@ -37,15 +37,18 @@ mat2 scale(vec2 _scale){
                 0.0, _scale.y);
 }
 
-float line (vec2 st, float pct){
+float line(vec2 st, float pct){
     return step(pct, st.y) - step(pct+0.001, st.y);
-//    return smoothstep(pct-0.01, pct, st.y) - smoothstep(pct, pct+0.01, st.y);
 }
 
-vec3 makeColor (float red, float green, float blue, float coord) {
+vec3 makeColor(float red, float green, float blue, float coord) {
     return vec3(coord * red / 255,
                 coord * green / 255,
                 coord * blue / 255);
+}
+
+float blinking(float time) {
+    return step(0.5, abs(sin(time * 15)));
 }
 
 void main(){
@@ -86,14 +89,14 @@ void main(){
     color += vec3(line(stMoved, 1-stMoved.x));
 
     // Add moving small red circle.
-    vec2 translate = vec2(cos(u_time), sin(u_time));
-    vec2 stMoving = st - center;
-    stMoving += translate * 0.28 * sin(u_time / 15);
-    stMoving += center;
+    vec2 translate = vec2(cos(u_time), sin(u_time));    // Creates circular movement.
+    vec2 stMoving = st - center;                        // Decentralize.
+    stMoving += translate * 0.28 * sin(u_time / 25);    // Adds time dependent movement.
+    stMoving += center;                                 // Centralize.
 
-    pct = distance(stMoving, center);
-    color += makeColor(255, 0, 0, circle(0.02, 0.025, pct));
-    
+    pct = distance(stMoving, center);                   // Gets distance from the center.
+    color += makeColor(255, 0, 0, circle(0.0, 0.015, pct)) * blinking(u_time);      // Adds red filled blinking cirle.
+    color += makeColor(255, 0, 0, circle(0.02, 0.022, pct));                        // Adds red empty circle.
     
     gl_FragColor = vec4(color, 1.0);
 }
