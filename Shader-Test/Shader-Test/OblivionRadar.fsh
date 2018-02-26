@@ -42,7 +42,14 @@ float line (vec2 st, float pct){
 //    return smoothstep(pct-0.01, pct, st.y) - smoothstep(pct, pct+0.01, st.y);
 }
 
+vec3 makeColor (float red, float green, float blue, float coord) {
+    return vec3(coord * red / 255,
+                coord * green / 255,
+                coord * blue / 255);
+}
+
 void main(){
+    vec2 center = vec2(0.3, 0.5);
     vec2 iResolution = a_sprite_size.y / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(1.0);
@@ -63,17 +70,30 @@ void main(){
 //    color = vec3(st.x*2, st.y*2, 0);
     
     // Calculate the center
-    float pct = distance(st, vec2(0.3, 0.5));
-    // Add the cicle shape on the foreground
-    color = vec3(circle(0.5, 0.52, pct));
-    color += vec3(circle(0.35, 0.36, pct));
-    color += vec3(circle(0.2, 0.205, pct));
-    color += vec3(circle(0.05, 0.057, pct));
+    float pct = distance(st, center);
+    
+    // Add the cicle shape .
+    color = vec3(circle(0.5, 0.51, pct));
+    color += vec3(circle(0.35, 0.355, pct));
+    color += makeColor(24, 201, 239, circle(0.2, 0.205, pct));
+    color += makeColor(24, 201, 239, circle(0.03, 0.035, pct));
 
     // Moving center position of the cross to match the circle center.
     vec2 stMoved = st + vec2(0.2, 0);
+    
+    // Add crossing lines.
     color += vec3(line(stMoved, stMoved.x));
     color += vec3(line(stMoved, 1-stMoved.x));
 
+    // Add moving small red circle.
+    vec2 translate = vec2(cos(u_time), sin(u_time));
+    vec2 stMoving = st - center;
+    stMoving += translate * 0.28 * sin(u_time / 15);
+    stMoving += center;
+
+    pct = distance(stMoving, center);
+    color += makeColor(255, 0, 0, circle(0.02, 0.025, pct));
+    
+    
     gl_FragColor = vec4(color, 1.0);
 }
