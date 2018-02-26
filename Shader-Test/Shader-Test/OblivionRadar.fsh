@@ -8,16 +8,16 @@
 
 #define PI 3.14159265359
 
-float box(vec2 _st, vec2 _size){
-    _size = vec2(0.5) - _size*0.5;
-    vec2 uv = smoothstep(_size,
-                         _size+vec2(0.001),
-                         _st);
-    uv *= smoothstep(_size,
-                     _size+vec2(0.001),
-                     vec2(1.0)-_st);
-    return uv.x*uv.y;
-}
+//float box(vec2 _st, vec2 _size){
+//    _size = vec2(0.5) - _size*0.5;
+//    vec2 uv = smoothstep(_size,
+//                         _size+vec2(0.001),
+//                         _st);
+//    uv *= smoothstep(_size,
+//                     _size+vec2(0.001),
+//                     vec2(1.0)-_st);
+//    return uv.x*uv.y;
+//}
 
 float circle(float firstRadius, float secondRadius, float d) {
     float circle = step(firstRadius, d);
@@ -37,8 +37,13 @@ mat2 scale(vec2 _scale){
                 0.0, _scale.y);
 }
 
+float line (vec2 st, float pct){
+    return step(pct, st.y) - step(pct+0.001, st.y);
+//    return smoothstep(pct-0.01, pct, st.y) - smoothstep(pct, pct+0.01, st.y);
+}
+
 void main(){
-    vec2 iResolution = a_sprite_size / 1.15;
+    vec2 iResolution = a_sprite_size.x / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(1.0);
     
@@ -60,7 +65,13 @@ void main(){
     // Calculate the center
     float pct = distance(st, vec2(0.5));
     // Add the cicle shape on the foreground
-    color = vec3(circle(0.5, 0.55, pct));
-        
+    color = vec3(circle(0.5, 0.52, pct));
+    color += vec3(circle(0.35, 0.36, pct));
+    color += vec3(circle(0.2, 0.205, pct));
+    color += vec3(circle(0.05, 0.057, pct));
+
+    color += vec3(line(st, st.x));
+    color += vec3(line(st, 1-st.x));
+
     gl_FragColor = vec4(color, 1.0);
 }
