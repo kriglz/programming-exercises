@@ -8,6 +8,7 @@
 
 #define PI 3.14159265359
 #define center vec2(0.3, 0.5)
+#define radarRadius 0.35
 
 float circle(float firstRadius, float secondRadius, float d) {
     float circle = step(firstRadius, d);
@@ -38,29 +39,24 @@ float line(float x, float y){
     return step(x, y) - step(x + 0.001, y);
 }
 
-float box(vec2 st, vec2 size){
+/// Adds thin some distance lines with vanishing tail lines.
+float lineVanishing(float distanceToCenter, vec2 size, vec2 st){
+    // Moves the center to make line start from the center.
+    st.x += size.x / 2;
+    // Reduces size twice and adjust to the screen size.
     size = vec2(0.5) - size * 0.5;
-    st.x += size.x / 4;
+    // Makes a abrupt line.
+    vec2 line = step(size, st);
     
-    vec2 box = step(size, st);
-    box *= step(size + vec2(0.001), vec2(1.0) - st);
+    if (distanceToCenter > radarRadius) {
+        // No line if outside the radius.
+        line *= 0;
+    } else {
+        // Makes a vanishing line if it less thad radar radius.
+        line *= smoothstep(size, size - vec2(0, 2 * distanceToCenter), vec2(1.0) - st);
+    }
     
-    return box.x * box.y;
-}
-
-/// Adds thin lines vanishing lines.
-float lineTo(float distanceToCenter, float size, vec2 st){
-    // one way - both sides
-//    return step(st.x, st.y) - smoothstep(st.x, st.x + 1.2 * distanceToCenter, st.y);
-
-    // second - one side, but some leftover from another side
-//    if (st.x <= 0.5) {
-//        return step(st.x, st.y) - smoothstep(st.x, st.x + 1.2 * distanceToCenter, st.y);
-//    } else {
-//        return 0;
-//    }
-    
-    return box(st, vec2(size, 0.002));
+    return line.x * line.y;
 }
 
 /// Makes color.
@@ -84,7 +80,7 @@ void main(){
     
     // Add the cicle shapes.
     color = vec3(circle(0.5, 0.51, pct));
-    color += vec3(circle(0.35, 0.355, pct));
+    color += vec3(circle(radarRadius, radarRadius + 0.005, pct));
     color += makeColor(24, 201, 239, circle(0.2, 0.205, pct));
     color += makeColor(24, 201, 239, circle(0.03, 0.035, pct));
 
@@ -128,13 +124,13 @@ void main(){
     stMoving = st + vec2(0.2, 0);
     stMoving -= centerMoving;
     // Add rotation to the line.
-    stMoving = rotate2d(u_time) * stMoving;
+    stMoving = rotate2d(u_time / 2) * stMoving;
     // Centrialize the line rotation.
     stMoving += centerMoving;
     // Point distance to the center.
     float distanceToCenter = distance(st, center);
     // Add the line.
-    color += makeColor(24, 201, 239, lineTo(distanceToCenter, 0.3, stMoving));
+    color += makeColor(24, 201, 239, lineVanishing(distanceToCenter, vec2(radarRadius, 0.002), stMoving));
     
     gl_FragColor = vec4(color, 1.0);
 }
