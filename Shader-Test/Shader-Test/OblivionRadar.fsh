@@ -76,6 +76,19 @@ float blinking(float time) {
     return step(0.5, abs(sin(time * 15)));
 }
 
+float move(float time, float radiusConstant, vec2 st) {
+    // Creates circular movement.
+    vec2 translate = vec2(cos(time), sin(time));
+    // Decentralize.
+    vec2 stMoving = st - center;
+    // Adds time dependent movement.
+    stMoving += translate * radiusConstant * sin(translate - time);
+    // Centralize.
+    stMoving += center;
+    // Gets distance from the center.
+    return distance(stMoving, center);
+}
+
 void main(){
     vec2 iResolution = a_sprite_size.y / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
@@ -108,16 +121,8 @@ void main(){
     
     // Adding moving small red circle.
     
-    // Creates circular movement.
-    vec2 translate = vec2(cos(u_time/6), sin(u_time/6));
-    // Decentralize.
-    vec2 stMoving = st - center;
-    // Adds time dependent movement.
-    stMoving += translate * 0.28 * sin(translate / 10 - u_time / 5);
-    // Centralize.
-    stMoving += center;
     // Gets distance from the center.
-    pct = distance(stMoving, center);
+    pct = move(u_time / 6.0, 0.28, st);
     // Adds red filled blinking cirle.
     color += makeColor(255, 96, 0, circle(0.0, 0.015, pct)) * blinking(u_time);
     // Adds red empty circle.
@@ -131,11 +136,23 @@ void main(){
     color += makeColor(255, 96, 0, circleSmooth(scaledCircle.x - 0.05, scaledCircle.x, pct));
     
     
+    // Adding moving very small white circle.
+    
+    // Gets distance from the center.
+    pct = move(u_time / 8, 0.5, st);
+    // Adds red filled blinking cirle.
+    color += vec3(circle(0.0, 0.005, pct));
+    // Gets distance from the center.
+    pct = move(u_time / 18, 1.0, st);
+    // Adds red filled blinking cirle.
+    color += vec3(circle(0.0, 0.005, pct));
+    
+    
     // Adding rotating line.
     
     // Virtual center position.
     // Decentrialize center.
-    stMoving = st + vec2(0.2, 0);
+    vec2 stMoving = st + vec2(0.2, 0);
     stMoving -= centerMoving;
     // Add rotation to the line.
     stMoving = rotate2d(u_time) * stMoving;
