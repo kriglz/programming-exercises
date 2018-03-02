@@ -9,17 +9,6 @@
 #define PI 3.14159265359
 #define center vec2(0.3, 0.5)
 
-//float box(vec2 _st, vec2 _size){
-//    _size = vec2(0.5) - _size*0.5;
-//    vec2 uv = smoothstep(_size,
-//                         _size+vec2(0.001),
-//                         _st);
-//    uv *= smoothstep(_size,
-//                     _size+vec2(0.001),
-//                     vec2(1.0)-_st);
-//    return uv.x*uv.y;
-//}
-
 float circle(float firstRadius, float secondRadius, float d) {
     float circle = step(firstRadius, d);
     circle *= step(1-secondRadius, 1 - d);
@@ -44,14 +33,37 @@ mat2 scale(vec2 _scale){
                 0.0, _scale.y);
 }
 
-float line(vec2 st, float x){
-    return step(x, st.y) - step(x + 0.001, st.y);
+/// Adds thin lines.
+float line(float x, float y){
+    return step(x, y) - step(x + 0.001, y);
 }
 
-float lineTo(float distanceToCenter, float y, float x){
-    return step(x, y) - smoothstep(x, x + 1 * distanceToCenter, y);
+float box(vec2 st, vec2 size){
+    size = vec2(0.5) - size * 0.5;
+    st.x += size.x / 4;
+    
+    vec2 box = step(size, st);
+    box *= step(size + vec2(0.001), vec2(1.0) - st);
+    
+    return box.x * box.y;
 }
 
+/// Adds thin lines vanishing lines.
+float lineTo(float distanceToCenter, float size, vec2 st){
+    // one way - both sides
+//    return step(st.x, st.y) - smoothstep(st.x, st.x + 1.2 * distanceToCenter, st.y);
+
+    // second - one side, but some leftover from another side
+//    if (st.x <= 0.5) {
+//        return step(st.x, st.y) - smoothstep(st.x, st.x + 1.2 * distanceToCenter, st.y);
+//    } else {
+//        return 0;
+//    }
+    
+    return box(st, vec2(size, 0.002));
+}
+
+/// Makes color.
 vec3 makeColor(float red, float green, float blue, float coord) {
     return vec3(coord * red / 255,
                 coord * green / 255,
@@ -70,7 +82,7 @@ void main(){
     // Calculate the center
     float pct = distance(st, center);
     
-    // Add the cicle shape .
+    // Add the cicle shapes.
     color = vec3(circle(0.5, 0.51, pct));
     color += vec3(circle(0.35, 0.355, pct));
     color += makeColor(24, 201, 239, circle(0.2, 0.205, pct));
@@ -78,12 +90,13 @@ void main(){
 
     // Moving center position of the cross to match the circle center.
     vec2 stMoved = st + vec2(0.2, 0);
-    
     // Adds crossing lines.
-    color += vec3(line(stMoved, stMoved.x));
-    color += vec3(line(stMoved, 1-stMoved.x));
+    color += vec3(line(stMoved.x, stMoved.y));
+    color += vec3(line(1-stMoved.x, stMoved.y));
   
+    
     // Adding moving small red circle.
+    
     // Creates circular movement.
     vec2 translate = vec2(cos(u_time), sin(u_time));
     // Decentralize.
@@ -92,14 +105,12 @@ void main(){
     stMoving += translate * 0.28 * sin(translate / 10 - u_time / 5);
     // Centralize.
     stMoving += center;
-
     // Gets distance from the center.
     pct = distance(stMoving, center);
     // Adds red filled blinking cirle.
     color += makeColor(255, 0, 0, circle(0.0, 0.015, pct)) * blinking(u_time);
     // Adds red empty circle.
     color += makeColor(255, 0, 0, circle(0.02, 0.022, pct));
-    
     // Init scaled circle radius.
     vec2 scaledCircle = vec2(0.022);
     // Scales the circle radius.
@@ -107,7 +118,10 @@ void main(){
                                    step(0, tan(u_time*2)) * (tan(u_time) * 5 + 1.0))));
     // Adds red empty scaling circle with smooth line.
     color += makeColor(255, 0, 0, circleSmooth(scaledCircle.x - 0.05, scaledCircle.x, pct));
-
+    
+    
+    // Adding rotating line.
+    
     // Virtual center position.
     vec2 centerMoving = vec2(0.5);
     // Decentrialize center.
@@ -119,9 +133,8 @@ void main(){
     stMoving += centerMoving;
     // Point distance to the center.
     float distanceToCenter = distance(st, center);
-
     // Add the line.
-    color += makeColor(24, 201, 239, lineTo(distanceToCenter, stMoving.y, stMoving.x));
+    color += makeColor(24, 201, 239, lineTo(distanceToCenter, 0.3, stMoving));
     
     gl_FragColor = vec4(color, 1.0);
 }
