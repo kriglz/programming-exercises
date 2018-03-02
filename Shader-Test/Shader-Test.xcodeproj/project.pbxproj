@@ -30,6 +30,7 @@
 		89E3D739201A70F400917358 /* ColorMoveShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E3D738201A70F400917358 /* ColorMoveShader.fsh */; };
 		89E3D73B201A77FF00917358 /* SpectrumShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E3D73A201A77FF00917358 /* SpectrumShader.fsh */; };
 		89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E94F7A2049C6B60099A87B /* RGBColorTransformYUV.fsh */; };
+		89E94F7D2049CB5F0099A87B /* ColorGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E94F7C2049CB5F0099A87B /* ColorGrid.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		89E3D738201A70F400917358 /* ColorMoveShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ColorMoveShader.fsh; sourceTree = "<group>"; };
 		89E3D73A201A77FF00917358 /* SpectrumShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SpectrumShader.fsh; sourceTree = "<group>"; };
 		89E94F7A2049C6B60099A87B /* RGBColorTransformYUV.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RGBColorTransformYUV.fsh; sourceTree = "<group>"; };
+		89E94F7C2049CB5F0099A87B /* ColorGrid.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ColorGrid.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89E94F7C2049CB5F0099A87B /* ColorGrid.fsh */,
 				89E94F7A2049C6B60099A87B /* RGBColorTransformYUV.fsh */,
 				893B883C203CA74E00CA92DE /* OblivionRadar.fsh */,
 				892C77072039F4BD0051E11E /* MovingPlus.fsh */,
@@ -201,6 +204,7 @@
 				89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */,
 				89E3D73B201A77FF00917358 /* SpectrumShader.fsh in Resources */,
 				89BE3CD91FFD8042009F8636 /* LaunchScreen.storyboard in Resources */,
+				89E94F7D2049CB5F0099A87B /* ColorGrid.fsh in Resources */,
 				89BE3CE41FFDA23B009F8636 /* ShapeGradientShader.fsh in Resources */,
 				89223B8F2028A76900E7D1D2 /* CircleShader.fsh in Resources */,
 				893B883D203CA74E00CA92DE /* OblivionRadar.fsh in Resources */,

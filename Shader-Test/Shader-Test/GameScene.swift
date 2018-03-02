@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["RGBColorTransformYUV.fsh",
+    let shaders = ["ColorGrid.fsh",
+                   "RGBColorTransformYUV.fsh",
                    "OblivionRadar.fsh",
                    "MovingPlus.fsh",
                    "DistanceCombinedShader.fsh",
