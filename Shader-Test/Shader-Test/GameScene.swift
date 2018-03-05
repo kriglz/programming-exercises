@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["ColorGrid.fsh",
+    let shaders = ["MatrixPattern.fsh",
+                   "ColorGrid.fsh",
                    "RGBColorTransformYUV.fsh",
                    "OblivionRadar.fsh",
                    "MovingPlus.fsh",
