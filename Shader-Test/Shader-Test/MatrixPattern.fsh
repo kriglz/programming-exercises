@@ -35,10 +35,11 @@ void main(void){
     vec3 color = vec3(0.0);
     
     // Divide the space in 4
-    st = tile(st, 6) + abs(sin(u_time));
-    
-    // Use a matrix to rotate the space 45 degrees
-    st = rotate2D(st, PI * (u_time)); //0.35);
+    st = tile(st, 6) + abs(cos(u_time));
+    st *= tile(st + cos(u_time), 6);
+
+    // Use a matrix to rotate the space
+    st = rotate2D(st, PI * (u_time));
     
     // Draw a square
 //    color = vec3(box(st, vec2(0.7), 0.01));
