@@ -21,11 +21,19 @@ vec2 tile(vec2 _st, float _zoom){
     return fract(_st);
 }
 
-float box(vec2 _st, vec2 _size, float _smoothEdges){
+float box(vec2 _st, vec2 _size, float _smoothEdges, bool _isEmpty){
     _size = vec2(0.5)-_size*0.5;
     vec2 aa = vec2(_smoothEdges*0.5);
     vec2 uv = smoothstep(_size,_size+aa,_st);
     uv *= smoothstep(_size,_size+aa,vec2(1.0)-_st);
+        
+    if (_isEmpty) {
+        _size = _size * 1.1;
+        vec2 hole = smoothstep(_size, _size+aa, _st);
+        hole *= smoothstep(_size, _size+aa, vec2(1.0)-_st);
+        uv -= hole;
+    }
+    
     return uv.x*uv.y;
 }
 
@@ -34,17 +42,27 @@ void main(void){
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(0.0);
     
-    // Divide the space in 4
-    st = tile(st, 6) + abs(cos(u_time));
-    st *= tile(st + cos(u_time), 6);
+    // Divide the space by * times
+//    st = tile(st, 6) + abs(cos(u_time));
+//    st *= tile(st + cos(u_time), 6);
+    //st = tile(st, 6);
 
+    // Crossing thin lines.
+    color = vec3(box(st, vec2(1, 0.02), 0.01, false));
+    color += vec3(box(st, vec2(0.02, 1), 0.01, false));
+    
     // Use a matrix to rotate the space
-    st = rotate2D(st, PI * (u_time));
+//    st = rotate2D(st, PI * (u_time));
+    // Fixed rotation of 45DEG
+    st = rotate2D(st, PI / 4);
     
     // Draw a square
-//    color = vec3(box(st, vec2(0.7), 0.01));
+    color += vec3(box(st, vec2(0.2), 0.01, true));
+//    color += vec3(box(st, vec2(1, 0.02), 0.01));
+//    color += vec3(box(st, vec2(0.02, 1), 0.01));
+
     // Fill with gradient color.
-    color = vec3(st.x, st.y / 3, abs(sin(u_time)));
+//    color = vec3(st.x, st.y / 3, abs(sin(u_time)));
     
     gl_FragColor = vec4(color,1.0);
 }
