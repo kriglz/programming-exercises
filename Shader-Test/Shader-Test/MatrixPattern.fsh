@@ -26,15 +26,16 @@ float box(vec2 _st, vec2 _size, float _smoothEdges, bool _isEmpty){
     vec2 aa = vec2(_smoothEdges*0.5);
     vec2 uv = smoothstep(_size,_size+aa,_st);
     uv *= smoothstep(_size,_size+aa,vec2(1.0)-_st);
-        
+    
+    vec2 hole = vec2(0);
+    
     if (_isEmpty) {
-        _size = _size * 1.1;
-        vec2 hole = smoothstep(_size, _size+aa, _st);
-        hole *= smoothstep(_size, _size+aa, vec2(1.0)-_st);
-        uv -= hole;
+        _size = _size * 1.05;
+        hole = smoothstep(_size, _size+aa/2, _st);
+        hole *= smoothstep(_size, _size+aa/2, vec2(1.0)-_st);
     }
     
-    return uv.x*uv.y;
+    return uv.x*uv.y - hole.x*hole.y ;
 }
 
 void main(void){
@@ -45,7 +46,7 @@ void main(void){
     // Divide the space by * times
 //    st = tile(st, 6) + abs(cos(u_time));
 //    st *= tile(st + cos(u_time), 6);
-    //st = tile(st, 6);
+    st = tile(st, 6);
 
     // Crossing thin lines.
     color = vec3(box(st, vec2(1, 0.02), 0.01, false));
