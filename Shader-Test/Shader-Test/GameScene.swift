@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["MatrixPattern.fsh",
+    let shaders = ["BrickWall.fsh",
+                   "MatrixPattern.fsh",
                    "ColorGrid.fsh",
                    "RGBColorTransformYUV.fsh",
                    "OblivionRadar.fsh",

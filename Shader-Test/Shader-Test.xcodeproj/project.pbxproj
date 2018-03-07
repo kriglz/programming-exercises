@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8920941820507DB3001E096E /* BrickWall.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8920941720507DB3001E096E /* BrickWall.fsh */; };
 		89223B8F2028A76900E7D1D2 /* CircleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89223B8E2028A76900E7D1D2 /* CircleShader.fsh */; };
 		89223B912028A97600E7D1D2 /* DistanceFieldShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89223B902028A97600E7D1D2 /* DistanceFieldShader.fsh */; };
 		892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892294582020BE5800BCE6E2 /* ShapeShader.fsh */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8920941720507DB3001E096E /* BrickWall.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = BrickWall.fsh; sourceTree = "<group>"; };
 		89223B8E2028A76900E7D1D2 /* CircleShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircleShader.fsh; sourceTree = "<group>"; };
 		89223B902028A97600E7D1D2 /* DistanceFieldShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = DistanceFieldShader.fsh; sourceTree = "<group>"; };
 		892294582020BE5800BCE6E2 /* ShapeShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ShapeShader.fsh; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				8920941720507DB3001E096E /* BrickWall.fsh */,
 				892FF13D204DC2FD00F1F7EC /* MatrixPattern.fsh */,
 				89E94F7C2049CB5F0099A87B /* ColorGrid.fsh */,
 				89E94F7A2049C6B60099A87B /* RGBColorTransformYUV.fsh */,
@@ -196,6 +199,7 @@
 				89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */,
 				892D87E22029F056002D0C0D /* DistanceCombinedShader.fsh in Resources */,
 				892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */,
+				8920941820507DB3001E096E /* BrickWall.fsh in Resources */,
 				892D87E02029EB15002D0C0D /* PolarShader.fsh in Resources */,
 				89BE3CEC1FFDD867009F8636 /* InterferanceShader.fsh in Resources */,
 				89223B912028A97600E7D1D2 /* DistanceFieldShader.fsh in Resources */,
