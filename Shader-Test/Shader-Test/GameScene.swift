@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["BrickWall.fsh",
+    let shaders = ["TruchetTiles.fsh",
+                   "BrickWall.fsh",
                    "MatrixPattern.fsh",
                    "ColorGrid.fsh",
                    "RGBColorTransformYUV.fsh",
