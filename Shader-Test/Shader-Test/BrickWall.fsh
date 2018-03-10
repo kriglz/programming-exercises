@@ -6,6 +6,7 @@
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
+#define center vec2(0.5, 0.5)
 
 vec2 brickTile(vec2 _st, float _zoom, float time) {
     _st *= _zoom;
@@ -27,6 +28,13 @@ float box(vec2 _st, vec2 _size) {
     return uv.x * uv.y;
 }
 
+float circle(float firstRadius, float secondRadius, vec2 st) {
+    float pct = distance(st, center);
+    float circle = step(firstRadius, pct);
+    circle *= step(1-secondRadius, 1 - pct);
+    return circle;
+}
+
 void main(void) {
     vec2 iResolution = a_sprite_size.x / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
@@ -34,12 +42,13 @@ void main(void) {
     
     // Modern metric brick of 215mm x 102.5mm x 65mm
     // http://www.jaharrison.me.uk/Brickwork/Sizes.html
-    st /= vec2(2.15,0.65) / 1.5;
+//    st /= vec2(2.15,0.65) / 1.5;
     
     // Apply the brick tiling
-    st = brickTile(st, 5.0, u_time);
+    st = brickTile(st, 7.0, u_time);
     
-    color = vec3(box(st, vec2(0.98)));
+    color = vec3(circle(0, 0.1, st));
+//    color = vec3(box(st, vec2(0.98)));
     
     // Uncomment to see the space coordinates
 //    color = vec3(st, 0.0);
