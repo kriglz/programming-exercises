@@ -37,19 +37,13 @@ vec2 direction(vec2 _st, float _time) {
 }
 
 // Pattern control
-vec2 brickTile(vec2 _st, float _zoom, float _time) {
+vec2 movingGrid(vec2 _st, float _zoom, float _time) {
     _st *= _zoom;
-    
-    // Here is where the offset is happening
-    vec2 patternStep = step(1.0, mod(_st, 2.0));
-    
-    vec2 directionC = direction(patternStep, _time);
-
-    vec2 modifiedPatternStep = directionC * time(_time);
-
-    vec2 directionComponent = _st + modifiedPatternStep;
-
-    return fract(directionComponent);
+    vec2 stepForLines = step(1.0, mod(_st, 2.0));
+    vec2 lineDirections = direction(stepForLines, _time);
+    vec2 lineDirectionsOnTime = lineDirections * time(_time);
+    vec2 directionsForLines = _st + lineDirectionsOnTime;
+    return fract(directionsForLines);
 }
 
 float box(vec2 _st, vec2 _size) {
@@ -71,17 +65,13 @@ void main(void) {
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(0.0);
     
-    // Modern metric brick of 215mm x 102.5mm x 65mm
-    // http://www.jaharrison.me.uk/Brickwork/Sizes.html
-//    st /= vec2(2.15,0.65) / 1.5;
+    // Inits grid and moves it's lines.
+    st = movingGrid(st, 7.0, u_time);
     
-    // Apply the brick tiling
-    st = brickTile(st, 7.0, u_time);
+    // Draws circle.
+    color = vec3(circle(0.1, 0.4, st));
     
-    color = vec3(circle(0, 0.4, st));
-//    color = vec3(box(st, vec2(0.98)));
-    
-    // Uncomment to see the space coordinates
+    // Makes color changes.
     color = color.x == 1 ? vec3(1.0, sin(u_time), 0.0) : 0;
     
     gl_FragColor = vec4(color, 1.0);
