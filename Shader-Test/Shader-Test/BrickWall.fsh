@@ -7,12 +7,16 @@
 //
 
 
-vec2 brickTile(vec2 _st, float _zoom) {
+vec2 brickTile(vec2 _st, float _zoom, float time) {
     _st *= _zoom;
     
     // Here is where the offset is happening
-    _st.x += step(1., mod(_st.y, 2.0)) * 0.5;
+
+    float patternStep = step(1.0, mod(_st.y, 2.0));
+    float modifiedPatternStep = patternStep == 1 ? patternStep * (time): (-time);
     
+    _st.x += modifiedPatternStep;
+
     return fract(_st);
 }
 
@@ -33,9 +37,9 @@ void main(void) {
     st /= vec2(2.15,0.65) / 1.5;
     
     // Apply the brick tiling
-    st = brickTile(st, 5.0);
+    st = brickTile(st, 5.0, u_time);
     
-    color = vec3(box(st, vec2(0.9)));
+    color = vec3(box(st, vec2(0.98)));
     
     // Uncomment to see the space coordinates
 //    color = vec3(st, 0.0);
