@@ -8,14 +8,19 @@
 
 #define center vec2(0.5, 0.5)
 
-vec2 brickTile(vec2 _st, float _zoom, float time) {
+float time(float _time) {
+    float timeStep = step(1.0, mod(_time, 3.0));
+    float modifiedTimeStep = timeStep == 1 ? timeStep * (_time): (-_time);
+    return modifiedTimeStep;
+}
+
+vec2 brickTile(vec2 _st, float _zoom, float _time) {
     _st *= _zoom;
     
     // Here is where the offset is happening
-
     float patternStep = step(1.0, mod(_st.y, 2.0));
-    float modifiedPatternStep = patternStep == 1 ? patternStep * (time): (-time);
-    
+    float modifiedPatternStep = patternStep == 1 ? patternStep * time(_time): -time(_time);
+
     _st.x += modifiedPatternStep;
 
     return fract(_st);
