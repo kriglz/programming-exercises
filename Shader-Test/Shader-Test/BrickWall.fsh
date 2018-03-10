@@ -51,7 +51,7 @@ void main(void) {
 //    color = vec3(box(st, vec2(0.98)));
     
     // Uncomment to see the space coordinates
-//    color = vec3(st, 0.0);
+    color = color.x == 1 ? vec3(1.0, sin(u_time), 0.0) : 0;
     
     gl_FragColor = vec4(color, 1.0);
 }
