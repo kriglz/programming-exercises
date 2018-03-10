@@ -8,22 +8,48 @@
 
 #define center vec2(0.5, 0.5)
 
+/// Time step control
 float time(float _time) {
-    float timeStep = step(1.0, mod(_time, 3.0));
+    float timeStep = step(1.0, mod(_time, 2));
     float modifiedTimeStep = timeStep == 1 ? timeStep * (_time): (-_time);
     return modifiedTimeStep;
 }
 
+/// Direction control
+vec2 direction(vec2 _st, float _time) {
+    float timeStep = step(1.0, mod(_time, 2));
+    vec2 _direction = _st;
+    
+    if (_st.x == 0) {
+        if (_st.y == 0) {
+            _direction = timeStep == 1 ? vec2(1, 0) : vec2(0, -1);
+        } else {
+            _direction = timeStep == 1 ? vec2(-1, 0) : vec2(0, -1);
+        }
+    } else {
+        if (_st.y == 0) {
+            _direction = timeStep == 1 ? vec2(1, 0) : vec2(0, 1);
+        } else {
+            _direction = timeStep == 1 ? vec2(-1, 0) : vec2(0, 1);
+        }
+    }
+    return _direction;
+}
+
+// Pattern control
 vec2 brickTile(vec2 _st, float _zoom, float _time) {
     _st *= _zoom;
     
     // Here is where the offset is happening
-    float patternStep = step(1.0, mod(_st.y, 2.0));
-    float modifiedPatternStep = patternStep == 1 ? patternStep * time(_time): -time(_time);
+    vec2 patternStep = step(1.0, mod(_st, 2.0));
+    
+    vec2 directionC = direction(patternStep, _time);
 
-    _st.x += modifiedPatternStep;
+    vec2 modifiedPatternStep = directionC * time(_time);
 
-    return fract(_st);
+    vec2 directionComponent = _st + modifiedPatternStep;
+
+    return fract(directionComponent);
 }
 
 float box(vec2 _st, vec2 _size) {
@@ -52,7 +78,7 @@ void main(void) {
     // Apply the brick tiling
     st = brickTile(st, 7.0, u_time);
     
-    color = vec3(circle(0, 0.1, st));
+    color = vec3(circle(0, 0.4, st));
 //    color = vec3(box(st, vec2(0.98)));
     
     // Uncomment to see the space coordinates
