@@ -8,7 +8,7 @@
 
 #define PI 3.14159265358979323846
 #define lineNumber 24
-#define columnNumber 8
+#define columnNumber 10
 
 float indexFor(float _st, float _number) {
     float totalIndex = 0;
@@ -92,21 +92,25 @@ void main (void) {
     float boxDesign = box(st, vec2(0.8, 0.8));
 
     if (boxDesign == 1) {
-        if (microIndexX == 0) {
-            color = colorFor(microIndexX, microIndexY, u_time);
-        } else if (microIndexX == 1) {
-            color = colorFor(microIndexX, microIndexY, 20 * u_time);
-        } else if (microIndexX == 2) {
-            color = colorFor(microIndexX, microIndexY, 3 * u_time);
-        } else if (microIndexX == 3) {
-            color = colorFor(microIndexX, microIndexY, 9 * u_time);
-        } else if (microIndexX == 5) {
-            color = colorFor(microIndexX, microIndexY, 6 * u_time);
-        } else if (microIndexX == 6) {
-            color = colorFor(microIndexX, microIndexY, 5 * u_time);
-        } else {
-            color = vec3(1.0);
-        }
+        
+        color = colorFor(microIndexX, microIndexY, u_time * microIndexX);
+          
+        
+//        if (microIndexX == 0) {
+//            color = colorFor(microIndexX, microIndexY, u_time);
+//        } else if (microIndexX == 1) {
+//            color = colorFor(microIndexX, microIndexY, 20 * u_time);
+//        } else if (microIndexX == 2) {
+//            color = colorFor(microIndexX, microIndexY, 3 * u_time);
+//        } else if (microIndexX == 3) {
+//            color = colorFor(microIndexX, microIndexY, 9 * u_time);
+//        } else if (microIndexX == 5) {
+//            color = colorFor(microIndexX, microIndexY, 6 * u_time);
+//        } else if (microIndexX == 6) {
+//            color = colorFor(microIndexX, microIndexY, 5 * u_time);
+//        } else {
+//            color = vec3(1.0);
+//        }
     }
     
     gl_FragColor = vec4(color, 1.0);
