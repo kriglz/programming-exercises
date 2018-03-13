@@ -15,10 +15,6 @@ float indexFor(float _st, float _number) {
     float number = _number;
     
     while (number > 0) {
-//        totalIndex += step(1., mod(_st, number));
-//        totalIndex += step(1., ((number / _st) <= 1 ? mod(_st, number) : 0));// * (number - 1.);
-//        totalIndex += floor(_st / number) == 1 ? number : 0;
-
         if (floor(_st / number) == 1) {
             return number;
         }
@@ -41,23 +37,23 @@ float tileComponent (float _st, float _zoom) {
 }
 
 vec3 changeColor(float _index) {
-    vec3 color = vec3(1.);
+    vec3 color = vec3(.0);
     
-    if (_index == .0) {
-        color = vec3(1., .0, .0);
-        
-    } else if (_index == 1.) {
-        color = vec3(.0, 1., .0);
-        
-    } else if (_index == 2.) {
-        color = vec3(.0, .0, 1.);
-        
-    } else if (_index == 3.) {
-        color = vec3(1., .0, 1.);
-        
-    } else if (_index == 4.0) {
-        color = vec3(.1, 0.9, 0.9);
-    }
+//    if (_index == .0) {
+//        color = vec3(1., .0, .0);
+//        
+//    } else if (_index == 1.) {
+//        color = vec3(.0, 1., .0);
+//        
+//    } else if (_index == 2.) {
+//        color = vec3(.0, .0, 1.);
+//        
+//    } else if (_index == 3.) {
+//        color = vec3(1., .0, 1.);
+//        
+//    } else if (_index == 4.0) {
+//        color = vec3(.1, 0.9, 0.9);
+//    }
 
     return color;
 }
@@ -67,6 +63,14 @@ float box(vec2 _st, vec2 _size) {
     vec2 uv = smoothstep(_size, _size + vec2(1e-4), _st);
     uv *= smoothstep(_size, _size + vec2(1e-4), vec2(1.0) - _st);
     return uv.x * uv.y;
+}
+
+vec3 colorFor(float _microIndexX, float _microIndexY, float _time) {
+    if (_microIndexY == time(_time)) {
+        return changeColor(_microIndexX);
+    } else {
+        return vec3(1.0);
+    }
 }
 
 void main (void) {
@@ -88,17 +92,22 @@ void main (void) {
     float boxDesign = box(st, vec2(0.8, 0.8));
 
     if (boxDesign == 1) {
-        float timeIndex = time(u_time);
-        
-        if (microIndexY == timeIndex) {
-            color = changeColor(microIndexX);
-
+        if (microIndexX == 0) {
+            color = colorFor(microIndexX, microIndexY, u_time);
+        } else if (microIndexX == 1) {
+            color = colorFor(microIndexX, microIndexY, 20 * u_time);
+        } else if (microIndexX == 2) {
+            color = colorFor(microIndexX, microIndexY, 3 * u_time);
+        } else if (microIndexX == 3) {
+            color = colorFor(microIndexX, microIndexY, 9 * u_time);
+        } else if (microIndexX == 5) {
+            color = colorFor(microIndexX, microIndexY, 6 * u_time);
+        } else if (microIndexX == 6) {
+            color = colorFor(microIndexX, microIndexY, 5 * u_time);
         } else {
-            color = vec3(1.);
+            color = vec3(1.0);
         }
     }
     
-//    vec3 color = triangleDesign == 1 ? changeColor(index + (sin(u_time) > 0 ? 1 : 0)) : vec3(0);
-
     gl_FragColor = vec4(color, 1.0);
 }
