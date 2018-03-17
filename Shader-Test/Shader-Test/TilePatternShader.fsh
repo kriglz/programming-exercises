@@ -65,9 +65,9 @@ float box(vec2 _st, vec2 _size) {
     return uv.x * uv.y;
 }
 
-vec3 colorFor(float _microIndexX, float _microIndexY, float _time) {
-    if (_microIndexY == time(_time)) {
-        return changeColor(_microIndexX);
+vec3 colorFor(float column, float row, float _time) {
+    if (row == time(_time)) {
+        return changeColor(column);
     } else {
         return vec3(1.0);
     }
@@ -80,37 +80,37 @@ void main (void) {
 
     // Pattern - x.
     st.x = tileComponent(st.x, columnNumber);
-    float microIndexX = indexFor(st.x, columnNumber);
+    float macroIndexX = indexFor(st.x, columnNumber);
     
     // Pattern - y.
     st.y = tileComponent(st.y, lineNumber);
+    float macroIndexY = indexFor(st.y, lineNumber);
+    
+    st = fract(st);
+    
+    // Pattern - y.
+    st.y = tileComponent(st.y, 4);
     float microIndexY = indexFor(st.y, lineNumber);
     
     st = fract(st);
     
     // Draw box.
     float boxDesign = box(st, vec2(0.8, 0.8));
+    float smallBoxDesign = box(st, vec2(0.2, 0.8));
 
     if (boxDesign == 1) {
-        
-        color = colorFor(microIndexX, microIndexY, u_time * microIndexX);
-          
-        
-//        if (microIndexX == 0) {
-//            color = colorFor(microIndexX, microIndexY, u_time);
-//        } else if (microIndexX == 1) {
-//            color = colorFor(microIndexX, microIndexY, 20 * u_time);
-//        } else if (microIndexX == 2) {
-//            color = colorFor(microIndexX, microIndexY, 3 * u_time);
-//        } else if (microIndexX == 3) {
-//            color = colorFor(microIndexX, microIndexY, 9 * u_time);
-//        } else if (microIndexX == 5) {
-//            color = colorFor(microIndexX, microIndexY, 6 * u_time);
-//        } else if (microIndexX == 6) {
-//            color = colorFor(microIndexX, microIndexY, 5 * u_time);
-//        } else {
-//            color = vec3(1.0);
-//        }
+//        color = colorFor(macroIndexX, macroIndexY, u_time * (macroIndexX + 1)) * vec3(0.7, 0.8, 0.9);
+//        color = colorFor(macroIndexX, microIndexY * 4, u_time * (macroIndexX + 1));
+
+        if (smallBoxDesign == 0) {
+            if (microIndexY == 1) {
+                color = colorFor(macroIndexX, macroIndexY + microIndexY, u_time * (macroIndexX + 1)) * vec3(0.9, 0.6, 0.9);
+            } else {
+                color = vec3(1, 1, 1);
+            }
+        } else {
+            color = vec3(1, 1, 1);
+        }
     }
     
     gl_FragColor = vec4(color, 1.0);
