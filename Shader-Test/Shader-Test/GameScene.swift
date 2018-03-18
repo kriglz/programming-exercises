@@ -11,7 +11,10 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["TilePatternShader.fsh",
+    let shaders = ["RandomMovingRows.fsh",
+                   "RandomPatternShader.fsh",
+                   "RandomShader.fsh",
+                   "TilePatternShader.fsh",
                    "TruchetTiles.fsh",
                    "BrickWall.fsh",
                    "MatrixPattern.fsh",
