@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["RandomMovingRows2.fsh",
+    let shaders = ["RandomMovingRows3.fsh",
+                   "RandomMovingRows2.fsh",
                    "RandomMovingRows.fsh",
                    "RandomPatternShader.fsh",
                    "RandomShader.fsh",

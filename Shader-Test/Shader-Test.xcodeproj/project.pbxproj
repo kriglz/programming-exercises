@@ -39,6 +39,7 @@
 		89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E96479205EBB7C009B5420 /* RandomPatternShader.fsh */; };
 		89E9647C205EC158009B5420 /* RandomMovingRows.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647B205EC158009B5420 /* RandomMovingRows.fsh */; };
 		89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */; };
+		89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		89E96479205EBB7C009B5420 /* RandomPatternShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomPatternShader.fsh; sourceTree = "<group>"; };
 		89E9647B205EC158009B5420 /* RandomMovingRows.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows.fsh; sourceTree = "<group>"; };
 		89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows2.fsh; sourceTree = "<group>"; };
+		89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows3.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */,
 				89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */,
 				89E9647B205EC158009B5420 /* RandomMovingRows.fsh */,
 				89E96479205EBB7C009B5420 /* RandomPatternShader.fsh */,
@@ -229,6 +232,7 @@
 				89BE3CE21FFD80A7009F8636 /* ColorShader.fsh in Resources */,
 				89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */,
 				89E96478205EAA8B009B5420 /* RandomShader.fsh in Resources */,
+				89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */,
 				89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */,
 				89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */,
 				89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */,
