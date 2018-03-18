@@ -35,6 +35,9 @@
 		89E3D73B201A77FF00917358 /* SpectrumShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E3D73A201A77FF00917358 /* SpectrumShader.fsh */; };
 		89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E94F7A2049C6B60099A87B /* RGBColorTransformYUV.fsh */; };
 		89E94F7D2049CB5F0099A87B /* ColorGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E94F7C2049CB5F0099A87B /* ColorGrid.fsh */; };
+		89E96478205EAA8B009B5420 /* RandomShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E96477205EAA8B009B5420 /* RandomShader.fsh */; };
+		89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E96479205EBB7C009B5420 /* RandomPatternShader.fsh */; };
+		89E9647C205EC158009B5420 /* RandomMovingRows.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647B205EC158009B5420 /* RandomMovingRows.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		89E3D73A201A77FF00917358 /* SpectrumShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SpectrumShader.fsh; sourceTree = "<group>"; };
 		89E94F7A2049C6B60099A87B /* RGBColorTransformYUV.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RGBColorTransformYUV.fsh; sourceTree = "<group>"; };
 		89E94F7C2049CB5F0099A87B /* ColorGrid.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ColorGrid.fsh; sourceTree = "<group>"; };
+		89E96477205EAA8B009B5420 /* RandomShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomShader.fsh; sourceTree = "<group>"; };
+		89E96479205EBB7C009B5420 /* RandomPatternShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomPatternShader.fsh; sourceTree = "<group>"; };
+		89E9647B205EC158009B5420 /* RandomMovingRows.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89E9647B205EC158009B5420 /* RandomMovingRows.fsh */,
+				89E96479205EBB7C009B5420 /* RandomPatternShader.fsh */,
+				89E96477205EAA8B009B5420 /* RandomShader.fsh */,
 				89901EBC20551AD000D87D25 /* TilePatternShader.fsh */,
 				8927F15A2054344600E4AB86 /* TruchetTiles.fsh */,
 				8920941720507DB3001E096E /* BrickWall.fsh */,
@@ -207,6 +216,7 @@
 				892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */,
 				8920941820507DB3001E096E /* BrickWall.fsh in Resources */,
 				892D87E02029EB15002D0C0D /* PolarShader.fsh in Resources */,
+				89E9647C205EC158009B5420 /* RandomMovingRows.fsh in Resources */,
 				89BE3CEC1FFDD867009F8636 /* InterferanceShader.fsh in Resources */,
 				89223B912028A97600E7D1D2 /* DistanceFieldShader.fsh in Resources */,
 				89E3D739201A70F400917358 /* ColorMoveShader.fsh in Resources */,
@@ -215,7 +225,9 @@
 				892FF13E204DC2FD00F1F7EC /* MatrixPattern.fsh in Resources */,
 				89BE3CE21FFD80A7009F8636 /* ColorShader.fsh in Resources */,
 				89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */,
+				89E96478205EAA8B009B5420 /* RandomShader.fsh in Resources */,
 				89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */,
+				89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */,
 				89901EBD20551AD000D87D25 /* TilePatternShader.fsh in Resources */,
 				89E3D73B201A77FF00917358 /* SpectrumShader.fsh in Resources */,
 				89BE3CD91FFD8042009F8636 /* LaunchScreen.storyboard in Resources */,
