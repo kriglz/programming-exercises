@@ -100,17 +100,19 @@ void main (void) {
 
     if (boxDesign == 1) {
 //        color = colorFor(macroIndexX, macroIndexY, u_time * (macroIndexX + 1)) * vec3(0.7, 0.8, 0.9);
-//        color = colorFor(macroIndexX, microIndexY * 4, u_time * (macroIndexX + 1));
+        color = colorFor(macroIndexX, microIndexY * 4, u_time * (macroIndexX + 1));
 
-        if (smallBoxDesign == 0) {
+        if (smallBoxDesign == 1) {
             if (microIndexY == 1) {
-                color = colorFor(macroIndexX, macroIndexY + microIndexY, u_time * (macroIndexX + 1)) * vec3(0.9, 0.6, 0.9);
-            } else {
-                color = vec3(1, 1, 1);
+                color *= colorFor(macroIndexX, macroIndexY + microIndexY, u_time * (macroIndexX + 1)) * vec3(0.9, 0.6, 0.9);
             }
-        } else {
-            color = vec3(1, 1, 1);
+//            else {
+//                color *= vec3(1, 1, 1);
+//            }
         }
+//        else {
+//            color = vec3(1, 1, 1);
+//        }
     }
     
     gl_FragColor = vec4(color, 1.0);
