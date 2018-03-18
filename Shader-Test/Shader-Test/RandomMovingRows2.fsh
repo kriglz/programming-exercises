@@ -22,8 +22,7 @@ void main() {
     st.y *= 100;
     st.x *= 60;
     
-    st.x -= u_time * 20 * (abs(sin(floor(st.y))) + 0.1); //+ (40 * random(abs(sin(u_time) * sin(u_time))));
-
+    st.x -= u_time * (floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
     
     // get the integer coords
     vec2 ipos = floor(st);
@@ -33,11 +32,7 @@ void main() {
     
     
     // Assign a random value based on the integer coord
-    vec3 color = vec3(step(random(u_time)/5 + 0.4, random(ipos)) == 1 ? random(ipos) : 0);
-    
-    // Uncomment to see the subdivided grid
-    //     color = vec3(fpos,0.0);
+    vec3 color = vec3(step(random(u_time)/5 + 0.3, random(ipos)) == 1 ? random(ipos) : 0);
     
     gl_FragColor = vec4(color,1.0);
 }
-
