@@ -51,15 +51,13 @@ void main() {
     
     if (ipos.y < time(u_time * 2)) {
         
-        if (ipos.x < columnNumber / 2) {
+        if (ipos.y == (time(u_time * 2) - 1) && ipos.x < time(u_time * 2 * 60)) {
+            colorComponent *= step(0.6, random(ipos));
+        } else if (ipos.y < (time(u_time * 2) - 1)) {
             colorComponent *= step(0.6, random(ipos));
         }
     }
-    
-
-    
-    
-    
+  
     // Assign a random value based on the integer coord
     vec3 color = vec3(colorComponent);
     
