@@ -34,15 +34,8 @@ float time(float _time) {
     return indexFor(_time, lineNumber);
 }
 
-//float timeSec(float _time, float x) {
-//    if ((_time / lineNumber) > 1) {
-//        _time -= lineNumber * floor(_time / lineNumber);
-//    }
-//
-//    return indexFor(_time, lineNumber);
-//}
-
 void main() {
+    
     vec2 iResolution = a_sprite_size.xy / 1.15;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     
@@ -50,12 +43,10 @@ void main() {
     st.y *= lineNumber;
     st.x *= columnNumber;
     
-//    st.x -= u_time * (floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
-    
     // get the integer coords
     vec2 ipos = floor(st);
     
-    float colorComponent = 1.0;
+    vec3 color = vec3(1.0);
     
     if (ipos.y == (time(u_time) - 1)) {
         
@@ -63,22 +54,26 @@ void main() {
             
             st.x -= u_time * (0.5 + floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
             ipos = floor(st);
-            
-            colorComponent *= step(0.5, random(ipos));
+            color *= step(0.5, random(ipos));
         }
         
     } else if (ipos.y < (time(u_time) - 1)) {
+        
         st.x -= u_time * (0.5 + floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
         ipos = floor(st);
-
-        colorComponent *= step(0.5, random(ipos));
+        color *= step(0.5, random(ipos));
     }
-  
+    
+    float alpha = 1.0;
+    
+    if (ipos.y == floor(time(u_time) / 5) && ipos.x < floor(time(u_time * 5) / 2)) {
+        color += abs(sin(u_time * 8)) * vec3(0.8, 1, 0.6);
+        
+    } else if (ipos.y == floor(time(u_time) / 4) && ipos.x < floor(time(u_time * 4) / 2)) {
+        color += abs(sin(u_time * 4)) * vec3(1.0, 0.2, 0.2);
+        
+    }
     
     
-    // Assign a random value based on the integer coord
-    vec3 color = vec3(colorComponent);
-    
-    gl_FragColor = vec4(color, 1.0);
+    gl_FragColor = vec4(color, alpha);
 }
-
