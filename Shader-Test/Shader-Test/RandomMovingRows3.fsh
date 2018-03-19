@@ -56,11 +56,10 @@ void main() {
     vec2 ipos = floor(st);
     
     float colorComponent = 1.0;
-
     
-    if (ipos.y == (time(u_time * 2) - 1)) {
+    if (ipos.y == (time(u_time) - 1)) {
         
-        if (ipos.x < time(u_time * 2 * 60)) { //}&& ipos.x < columnNumber / 2) {
+        if (ipos.x < time(u_time * columnNumber)) {
             
             st.x -= u_time * (0.5 + floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
             ipos = floor(st);
@@ -68,13 +67,11 @@ void main() {
             colorComponent *= step(0.5, random(ipos));
         }
         
-        
-    } else if (ipos.y < (time(u_time * 2) - 1)) {
+    } else if (ipos.y < (time(u_time) - 1)) {
         st.x -= u_time * (0.5 + floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
         ipos = floor(st);
 
         colorComponent *= step(0.5, random(ipos));
-
     }
   
     
