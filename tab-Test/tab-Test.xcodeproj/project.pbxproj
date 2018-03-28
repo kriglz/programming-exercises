@@ -13,6 +13,9 @@
 		8973AD13206C0B9800342327 /* TabWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8973AD12206C0B9800342327 /* TabWindow.swift */; };
 		8973AD15206C0EE100342327 /* TabWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8973AD14206C0EE100342327 /* TabWindowController.swift */; };
 		8973AD17206C232600342327 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8973AD16206C232600342327 /* First.swift */; };
+		8973AD19206C2A1100342327 /* First.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8973AD18206C2A1100342327 /* First.xib */; };
+		8973AD1B206C2ABB00342327 /* Second.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8973AD1A206C2ABB00342327 /* Second.xib */; };
+		8973AD1D206C2B3E00342327 /* Third.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8973AD1C206C2B3E00342327 /* Third.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		8973AD12206C0B9800342327 /* TabWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabWindow.swift; sourceTree = "<group>"; };
 		8973AD14206C0EE100342327 /* TabWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabWindowController.swift; sourceTree = "<group>"; };
 		8973AD16206C232600342327 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
+		8973AD18206C2A1100342327 /* First.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = First.xib; sourceTree = "<group>"; };
+		8973AD1A206C2ABB00342327 /* Second.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Second.xib; sourceTree = "<group>"; };
+		8973AD1C206C2B3E00342327 /* Third.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Third.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				8973AD07206C095900342327 /* MainMenu.xib */,
 				8973AD14206C0EE100342327 /* TabWindowController.swift */,
 				8973AD12206C0B9800342327 /* TabWindow.swift */,
+				8973AD18206C2A1100342327 /* First.xib */,
+				8973AD1A206C2ABB00342327 /* Second.xib */,
+				8973AD1C206C2B3E00342327 /* Third.xib */,
 				8973AD0A206C095900342327 /* Info.plist */,
 				8973AD11206C0B3500342327 /* supporting fileds */,
 			);
@@ -137,7 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8973AD06206C095900342327 /* Assets.xcassets in Resources */,
+				8973AD19206C2A1100342327 /* First.xib in Resources */,
 				8973AD09206C095900342327 /* MainMenu.xib in Resources */,
+				8973AD1B206C2ABB00342327 /* Second.xib in Resources */,
+				8973AD1D206C2B3E00342327 /* Third.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ class TabWindow: NSWindow, NSToolbarDelegate {
                              "class": "Second",
                              "identifier":"Second"],
                             ["title": "Third c",
-                             "icon": "NSAdvanced",
+                             "icon": "second",
                              "class": "Third",
                              "identifier": "Third"]]
     
@@ -32,7 +32,7 @@ class TabWindow: NSWindow, NSToolbarDelegate {
     var currentViewController = NSViewController()
     
     convenience init() {
-        self.init(contentRect: NSRect(x: 100, y: 100, width: 600, height: 200),
+        self.init(contentRect: NSRect(x: 100, y: 100, width: 600, height: 600),
                   styleMask: NSWindow.StyleMask.titled,
                   backing: BackingStoreType.buffered,
                   defer: true)
