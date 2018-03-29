@@ -36,8 +36,10 @@ class TabWindow: NSWindow, NSToolbarDelegate {
         
         self.makeKeyAndOrderFront(nil)
         self.title = "Test"
-        self.styleMask = [.titled, .closable, .miniaturizable, .resizable, .unifiedTitleAndToolbar]
+        self.styleMask = [.titled, .closable, .resizable, .miniaturizable, .unifiedTitleAndToolbar]
 
+        self.styleMask.remove(.resizable)
+        
         for dictionary in toolbarTabsArray {
             guard let identifier = dictionary["identifier"] else { return }
             toolbarTabsIdentifierArray.append(NSToolbarItem.Identifier.init(identifier))
