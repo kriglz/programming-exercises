@@ -14,9 +14,21 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="1tt-MP-GH9">
             <rect key="frame" x="0.0" y="0.0" width="163" height="578"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dzh-Xh-oTC">
+                    <rect key="frame" x="63" y="280" width="49" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="second" id="G8e-CG-aBg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
             <constraints>
                 <constraint firstAttribute="width" constant="163" id="KIq-z0-UgX"/>
                 <constraint firstAttribute="height" constant="578" id="TMU-6S-xVm"/>
+                <constraint firstItem="Dzh-Xh-oTC" firstAttribute="centerY" secondItem="1tt-MP-GH9" secondAttribute="centerY" id="U8R-kr-YIS"/>
+                <constraint firstItem="Dzh-Xh-oTC" firstAttribute="leading" secondItem="1tt-MP-GH9" secondAttribute="leading" constant="65" id="UJs-Om-Zwi"/>
             </constraints>
             <point key="canvasLocation" x="124.5" y="164"/>
         </customView>
