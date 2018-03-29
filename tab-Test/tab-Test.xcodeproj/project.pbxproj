@@ -67,6 +67,7 @@
 				8973AD07206C095900342327 /* MainMenu.xib */,
 				8973AD14206C0EE100342327 /* TabWindowController.swift */,
 				8973AD12206C0B9800342327 /* TabWindow.swift */,
+				8973AD16206C232600342327 /* First.swift */,
 				8973AD18206C2A1100342327 /* First.xib */,
 				8973AD1A206C2ABB00342327 /* Second.xib */,
 				8973AD1C206C2B3E00342327 /* Third.xib */,
@@ -81,7 +82,6 @@
 			children = (
 				8973AD0B206C095900342327 /* tab_Test.entitlements */,
 				8973AD05206C095900342327 /* Assets.xcassets */,
-				8973AD16206C232600342327 /* First.swift */,
 			);
 			name = "supporting fileds";
 			sourceTree = "<group>";

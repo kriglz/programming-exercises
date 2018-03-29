@@ -13,7 +13,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -26,11 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func newWindowAction(_ sender: NSButton) {
         
         let tabWindow = TabWindow()
-        
         let tabWindowController = TabWindowController()
-
         tabWindowController.window = tabWindow
-        
         tabWindowController.showWindow(nil)
     }
 }
