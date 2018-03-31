@@ -19,10 +19,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSDraggingDestination {
 }
 
 class MyView: NSView {
-
     let fileTypes = ["jpg", "jpeg", "bmp", "png", "gif"]
-    var fileTypeIsOk = false
-    var droppedFilePath: String?
+    var isFileDroppable = false
+    var droppedObjects: NSMutableArray = []
+    var droppedFilePath: String? {
+        didSet {
+            droppedObjects.add(droppedFilePath)
+        }
+    }
+
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
     
     override func draw(_ dirtyRect: NSRect) {
@@ -42,31 +47,30 @@ class MyView: NSView {
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         if checkExtension(drag: sender) {
             self.layer?.backgroundColor = CGColor.black
-
-            fileTypeIsOk = true
+            isFileDroppable = true
             return .copy
         } else {
-            fileTypeIsOk = false
+            isFileDroppable = false
             return []
         }
     }
     
     override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
-        if fileTypeIsOk {
+        if isFileDroppable {
             return .copy
         } else {
             return []
         }
     }
     
-    
     override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        sender.animatesToDestination = true
+        
         return true
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         if let board = sender.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? NSArray, let imagePath = board[0] as? String {
-            // THIS IS WERE YOU GET THE PATH FOR THE DROPPED FILE
             droppedFilePath = imagePath
             return true
         }
@@ -75,6 +79,26 @@ class MyView: NSView {
     
     override func concludeDragOperation(_ sender: NSDraggingInfo?) {
         self.layer?.backgroundColor = CGColor.white
+        
+        let imageButton = NSButton(frame: NSRect(x: 100, y: 50, width: 100, height: 100))
+        imageButton.imageHugsTitle = true
+        imageButton.alternateTitle = "tite"
+        imageButton.isBordered = false
+        
+        imageButton.imageScaling = .scaleProportionallyDown
+        
+        imageButton.image = NSImage(pasteboard: (sender?.draggingPasteboard())!) //NSWorkspace.shared.icon(forFile: droppedObjects[0] as! String)
+        
+        
+            //NSImage(contentsOfFile: droppedObjects[0] as! String) //NSImage(pasteboard: (sender?.draggingPasteboard())!)
+        self.addSubview(imageButton)
+        
+        
+//        let imageView = NSImageView(frame: NSRect(x: 100, y: 50, width: 100, height: 100))
+//        imageView.image = NSImage(pasteboard: (sender?.draggingPasteboard())!) //NSImage(contentsOfFile: droppedObjects[0] as! String)
+//        self.addSubview(imageView)
+        
+        self.setNeedsDisplay(self.bounds)
     }
     
     override func draggingExited(_ sender: NSDraggingInfo?) {
