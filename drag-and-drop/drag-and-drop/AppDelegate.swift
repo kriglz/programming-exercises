@@ -80,24 +80,35 @@ class MyView: NSView {
     override func concludeDragOperation(_ sender: NSDraggingInfo?) {
         self.layer?.backgroundColor = CGColor.white
         
-        let imageButton = NSButton(frame: NSRect(x: 100, y: 50, width: 100, height: 100))
-        imageButton.imageHugsTitle = true
-        imageButton.alternateTitle = "tite"
-        imageButton.isBordered = false
+//        let iconButton = NSButton(frame: NSRect(x: 100, y: 65, width: 50, height: 100))
+//        iconButton.isBordered = false
+//        iconButton.imageScaling = .scaleProportionallyDown
+//        iconButton.imagePosition = .imageAbove
+//        let image = NSWorkspace.shared.icon(forFile: droppedObjects[0] as! String)
+//        image.size = CGSize(width: 50, height: 50)
+//        iconButton.image = image
+//        iconButton.title = ((droppedObjects[0] as? NSString)?.lastPathComponent) ?? "picture"
+//        iconButton.lineBreakMode = .byWordWrapping
+//        iconButton.usesSingleLineMode = false
+//        iconButton.imageHugsTitle = true
+//
+//        self.addSubview(iconButton)
         
-        imageButton.imageScaling = .scaleProportionallyDown
+        let imageView = NSImageView(frame: NSRect(x: 100, y: 65, width: 50, height: 50))
+        imageView.imageScaling = .scaleProportionallyDown
+        let image = NSWorkspace.shared.icon(forFile: droppedObjects[0] as! String)
+        image.size = CGSize(width: 50, height: 50)
+        imageView.image = image
+        self.addSubview(imageView)
         
-        imageButton.image = NSImage(pasteboard: (sender?.draggingPasteboard())!) //NSWorkspace.shared.icon(forFile: droppedObjects[0] as! String)
-        
-        
-            //NSImage(contentsOfFile: droppedObjects[0] as! String) //NSImage(pasteboard: (sender?.draggingPasteboard())!)
-        self.addSubview(imageButton)
-        
-        
-//        let imageView = NSImageView(frame: NSRect(x: 100, y: 50, width: 100, height: 100))
-//        imageView.image = NSImage(pasteboard: (sender?.draggingPasteboard())!) //NSImage(contentsOfFile: droppedObjects[0] as! String)
-//        self.addSubview(imageView)
-        
+        let imageViewTitle = NSTextField(frame: NSRect(x: 75, y: 0, width: 100, height: 60))
+        imageViewTitle.isBordered = false
+        imageViewTitle.stringValue = ((droppedObjects[0] as? NSString)?.lastPathComponent) ?? "picture"
+        imageViewTitle.maximumNumberOfLines = 0
+        imageViewTitle.lineBreakMode = .byTruncatingHead
+        imageViewTitle.alignment = .center
+        self.addSubview(imageViewTitle)
+
         self.setNeedsDisplay(self.bounds)
     }
     
