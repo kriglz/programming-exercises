@@ -6,7 +6,7 @@
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
-#define lineNumber 50
+#define lineNumber 2
 #define columnNumber 2
 
 float random(vec2 st) {
@@ -24,35 +24,27 @@ float noise(float x) {
     return mix(rand(i), rand(i + 1.0), u);
 }
 
+float circle(float firstRadius, float secondRadius, float d) {
+    float circle = step(firstRadius, d);
+    circle *= step(1-secondRadius, 1 - d);
+    return circle;
+}
+
 void main() {
-    vec2 iResolution = a_sprite_size.xy / 1.15;
+    vec2 iResolution = a_sprite_size.xy;// / 1.15;
+    iResolution.x *= 1.5;
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     vec3 color = vec3(1.0);
     float alpha = 1.0;
-    
-    // Scale the coordinate system by 10
-    st.y *= lineNumber;
-    st.x *= columnNumber;
-    
-    // get the integer coords
-    vec2 ipos = floor(st);
- 
-//    st.x -= u_time * (0.5 + floor(st.y) / 10 + 10 * abs(random(floor(st.y))));
-//    ipos = floor(st);
-//    color *= step(0.5, random(ipos));
 
+    float pct = distance(st, vec2(0.5 * (abs(sin(u_time / 5)) + 0.1), 0.4 + noise(abs(cos(u_time / 5)))));
+    float secondRadius = 2 * noise(random(st) * abs(sin(u_time / 10)));
+    color = circle(0, secondRadius, pct);
     
-    
-    color =  dot(vec2(rand(st.x), st.y), vec2(cos(u_time), 0.5));
-    
-    // tilted lines
-//    color =  rand((st.y + st.x) * sin(u_time));
-
-
-    // Blinking screen.
-//    color = step(0.5, rand(u_time));
-
-    
+    if (secondRadius > 0.05 && color.x == 1) {
+        color = (step(0.5, abs(sin(u_time * 10))) == 0 ? 1 : vec3(1., 0., 0.));
+    }
+        
     gl_FragColor = vec4(color, alpha);
 }
 
