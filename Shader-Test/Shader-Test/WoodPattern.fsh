@@ -41,7 +41,7 @@ void main() {
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     
     float t = 1.0;
-    t = abs(1.0 - sin(u_time * .1)) * 5.;
+    t = abs(1.0 - abs(sin(u_time * .1))) * 5.;
     st.x += noise(st * 2.) * t; // Animate the coordinate space
     
     vec2 pos = st.yx * vec2(10., 3.);

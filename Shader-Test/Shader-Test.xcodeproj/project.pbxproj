@@ -21,6 +21,11 @@
 		895904F92072304600300B62 /* WoodPattern.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895904F82072304600300B62 /* WoodPattern.fsh */; };
 		895904FB2072313D00300B62 /* NoisePattern.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895904FA2072313D00300B62 /* NoisePattern.fsh */; };
 		895904FF2072382C00300B62 /* NoisyShapeShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895904FE2072382C00300B62 /* NoisyShapeShader.fsh */; };
+		895905012072652500300B62 /* NoiseFromTriangles.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905002072652500300B62 /* NoiseFromTriangles.fsh */; };
+		895905032072680600300B62 /* CubicPulse.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905022072680600300B62 /* CubicPulse.fsh */; };
+		895905052072684A00300B62 /* CubicPulse2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905042072684A00300B62 /* CubicPulse2.fsh */; };
+		895905072072690E00300B62 /* RandomDrops.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905062072690E00300B62 /* RandomDrops.fsh */; };
+		895905092072699700300B62 /* ConnectingLines.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905082072699700300B62 /* ConnectingLines.fsh */; };
 		8973ACF620696D8E00342327 /* NoiceShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8973ACF520696D8E00342327 /* NoiceShader.fsh */; };
 		89901EBD20551AD000D87D25 /* TilePatternShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89901EBC20551AD000D87D25 /* TilePatternShader.fsh */; };
 		89A03F4F20284DB500B9B705 /* CircularShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89A03F4E20284DB500B9B705 /* CircularShader.fsh */; };
@@ -62,6 +67,11 @@
 		895904F82072304600300B62 /* WoodPattern.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = WoodPattern.fsh; sourceTree = "<group>"; };
 		895904FA2072313D00300B62 /* NoisePattern.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = NoisePattern.fsh; sourceTree = "<group>"; };
 		895904FE2072382C00300B62 /* NoisyShapeShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = NoisyShapeShader.fsh; sourceTree = "<group>"; };
+		895905002072652500300B62 /* NoiseFromTriangles.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = NoiseFromTriangles.fsh; sourceTree = "<group>"; };
+		895905022072680600300B62 /* CubicPulse.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CubicPulse.fsh; sourceTree = "<group>"; };
+		895905042072684A00300B62 /* CubicPulse2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CubicPulse2.fsh; sourceTree = "<group>"; };
+		895905062072690E00300B62 /* RandomDrops.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomDrops.fsh; sourceTree = "<group>"; };
+		895905082072699700300B62 /* ConnectingLines.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ConnectingLines.fsh; sourceTree = "<group>"; };
 		8973ACF520696D8E00342327 /* NoiceShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = NoiceShader.fsh; sourceTree = "<group>"; };
 		89901EBC20551AD000D87D25 /* TilePatternShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TilePatternShader.fsh; sourceTree = "<group>"; };
 		89A03F4E20284DB500B9B705 /* CircularShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircularShader.fsh; sourceTree = "<group>"; };
@@ -120,6 +130,11 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				895905082072699700300B62 /* ConnectingLines.fsh */,
+				895905062072690E00300B62 /* RandomDrops.fsh */,
+				895905042072684A00300B62 /* CubicPulse2.fsh */,
+				895905022072680600300B62 /* CubicPulse.fsh */,
+				895905002072652500300B62 /* NoiseFromTriangles.fsh */,
 				895904FE2072382C00300B62 /* NoisyShapeShader.fsh */,
 				895904FA2072313D00300B62 /* NoisePattern.fsh */,
 				895904F82072304600300B62 /* WoodPattern.fsh */,
@@ -235,6 +250,7 @@
 				8973ACF620696D8E00342327 /* NoiceShader.fsh in Resources */,
 				892C77082039F4BD0051E11E /* MovingPlus.fsh in Resources */,
 				89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */,
+				895905092072699700300B62 /* ConnectingLines.fsh in Resources */,
 				892D87E22029F056002D0C0D /* DistanceCombinedShader.fsh in Resources */,
 				892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */,
 				8920941820507DB3001E096E /* BrickWall.fsh in Resources */,
@@ -245,15 +261,19 @@
 				895904F72072086400300B62 /* 2DNoiseShader.fsh in Resources */,
 				89E3D739201A70F400917358 /* ColorMoveShader.fsh in Resources */,
 				89BE3CD41FFD8042009F8636 /* Main.storyboard in Resources */,
+				895905052072684A00300B62 /* CubicPulse2.fsh in Resources */,
 				89A03F4F20284DB500B9B705 /* CircularShader.fsh in Resources */,
 				892FF13E204DC2FD00F1F7EC /* MatrixPattern.fsh in Resources */,
+				895905072072690E00300B62 /* RandomDrops.fsh in Resources */,
 				89BE3CE21FFD80A7009F8636 /* ColorShader.fsh in Resources */,
 				89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */,
 				895904F92072304600300B62 /* WoodPattern.fsh in Resources */,
 				89E96478205EAA8B009B5420 /* RandomShader.fsh in Resources */,
 				89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */,
 				89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */,
+				895905032072680600300B62 /* CubicPulse.fsh in Resources */,
 				89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */,
+				895905012072652500300B62 /* NoiseFromTriangles.fsh in Resources */,
 				89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */,
 				89901EBD20551AD000D87D25 /* TilePatternShader.fsh in Resources */,
 				89E3D73B201A77FF00917358 /* SpectrumShader.fsh in Resources */,

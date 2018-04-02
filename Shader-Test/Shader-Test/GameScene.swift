@@ -11,7 +11,12 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["NoisyShapeShader.fsh",
+    let shaders = ["ConnectingLines.fsh",
+                   "RandomDrops.fsh",
+                   "CubicPulse2.fsh",
+                   "CubicPulse.fsh",
+                   "NoiseFromTriangles.fsh",
+                   "NoisyShapeShader.fsh",
                    "NoisePattern.fsh",
                    "WoodPattern.fsh",
                    "2DNoiseShader.fsh",
