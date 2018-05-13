@@ -81,8 +81,9 @@ class GameScene: SKScene {
 //            shaderIndex = 0
 //        }
 //        addTheShader()
-        
+        print(tapPosition)
         tapPosition = byReactingTo.location(in: self.view)
+        addTheShader()
     }
     
     var tapPosition = CGPoint.zero
@@ -93,7 +94,8 @@ class GameScene: SKScene {
         
         // Adds the shader to the node.
         currentShader.attributes = [
-            SKAttribute(name: "a_sprite_size", type: .vectorFloat2)
+            SKAttribute(name: "a_sprite_size", type: .vectorFloat2),
+            SKAttribute(name: "a_mouse", type: .vectorFloat2)
         ]
         testNode.shader = currentShader
         let testNodeSize = vector_float2(Float(testNode.size.width*UIScreen.main.scale),

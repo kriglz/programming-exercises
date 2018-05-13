@@ -6,7 +6,11 @@
 //  Copyright © 2018 Kristina Gelzinyte. All rights reserved.
 //
 
-attribute vec2 a_mouse;
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+//uniform vec2 a_mouse;
 
 void main() {
     vec2 iResolution = a_sprite_size.xy;
@@ -23,7 +27,7 @@ void main() {
     point[3] =  vec2(0.31,0.26);
     point[4] = a_mouse/iResolution;
     
-    float m_dist = 1.;  // minimun distance
+    float m_dist = 0.4;  // minimun distance
     
     // Iterate through the points positions
     for (int i = 0; i < 5; i++) {
