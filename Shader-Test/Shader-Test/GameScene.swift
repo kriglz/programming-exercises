@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["ConnectingLines.fsh",
+    let shaders = ["PerlinsNoise.fsh",
+                   "ConnectingLines.fsh",
                    "RandomDrops.fsh",
                    "CubicPulse2.fsh",
                    "CubicPulse.fsh",
@@ -74,14 +75,17 @@ class GameScene: SKScene {
     
     
     @objc private func handleTapGesture(byReactingTo: UITapGestureRecognizer){
-        if shaderIndex != shaders.count-1 {
-            shaderIndex += 1
-        } else {
-            shaderIndex = 0
-        }
-        addTheShader()
+//        if shaderIndex != shaders.count-1 {
+//            shaderIndex += 1
+//        } else {
+//            shaderIndex = 0
+//        }
+//        addTheShader()
+        
+        tapPosition = byReactingTo.location(in: self.view)
     }
     
+    var tapPosition = CGPoint.zero
     
     private func addTheShader(){
         currentShader = SKShader(fileNamed: shaders[shaderIndex])
@@ -96,7 +100,11 @@ class GameScene: SKScene {
                                          Float(testNode.size.height*UIScreen.main.scale))
         testNode.setValue(SKAttributeValue(vectorFloat2: testNodeSize),
                           forAttribute: "a_sprite_size")
-
+        
+        let mousePosition = vector_float2(Float(tapPosition.x),
+                                         Float(tapPosition.y))
+        testNode.setValue(SKAttributeValue(vectorFloat2: mousePosition),
+                          forAttribute: "a_mouse")
     }
     
     override func update(_ currentTime: TimeInterval) {

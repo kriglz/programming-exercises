@@ -50,6 +50,7 @@
 		89E9647C205EC158009B5420 /* RandomMovingRows.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647B205EC158009B5420 /* RandomMovingRows.fsh */; };
 		89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */; };
 		89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */; };
+		89F51A1E20A8B33500E6F455 /* PerlinsNoise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		89E9647B205EC158009B5420 /* RandomMovingRows.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows.fsh; sourceTree = "<group>"; };
 		89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows2.fsh; sourceTree = "<group>"; };
 		89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows3.fsh; sourceTree = "<group>"; };
+		89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = PerlinsNoise.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */,
 				895905082072699700300B62 /* ConnectingLines.fsh */,
 				895905062072690E00300B62 /* RandomDrops.fsh */,
 				895905042072684A00300B62 /* CubicPulse2.fsh */,
@@ -272,6 +275,7 @@
 				89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */,
 				89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */,
 				895905032072680600300B62 /* CubicPulse.fsh in Resources */,
+				89F51A1E20A8B33500E6F455 /* PerlinsNoise.fsh in Resources */,
 				89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */,
 				895905012072652500300B62 /* NoiseFromTriangles.fsh in Resources */,
 				89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */,
