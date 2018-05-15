@@ -21,10 +21,10 @@ void main() {
     
     // Cell positions
     vec2 point[5];
-    point[0] = vec2(0.83,0.75);
-    point[1] = vec2(0.60,0.07);
-    point[2] = vec2(0.28,0.64);
-    point[3] =  vec2(0.31,0.26);
+    point[0] = vec2(0.83, 0.75) + vec2(sin(u_time) / 10);
+    point[1] = vec2(0.60, 0.07) - vec2(sin(u_time) / 5, 0);
+    point[2] = vec2(0.28, 0.64) + vec2(cos(u_time) / 5, 0);
+    point[3] =  vec2(0.31, 0.26) - vec2(sin(u_time) / 10);
     point[4] = a_mouse/iResolution;
     
     float m_dist = 0.4;  // minimun distance
@@ -41,7 +41,7 @@ void main() {
     color += m_dist;
     
     // Show isolines
-    // color -= step(.7,abs(sin(50.0*m_dist)))*.3;
+    color -= step(.7, abs(sin(50.0*m_dist)))*.3;
     
     gl_FragColor = vec4(color,1.0);
 }
