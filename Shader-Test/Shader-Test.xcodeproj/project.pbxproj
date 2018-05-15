@@ -51,6 +51,7 @@
 		89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */; };
 		89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */; };
 		89F51A1E20A8B33500E6F455 /* PerlinsNoise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */; };
+		89F51A2020AB5EEC00E6F455 /* CellularNoise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		89E9647D205ECE57009B5420 /* RandomMovingRows2.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows2.fsh; sourceTree = "<group>"; };
 		89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows3.fsh; sourceTree = "<group>"; };
 		89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = PerlinsNoise.fsh; sourceTree = "<group>"; };
+		89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CellularNoise.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */,
 				89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */,
 				895905082072699700300B62 /* ConnectingLines.fsh */,
 				895905062072690E00300B62 /* RandomDrops.fsh */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BE3CE61FFDA3EC009F8636 /* TestShader.fsh in Resources */,
+				89F51A2020AB5EEC00E6F455 /* CellularNoise.fsh in Resources */,
 				895904FF2072382C00300B62 /* NoisyShapeShader.fsh in Resources */,
 				8973ACF620696D8E00342327 /* NoiceShader.fsh in Resources */,
 				892C77082039F4BD0051E11E /* MovingPlus.fsh in Resources */,

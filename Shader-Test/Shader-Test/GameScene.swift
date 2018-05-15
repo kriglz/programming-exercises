@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["PerlinsNoise.fsh",
+    let shaders = ["CellularNoise.fsh",
+                   "PerlinsNoise.fsh",
                    "ConnectingLines.fsh",
                    "RandomDrops.fsh",
                    "CubicPulse2.fsh",
