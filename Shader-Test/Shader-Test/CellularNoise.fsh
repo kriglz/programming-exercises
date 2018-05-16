@@ -20,7 +20,6 @@ vec2 random2( vec2 p ) {
 void main() {
     vec2 iResolution = a_sprite_size.xy;
     vec2 st = gl_FragCoord.xy / iResolution.x;
-    st.x *= iResolution.x/iResolution.y;
 
     vec3 color = vec3(.0);
     

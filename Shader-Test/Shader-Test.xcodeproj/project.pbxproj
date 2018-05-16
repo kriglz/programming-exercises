@@ -52,6 +52,8 @@
 		89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */; };
 		89F51A1E20A8B33500E6F455 /* PerlinsNoise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */; };
 		89F51A2020AB5EEC00E6F455 /* CellularNoise.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */; };
+		89F51A2220ACA93D00E6F455 /* Voronoi.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A2120ACA93D00E6F455 /* Voronoi.fsh */; };
+		89F51A2420ACAB1400E6F455 /* VoronoiDynamic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89F51A2320ACAB1400E6F455 /* VoronoiDynamic.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		89E9647F205EEA67009B5420 /* RandomMovingRows3.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomMovingRows3.fsh; sourceTree = "<group>"; };
 		89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = PerlinsNoise.fsh; sourceTree = "<group>"; };
 		89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CellularNoise.fsh; sourceTree = "<group>"; };
+		89F51A2120ACA93D00E6F455 /* Voronoi.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Voronoi.fsh; sourceTree = "<group>"; };
+		89F51A2320ACAB1400E6F455 /* VoronoiDynamic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VoronoiDynamic.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				89F51A2320ACAB1400E6F455 /* VoronoiDynamic.fsh */,
+				89F51A2120ACA93D00E6F455 /* Voronoi.fsh */,
 				89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */,
 				89F51A1D20A8B33500E6F455 /* PerlinsNoise.fsh */,
 				895905082072699700300B62 /* ConnectingLines.fsh */,
@@ -274,12 +280,14 @@
 				895905072072690E00300B62 /* RandomDrops.fsh in Resources */,
 				89BE3CE21FFD80A7009F8636 /* ColorShader.fsh in Resources */,
 				89BE3CD61FFD8042009F8636 /* Assets.xcassets in Resources */,
+				89F51A2220ACA93D00E6F455 /* Voronoi.fsh in Resources */,
 				895904F92072304600300B62 /* WoodPattern.fsh in Resources */,
 				89E96478205EAA8B009B5420 /* RandomShader.fsh in Resources */,
 				89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */,
 				89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */,
 				895905032072680600300B62 /* CubicPulse.fsh in Resources */,
 				89F51A1E20A8B33500E6F455 /* PerlinsNoise.fsh in Resources */,
+				89F51A2420ACAB1400E6F455 /* VoronoiDynamic.fsh in Resources */,
 				89E94F7B2049C6B60099A87B /* RGBColorTransformYUV.fsh in Resources */,
 				895905012072652500300B62 /* NoiseFromTriangles.fsh in Resources */,
 				89E9647A205EBB7C009B5420 /* RandomPatternShader.fsh in Resources */,
