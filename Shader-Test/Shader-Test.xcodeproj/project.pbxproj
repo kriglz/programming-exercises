@@ -17,6 +17,7 @@
 		892D87E22029F056002D0C0D /* DistanceCombinedShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892D87E12029F056002D0C0D /* DistanceCombinedShader.fsh */; };
 		892FF13E204DC2FD00F1F7EC /* MatrixPattern.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 892FF13D204DC2FD00F1F7EC /* MatrixPattern.fsh */; };
 		893B883D203CA74E00CA92DE /* OblivionRadar.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 893B883C203CA74E00CA92DE /* OblivionRadar.fsh */; };
+		894F3C7920B1E8FC00B3E109 /* DropShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 894F3C7820B1E8FC00B3E109 /* DropShader.fsh */; };
 		895904F72072086400300B62 /* 2DNoiseShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895904F62072086400300B62 /* 2DNoiseShader.fsh */; };
 		895904F92072304600300B62 /* WoodPattern.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895904F82072304600300B62 /* WoodPattern.fsh */; };
 		895904FB2072313D00300B62 /* NoisePattern.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895904FA2072313D00300B62 /* NoisePattern.fsh */; };
@@ -67,6 +68,7 @@
 		892D87E12029F056002D0C0D /* DistanceCombinedShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = DistanceCombinedShader.fsh; sourceTree = "<group>"; };
 		892FF13D204DC2FD00F1F7EC /* MatrixPattern.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = MatrixPattern.fsh; sourceTree = "<group>"; };
 		893B883C203CA74E00CA92DE /* OblivionRadar.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = OblivionRadar.fsh; sourceTree = "<group>"; };
+		894F3C7820B1E8FC00B3E109 /* DropShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = DropShader.fsh; sourceTree = "<group>"; };
 		895904F62072086400300B62 /* 2DNoiseShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 2DNoiseShader.fsh; sourceTree = "<group>"; };
 		895904F82072304600300B62 /* WoodPattern.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = WoodPattern.fsh; sourceTree = "<group>"; };
 		895904FA2072313D00300B62 /* NoisePattern.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = NoisePattern.fsh; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				894F3C7820B1E8FC00B3E109 /* DropShader.fsh */,
 				89F51A2320ACAB1400E6F455 /* VoronoiDynamic.fsh */,
 				89F51A2120ACA93D00E6F455 /* Voronoi.fsh */,
 				89F51A1F20AB5EEC00E6F455 /* CellularNoise.fsh */,
@@ -265,6 +268,7 @@
 				89BE3CEA1FFDBF53009F8636 /* CircularShapeShader.fsh in Resources */,
 				895905092072699700300B62 /* ConnectingLines.fsh in Resources */,
 				892D87E22029F056002D0C0D /* DistanceCombinedShader.fsh in Resources */,
+				894F3C7920B1E8FC00B3E109 /* DropShader.fsh in Resources */,
 				892294592020BE5800BCE6E2 /* ShapeShader.fsh in Resources */,
 				8920941820507DB3001E096E /* BrickWall.fsh in Resources */,
 				892D87E02029EB15002D0C0D /* PolarShader.fsh in Resources */,
