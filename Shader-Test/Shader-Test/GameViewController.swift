@@ -12,17 +12,20 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var shaderLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Loading scene directly.
         /// Main game scene.
         let gameWorldSize = CGSize.init(width: view.frame.size.width, height: view.frame.size.height)
-        let gameSceneNode = GameScene(size: gameWorldSize)
-                
+        let gameScene = GameScene(size: gameWorldSize)
+        gameScene.sceneShaderDelegate = self
+        
         // Present the scene
         if let view = self.view as! SKView? {
-            view.presentScene(gameSceneNode)
+            view.presentScene(gameScene)
             view.ignoresSiblingOrder = true
 //            view.showsPhysics = true
 //            view.showsFPS = true
@@ -42,12 +45,13 @@ class GameViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+}
+
+extension GameViewController: GameSceneDelegate {
+    func gameScene(_ gameScene: GameScene, didChangeShader title: String) {
+        shaderLabel.text = title
     }
 }

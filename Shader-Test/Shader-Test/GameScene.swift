@@ -13,9 +13,9 @@ class GameScene: SKScene {
     
     let shaders = ["DropShader.fsh",
                    "VoronoiDynamic.fsh",
-                   "Voronoi.fsh",
+//                   "Voronoi.fsh",
                    "CellularNoise.fsh",
-                   "PerlinsNoise.fsh",
+//                   "PerlinsNoise.fsh",
                    "ConnectingLines.fsh",
                    "RandomDrops.fsh",
                    "CubicPulse2.fsh",
@@ -57,7 +57,10 @@ class GameScene: SKScene {
     private lazy var currentShader: SKShader = SKShader(fileNamed: shaders[0])
     private var shaderIndex: Int = 0
     private var testNode: SKSpriteNode!
+    private var tapPosition = CGPoint.zero
 
+    weak var sceneShaderDelegate: GameSceneDelegate?
+    
     override func didMove(to view: SKView) {
         // Adds tap handler to the scene.
         let tapHandler = #selector(handleTapGesture(byReactingTo:))
@@ -67,39 +70,34 @@ class GameScene: SKScene {
     }
     
     override func sceneDidLoad() {
-        
         testNode = SKSpriteNode.init(color: .blue, size: CGSize(width: self.size.width, height: self.size.height))
         testNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
         testNode.zPosition = 100
         
-        addTheShader()
-        
+        applyTheShader()
         addChild(testNode)
     }
     
-    
     @objc private func handleTapGesture(byReactingTo: UITapGestureRecognizer){
-//        if shaderIndex != shaders.count-1 {
-//            shaderIndex += 1
-//        } else {
-//            shaderIndex = 0
-//        }
-//        addTheShader()
-        print(tapPosition)
+        if shaderIndex != shaders.count-1 {
+            shaderIndex += 1
+        } else {
+            shaderIndex = 0
+        }
         tapPosition = byReactingTo.location(in: self.view)
-        addTheShader()
+        applyTheShader()
     }
     
-    var tapPosition = CGPoint.zero
-    
-    private func addTheShader(){
+    private func applyTheShader(){
+        sceneShaderDelegate?.gameScene(self, didChangeShader: shaders[shaderIndex])
+
         currentShader = SKShader(fileNamed: shaders[shaderIndex])
         testNode.shader = currentShader
         
         // Adds the shader to the node.
         currentShader.attributes = [
             SKAttribute(name: "a_sprite_size", type: .vectorFloat2),
-            SKAttribute(name: "a_mouse", type: .vectorFloat2)
+//            SKAttribute(name: "a_mouse", type: .vectorFloat2)
         ]
         testNode.shader = currentShader
         let testNodeSize = vector_float2(Float(testNode.size.width*UIScreen.main.scale),
@@ -107,13 +105,17 @@ class GameScene: SKScene {
         testNode.setValue(SKAttributeValue(vectorFloat2: testNodeSize),
                           forAttribute: "a_sprite_size")
         
-        let mousePosition = vector_float2(Float(tapPosition.x),
-                                         Float(tapPosition.y))
-        testNode.setValue(SKAttributeValue(vectorFloat2: mousePosition),
-                          forAttribute: "a_mouse")
+//        let mousePosition = vector_float2(Float(tapPosition.x),
+//                                         Float(tapPosition.y))
+//        testNode.setValue(SKAttributeValue(vectorFloat2: mousePosition),
+//                          forAttribute: "a_mouse")
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
+//    override func update(_ currentTime: TimeInterval) {
+//        // Called before each frame is rendered
+//    }
+}
+
+protocol GameSceneDelegate: class {
+    func gameScene(_ gameScene: GameScene, didChangeShader title: String)
 }
