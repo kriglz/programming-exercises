@@ -28,6 +28,7 @@
 		895905072072690E00300B62 /* RandomDrops.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905062072690E00300B62 /* RandomDrops.fsh */; };
 		895905092072699700300B62 /* ConnectingLines.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 895905082072699700300B62 /* ConnectingLines.fsh */; };
 		8973ACF620696D8E00342327 /* NoiceShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8973ACF520696D8E00342327 /* NoiceShader.fsh */; };
+		897AEB6720C4562000D70E55 /* SquareGridShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 897AEB6620C4562000D70E55 /* SquareGridShader.fsh */; };
 		89901EBD20551AD000D87D25 /* TilePatternShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89901EBC20551AD000D87D25 /* TilePatternShader.fsh */; };
 		89A03F4F20284DB500B9B705 /* CircularShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 89A03F4E20284DB500B9B705 /* CircularShader.fsh */; };
 		89BE3CC91FFD8042009F8636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE3CC81FFD8042009F8636 /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 		895905062072690E00300B62 /* RandomDrops.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = RandomDrops.fsh; sourceTree = "<group>"; };
 		895905082072699700300B62 /* ConnectingLines.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = ConnectingLines.fsh; sourceTree = "<group>"; };
 		8973ACF520696D8E00342327 /* NoiceShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = NoiceShader.fsh; sourceTree = "<group>"; };
+		897AEB6620C4562000D70E55 /* SquareGridShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SquareGridShader.fsh; sourceTree = "<group>"; };
 		89901EBC20551AD000D87D25 /* TilePatternShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TilePatternShader.fsh; sourceTree = "<group>"; };
 		89A03F4E20284DB500B9B705 /* CircularShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CircularShader.fsh; sourceTree = "<group>"; };
 		89BE3CC51FFD8042009F8636 /* Shader-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shader-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 		89BE3CC71FFD8042009F8636 /* Shader-Test */ = {
 			isa = PBXGroup;
 			children = (
+				897AEB6620C4562000D70E55 /* SquareGridShader.fsh */,
 				894F3C7820B1E8FC00B3E109 /* DropShader.fsh */,
 				89F51A2320ACAB1400E6F455 /* VoronoiDynamic.fsh */,
 				89F51A2120ACA93D00E6F455 /* Voronoi.fsh */,
@@ -287,6 +290,7 @@
 				89F51A2220ACA93D00E6F455 /* Voronoi.fsh in Resources */,
 				895904F92072304600300B62 /* WoodPattern.fsh in Resources */,
 				89E96478205EAA8B009B5420 /* RandomShader.fsh in Resources */,
+				897AEB6720C4562000D70E55 /* SquareGridShader.fsh in Resources */,
 				89E96480205EEA67009B5420 /* RandomMovingRows3.fsh in Resources */,
 				89E9647E205ECE57009B5420 /* RandomMovingRows2.fsh in Resources */,
 				895905032072680600300B62 /* CubicPulse.fsh in Resources */,

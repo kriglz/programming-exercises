@@ -11,7 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let shaders = ["DropShader.fsh",
+    let shaders = ["SquareGridShader",
+                   "DropShader.fsh",
                    "VoronoiDynamic.fsh",
 //                   "Voronoi.fsh",
                    "CellularNoise.fsh",
