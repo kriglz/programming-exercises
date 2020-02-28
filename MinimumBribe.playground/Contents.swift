@@ -1,5 +1,26 @@
 import UIKit
 
+//func minimumBribes(q: [Int]) -> Void {
+//    var bribeCount = 0
+//
+//    for currentPosition in 0..<q.count {
+//        let initialPositionInQueue = q[currentPosition] - 1
+//
+//        // Imposible case, too far ahead
+//        if initialPositionInQueue > currentPosition + 2 {
+//            return print("Too chaotic")
+//        }
+//
+//        for nextPosition in (currentPosition + 1)..<q.count {
+//            if q[currentPosition] > q[nextPosition] {
+//                bribeCount += 1
+//            }
+//        }
+//    }
+//
+//    print(bribeCount)
+//}
+
 func minimumBribes(q: [Int]) -> Void {
     var bribeCount = 0
     
@@ -11,9 +32,15 @@ func minimumBribes(q: [Int]) -> Void {
             return print("Too chaotic")
         }
         
-        for nextPosition in (currentPosition + 1)..<q.count {
-            if q[currentPosition] > q[nextPosition] {
-                bribeCount += 1
+        let delta = initialPositionInQueue - currentPosition
+        if delta > 0 {
+            bribeCount += delta
+            
+        } else {
+            for nextPosition in (currentPosition + 1)..<q.count {
+                if q[currentPosition] > q[nextPosition] {
+                    bribeCount += 1
+                }
             }
         }
     }
