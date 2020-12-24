@@ -14,7 +14,7 @@ struct DetailView: View {
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
-                NavigationLink(destination: MeetingView()) {
+                NavigationLink(destination: MeetingView(scrum: $scrum)) {
                     Label("Start meeting", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
