@@ -41,7 +41,7 @@ extension DailyScrum {
         var color: Color = .random
     }
     
-    var date: Data {
+    var data: Data {
         return Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), color: color)
     }
     

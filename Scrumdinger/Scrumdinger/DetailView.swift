@@ -46,7 +46,7 @@ struct DetailView: View {
         .navigationTitle(scrum.title)
         .navigationBarItems(trailing: Button("Edit") {
             isPresented = true
-            data = scrum.date
+            data = scrum.data
         })
         .fullScreenCover(isPresented: $isPresented) {
             NavigationView {
