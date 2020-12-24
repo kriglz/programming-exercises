@@ -13,6 +13,8 @@
 		893A86602593DC1900816B42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893A865F2593DC1900816B42 /* Preview Assets.xcassets */; };
 		893A866B2593E3B100816B42 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A866A2593E3B100816B42 /* DailyScrum.swift */; };
 		893A86702593E48400816B42 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A866F2593E48400816B42 /* CardView.swift */; };
+		893A86732593E8FA00816B42 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A86722593E8FA00816B42 /* ScrumsView.swift */; };
+		893A867825951F3200816B42 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A867725951F3200816B42 /* Color+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		893A86612593DC1900816B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893A866A2593E3B100816B42 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		893A866F2593E48400816B42 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		893A86722593E8FA00816B42 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		893A867725951F3200816B42 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				893A86582593DC1200816B42 /* ScrumdingerApp.swift */,
 				893A865A2593DC1200816B42 /* MeetingView.swift */,
+				893A86722593E8FA00816B42 /* ScrumsView.swift */,
 				893A866F2593E48400816B42 /* CardView.swift */,
+				893A867725951F3200816B42 /* Color+Codable.swift */,
 				893A866D2593E3B700816B42 /* Models */,
 				893A865C2593DC1900816B42 /* Assets.xcassets */,
 				893A86612593DC1900816B42 /* Info.plist */,
@@ -155,6 +161,8 @@
 				893A865B2593DC1200816B42 /* MeetingView.swift in Sources */,
 				893A866B2593E3B100816B42 /* DailyScrum.swift in Sources */,
 				893A86702593E48400816B42 /* CardView.swift in Sources */,
+				893A86732593E8FA00816B42 /* ScrumsView.swift in Sources */,
+				893A867825951F3200816B42 /* Color+Codable.swift in Sources */,
 				893A86592593DC1200816B42 /* ScrumdingerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
