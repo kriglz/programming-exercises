@@ -19,6 +19,7 @@
 		893A867F25952CC500816B42 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A867E25952CC500816B42 /* EditView.swift */; };
 		89657E32259550D4000E423D /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E31259550D4000E423D /* MeetingHeaderView.swift */; };
 		89657E352595530B000E423D /* ScrumProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E342595530B000E423D /* ScrumProgressViewStyle.swift */; };
+		89657E38259554AA000E423D /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E37259554AA000E423D /* ScrumTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		893A867E25952CC500816B42 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		89657E31259550D4000E423D /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		89657E342595530B000E423D /* ScrumProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumProgressViewStyle.swift; sourceTree = "<group>"; };
+		89657E37259554AA000E423D /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				893A866A2593E3B100816B42 /* DailyScrum.swift */,
+				89657E37259554AA000E423D /* ScrumTimer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				89657E32259550D4000E423D /* MeetingHeaderView.swift in Sources */,
 				893A86702593E48400816B42 /* CardView.swift in Sources */,
 				893A867B2595220400816B42 /* DetailView.swift in Sources */,
+				89657E38259554AA000E423D /* ScrumTimer.swift in Sources */,
 				893A86732593E8FA00816B42 /* ScrumsView.swift in Sources */,
 				893A867825951F3200816B42 /* Color+Codable.swift in Sources */,
 				89657E352595530B000E423D /* ScrumProgressViewStyle.swift in Sources */,
