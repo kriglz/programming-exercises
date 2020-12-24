@@ -33,8 +33,8 @@ struct DetailView: View {
             }
             Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees, id: \.self) { attendee in
-                    Label(attendee, systemImage: "Person")
-                        .accessibilityLabel(Text("person"))
+                    Label(attendee, systemImage: "person")
+                        .accessibilityLabel(Text("Person"))
                         .accessibilityValue(Text(attendee))
                 }
             }
