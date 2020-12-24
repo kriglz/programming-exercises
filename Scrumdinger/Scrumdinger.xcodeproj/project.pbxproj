@@ -17,6 +17,7 @@
 		893A867825951F3200816B42 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A867725951F3200816B42 /* Color+Codable.swift */; };
 		893A867B2595220400816B42 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A867A2595220400816B42 /* DetailView.swift */; };
 		893A867F25952CC500816B42 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A867E25952CC500816B42 /* EditView.swift */; };
+		89657E32259550D4000E423D /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E31259550D4000E423D /* MeetingHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		893A867725951F3200816B42 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		893A867A2595220400816B42 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		893A867E25952CC500816B42 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		89657E31259550D4000E423D /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				893A867A2595220400816B42 /* DetailView.swift */,
 				893A867E25952CC500816B42 /* EditView.swift */,
 				893A865A2593DC1200816B42 /* MeetingView.swift */,
+				89657E31259550D4000E423D /* MeetingHeaderView.swift */,
 				893A867725951F3200816B42 /* Color+Codable.swift */,
 				893A866D2593E3B700816B42 /* Models */,
 				893A865C2593DC1900816B42 /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 				893A865B2593DC1200816B42 /* MeetingView.swift in Sources */,
 				893A866B2593E3B100816B42 /* DailyScrum.swift in Sources */,
 				893A867F25952CC500816B42 /* EditView.swift in Sources */,
+				89657E32259550D4000E423D /* MeetingHeaderView.swift in Sources */,
 				893A86702593E48400816B42 /* CardView.swift in Sources */,
 				893A867B2595220400816B42 /* DetailView.swift in Sources */,
 				893A86732593E8FA00816B42 /* ScrumsView.swift in Sources */,
