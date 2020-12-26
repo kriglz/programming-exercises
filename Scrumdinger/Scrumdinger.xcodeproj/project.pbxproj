@@ -25,6 +25,7 @@
 		89657E4125968E3C000E423D /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89657E4025968E3C000E423D /* ding.wav */; };
 		89657E4A2596935F000E423D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E492596935F000E423D /* History.swift */; };
 		89657E522596C8A5000E423D /* ScrumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E512596C8A5000E423D /* ScrumData.swift */; };
+		89657E552597B30F000E423D /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E542597B30F000E423D /* MeetingTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		89657E4025968E3C000E423D /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		89657E492596935F000E423D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		89657E512596C8A5000E423D /* ScrumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumData.swift; sourceTree = "<group>"; };
+		89657E542597B30F000E423D /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				893A865A2593DC1200816B42 /* MeetingView.swift */,
 				89657E31259550D4000E423D /* MeetingHeaderView.swift */,
 				89657E3A25968BA9000E423D /* MeetingFooterView.swift */,
+				89657E542597B30F000E423D /* MeetingTimerView.swift */,
 				89657E342595530B000E423D /* ScrumProgressViewStyle.swift */,
 				893A866D2593E3B700816B42 /* Models */,
 				893A865C2593DC1900816B42 /* Assets.xcassets */,
@@ -203,6 +206,7 @@
 				893A867F25952CC500816B42 /* EditView.swift in Sources */,
 				89657E3E25968E05000E423D /* AVPlayer+Ding.swift in Sources */,
 				89657E522596C8A5000E423D /* ScrumData.swift in Sources */,
+				89657E552597B30F000E423D /* MeetingTimerView.swift in Sources */,
 				89657E32259550D4000E423D /* MeetingHeaderView.swift in Sources */,
 				893A86702593E48400816B42 /* CardView.swift in Sources */,
 				89657E3B25968BAA000E423D /* MeetingFooterView.swift in Sources */,
