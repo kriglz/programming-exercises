@@ -26,6 +26,7 @@
 		89657E4A2596935F000E423D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E492596935F000E423D /* History.swift */; };
 		89657E522596C8A5000E423D /* ScrumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E512596C8A5000E423D /* ScrumData.swift */; };
 		89657E552597B30F000E423D /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E542597B30F000E423D /* MeetingTimerView.swift */; };
+		89657E582597BEA4000E423D /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89657E572597BEA4000E423D /* SpeechRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		89657E492596935F000E423D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		89657E512596C8A5000E423D /* ScrumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumData.swift; sourceTree = "<group>"; };
 		89657E542597B30F000E423D /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
+		89657E572597BEA4000E423D /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				89657E37259554AA000E423D /* ScrumTimer.swift */,
 				89657E3D25968E05000E423D /* AVPlayer+Ding.swift */,
 				893A867725951F3200816B42 /* Color+Codable.swift */,
+				89657E572597BEA4000E423D /* SpeechRecognizer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				893A865B2593DC1200816B42 /* MeetingView.swift in Sources */,
 				893A866B2593E3B100816B42 /* DailyScrum.swift in Sources */,
 				89657E4A2596935F000E423D /* History.swift in Sources */,
+				89657E582597BEA4000E423D /* SpeechRecognizer.swift in Sources */,
 				893A867F25952CC500816B42 /* EditView.swift in Sources */,
 				89657E3E25968E05000E423D /* AVPlayer+Ding.swift in Sources */,
 				89657E522596C8A5000E423D /* ScrumData.swift in Sources */,
